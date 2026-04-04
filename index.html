@@ -409,7 +409,7 @@
     });
     drawerOverlay.addEventListener('click', window.closeDrawer);
   });
-
+  document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Lead');})});
 </script>
   <!-- ===== /Microsoft Clarity ===== -->
   <!-- ===== Google Analytics (GA4) ===== -->
