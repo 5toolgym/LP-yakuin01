@@ -27,8 +27,8 @@
     --gold-pale: #F5EDE0;
     --dark: #1A1814;
     --mid: #3D3830;
-    --text: #4A4540;
-    --text-light: #8A827A;
+    --text: #2E2B28;
+    --text-light: #5A5752;
     --bg: #FAFAF8;
     --white: #FFFFFF;
     --border: rgba(196,164,107,0.22);
@@ -68,6 +68,17 @@
   .hero-headline em { font-style: normal; color: #9A7A3A; }
   .hero-sub { font-size: 16px; color: var(--text); letter-spacing: 0.08em; margin-bottom: 36px; line-height: 1.9; font-weight: 400; }
   .hero-copy { font-size: 13px; line-height: 2.1; color: var(--text-light); margin-bottom: 36px; }
+  .hero-trust-badge {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: rgba(196,164,107,0.13); border: 1px solid rgba(196,164,107,0.38);
+    border-radius: 4px; padding: 10px 18px; margin-bottom: 22px;
+  }
+  .hero-trust-num {
+    font-family: "Cormorant Garamond", serif; font-size: 32px; font-weight: 300;
+    color: #9A7A3A; line-height: 1; white-space: nowrap;
+  }
+  .hero-trust-num small { font-size: 16px; vertical-align: middle; }
+  .hero-trust-label { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; line-height: 1.6; }
   .hero-actions { display: flex; flex-direction: column; gap: 12px; max-width: 360px; }
   .btn-primary { display: block; background: #2D7A3A; color: var(--white); text-decoration: none; text-align: center; padding: 22px 36px; font-size: 15px; letter-spacing: 0.1em; transition: all 0.25s; font-weight: 700; border-radius: 8px; box-shadow: 0 6px 20px rgba(45,122,58,0.4), 0 2px 4px rgba(0,0,0,0.15); position: relative; }
   .btn-primary:hover { background: #246832; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(45,122,58,0.5), 0 4px 8px rgba(0,0,0,0.2); }
@@ -108,13 +119,13 @@
   /* EMPATHY */
   .empathy-section { padding: 100px 0; background: var(--white); }
   .empathy-intro { max-width: 640px; margin-bottom: 64px; }
-  .empathy-intro p { font-size: 14.5px; line-height: 2.4; color: var(--text); margin-bottom: 16px; }
+  .empathy-intro p { font-size: 16px; line-height: 2.4; color: var(--text); margin-bottom: 16px; }
   .empathy-intro .lead { font-family: "Noto Serif JP", serif; font-size: 18px; color: var(--dark); font-weight: 300; line-height: 2; }
   .empathy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
   .empathy-card { background: var(--white); padding: 36px 40px; transition: background 0.25s; }
   .empathy-card:hover { background: var(--gold-pale); }
   .empathy-card-num { font-family: "Cormorant Garamond", serif; font-size: 32px; font-weight: 300; color: var(--gold); opacity: 0.4; display: block; margin-bottom: 12px; line-height: 1; }
-  .empathy-card p { font-size: 14px; line-height: 2; color: var(--text); }
+  .empathy-card p { font-size: 16px; line-height: 2; color: var(--text); }
   .empathy-card strong { color: var(--dark); font-weight: 500; }
   .empathy-bridge { margin-top: 56px; padding: 44px 28px; background: var(--dark); overflow: hidden; }
   .empathy-bridge p { font-size: 13.5px; line-height: 2.4; color: rgba(255,255,255,0.75); margin-bottom: 12px; }
@@ -131,22 +142,22 @@
   .solution-step-content { padding: 32px 40px; }
   .solution-step-label { font-size: 9px; letter-spacing: 0.45em; color: var(--gold); margin-bottom: 8px; }
   .solution-step-title { font-family: "Noto Serif JP", serif; font-weight: 400; font-size: 18px; color: var(--dark); margin-bottom: 12px; }
-  .solution-step-desc { font-size: 13px; line-height: 2.1; color: var(--text); }
+  .solution-step-desc { font-size: 15px; line-height: 2.1; color: var(--text); }
   .solution-cta { margin-top: 56px; text-align: center; }
 
   /* TRAINERS */
   .trainers-section { padding: 100px 0; background: var(--white); }
   .trainers-intro { max-width: 600px; margin-bottom: 56px; }
-  .trainers-intro p { font-size: 13.5px; line-height: 2.3; color: var(--text); }
+  .trainers-intro p { font-size: 15px; line-height: 2.3; color: var(--text); }
   .trainers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); margin-bottom: 40px; }
   .trainer-card { background: var(--white); padding: 40px 32px; transition: background 0.25s; }
   .trainer-card:hover { background: var(--gold-pale); }
-  .trainer-avatar { width: 88px; height: 88px; border-radius: 50%; margin-bottom: 20px; border: 2px solid var(--border); overflow: hidden; flex-shrink: 0; }
+  .trainer-avatar { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 20px; border: 2px solid var(--border); overflow: hidden; flex-shrink: 0; }
 .trainer-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .trainer-role { font-size: 9px; letter-spacing: 0.45em; color: var(--gold); margin-bottom: 6px; }
   .trainer-name { font-family: "Noto Serif JP", serif; font-weight: 400; font-size: 19px; color: var(--dark); margin-bottom: 8px; }
   .trainer-credential { display: inline-block; font-size: 10px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold); padding: 3px 10px; margin-bottom: 14px; }
-  .trainer-desc { font-size: 12.5px; line-height: 2; color: var(--text); }
+  .trainer-desc { font-size: 15px; line-height: 2; color: var(--text); }
   .trainer-card.coming { background: transparent; border: 1px dashed var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 240px; }
   .trainer-card.coming .coming-icon { font-family: "Cormorant Garamond", serif; font-size: 32px; color: var(--gold); opacity: 0.35; margin-bottom: 12px; }
   .trainer-card.coming .coming-text { font-size: 11px; letter-spacing: 0.3em; color: var(--text-light); }
@@ -168,7 +179,7 @@
   .review-meta .reviewer-detail { font-size: 11px; color: var(--text-light); margin-top: 2px; letter-spacing: 0.08em; }
   .review-stars { color: var(--gold); font-size: 12px; letter-spacing: 3px; margin-bottom: 14px; }
   .review-title { font-family: "Noto Serif JP", serif; font-size: 15px; font-weight: 400; color: var(--dark); margin-bottom: 10px; line-height: 1.6; }
-  .review-text { font-size: 13px; line-height: 2.1; color: var(--text); }
+  .review-text { font-size: 15px; line-height: 2.1; color: var(--text); }
 
   /* CAMPAIGN */
   .campaign-section { padding: 100px 0; background: var(--dark); text-align: center; }
@@ -195,8 +206,8 @@
   .flow-step { padding: 0 16px; text-align: center; position: relative; z-index: 1; }
   .step-circle { width: 54px; height: 54px; border-radius: 50%; background: var(--white); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; }
   .step-num { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 300; color: var(--gold); }
-  .step-title { font-size: 13px; color: var(--dark); margin-bottom: 8px; font-weight: 500; }
-  .step-desc { font-size: 12px; line-height: 1.9; color: var(--text-light); white-space: pre-line; }
+  .step-title { font-size: 15px; color: var(--dark); margin-bottom: 8px; font-weight: 500; }
+  .step-desc { font-size: 14px; line-height: 1.9; color: var(--text-light); white-space: pre-line; }
 
   /* FAQ */
   .faq-section { padding: 100px 0; background: var(--bg); }
@@ -205,12 +216,12 @@
   .faq-q { padding: 24px 0; display: flex; align-items: flex-start; gap: 18px; cursor: pointer; }
   .faq-q:hover .faq-q-text { color: var(--gold); }
   .faq-q-label { font-family: "Cormorant Garamond", serif; font-size: 20px; color: var(--gold); flex-shrink: 0; line-height: 1.4; }
-  .faq-q-text { font-size: 14px; color: var(--dark); line-height: 1.7; flex: 1; font-weight: 400; transition: color 0.2s; }
+  .faq-q-text { font-size: 16px; color: var(--dark); line-height: 1.7; flex: 1; font-weight: 400; transition: color 0.2s; }
   .faq-toggle { flex-shrink: 0; font-size: 18px; color: var(--gold); transition: transform 0.3s; line-height: 1.4; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-item.open .faq-a { max-height: 250px; }
-  .faq-a-inner { padding: 0 0 24px 38px; font-size: 13px; line-height: 2.1; color: var(--text); }
+  .faq-a-inner { padding: 0 0 24px 38px; font-size: 15px; line-height: 2.1; color: var(--text); }
 
   /* ACCESS */
   .access-section { padding: 100px 0; background: var(--white); }
@@ -218,7 +229,7 @@
   .access-map { height: 320px; }
   .access-map iframe { width: 100%; height: 100%; border: none; }
   .access-name { font-family: "Cormorant Garamond", serif; font-size: 24px; color: var(--dark); margin-bottom: 28px; }
-  .access-detail { display: grid; grid-template-columns: 80px 1fr; gap: 8px 16px; font-size: 13px; line-height: 1.9; margin-bottom: 32px; }
+  .access-detail { display: grid; grid-template-columns: 80px 1fr; gap: 8px 16px; font-size: 15px; line-height: 1.9; margin-bottom: 32px; }
   .access-label { color: var(--text-light); font-size: 11px; letter-spacing: 0.18em; padding-top: 2px; }
   .access-btns { display: flex; gap: 12px; }
 
@@ -260,7 +271,7 @@
     footer { flex-direction: column; gap: 14px; text-align: center; }
   }
   @media (max-width: 480px) {
-    .hero-headline { font-size: 32px; }
+    .hero-headline { font-size: 26px; }
     .flow-steps { grid-template-columns: 1fr; }
   }
 
@@ -309,6 +320,13 @@
   .campaign-cta:hover { animation: none; transform: translateY(-3px); }
   .final-cta a { animation: bounce 2s ease-in-out infinite; }
   .final-cta a:hover { animation: none; transform: translateY(-3px); }
+
+  /* PAIN ICON GRID */
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .pain-card { background: var(--gold-pale); padding: 24px 20px; display: flex; align-items: flex-start; gap: 14px; border-radius: 4px; }
+  .pain-ico { width: 44px; height: 44px; flex-shrink: 0; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
+  .pain-card p { font-size: 15px; line-height: 1.8; color: var(--dark); font-weight: 500; }
+  @media (max-width: 600px) { .pain-grid { grid-template-columns: 1fr; } }
 
   /* HAMBURGER MENU */
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
@@ -409,7 +427,7 @@
     });
     drawerOverlay.addEventListener('click', window.closeDrawer);
   });
-  document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Lead');})});
+  document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Lead');if(typeof gtag==='function')gtag('event','cta_click',{event_category:'booking',store:'薬院'});});});
 </script>
   <!-- ===== /Microsoft Clarity ===== -->
   <!-- ===== Google Analytics (GA4) ===== -->
@@ -467,23 +485,26 @@
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
+    <div class="hero-trust-badge">
+      <span class="hero-trust-num">13.1<small>ヶ月</small></span>
+      <span class="hero-trust-label">会員の平均継続期間<br>続けられるから、変わる。</span>
+    </div>
     <h1 class="hero-headline">
-      <span style="font-size:0.52em;font-weight:300;letter-spacing:0.08em;display:block;margin-bottom:8px;color:var(--text);">体型・姿勢・体力の悩み、</span>パーソナルトレーニングで<br><em>解決できます。</em>
+      続けられなかった<br>あなたへ。<br><em>ここなら、変われます。</em>
     </h1>
-    <p class="hero-sub">肩こり・姿勢の崩れ・体力低下…<br>気になっていること、まずは90分の体験で話してみませんか。</p>
+    <p class="hero-sub">姿勢・体型・体力——何度挑戦しても変わらなかった悩みを、<br>福岡・薬院のパーソナルジムが根本から変えます。</p>
     <div class="hero-actions">
       <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-primary">
-        今すぐ体験トレーニングを予約する
-        <span class="price-tag">当日入会で体験0円 / 相談だけでもOK</span>
+        無料体験を予約する
+        <span class="price-tag">当日入会で体験0円 · 相談だけでもOK</span>
       </a>
-      <p style="font-size:11px;color:var(--text);letter-spacing:0.08em;margin-top:10px;opacity:0.7;">※ お気に入りのウェアをご持参ください</p>
     </div>
   </div>
   <div class="hero-foot">
     <div class="hero-badges">
       <div class="badge-green">薬院大通駅<br><span class="big">徒歩2分</span></div>
       <div class="badge-green">24時間ジム<br><span class="big">無料利用可</span></div>
-      <div class="badge-green">ストレッチ<br><span class="big">付き</span></div>
+      <div class="badge-green">Google評価<br><span class="big">★ 4.9</span></div>
     </div>
     <div class="hero-24h">
       <span class="big">24H</span>
@@ -492,45 +513,35 @@
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<div style="background:#F0EDE8;padding:56px 24px;text-align:center;">
-  <p style="font-size:9px;letter-spacing:0.45em;color:var(--gold);margin-bottom:14px;">ABOUT 5TOOLGYM</p>
-  <p style="font-family:'Noto Serif JP',serif;font-size:clamp(17px,4.5vw,22px);font-weight:300;color:var(--dark);margin-bottom:28px;line-height:1.7;">続けられる理由が、ここにある。</p>
-  <div style="position:relative;width:100%;max-width:320px;margin:0 auto;aspect-ratio:9/16;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15);">
-    <iframe src="https://www.youtube.com/embed/gZBgJcE4pxM?controls=1&playsinline=1&rel=0&modestbranding=1" frameborder="0" allow="encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
-  </div>
-</div>
 
 <!-- PAIN POINTS BAR -->
 <div style="background:var(--dark);padding:48px 0;">
   <div style="max-width:960px;margin:0 auto;padding:0 40px;">
     <p style="text-align:center;font-size:10px;letter-spacing:0.45em;color:var(--gold);margin-bottom:36px;">こんなお悩みはありませんか？</p>
     <div style="display:flex;flex-direction:column;gap:1px;background:rgba(196,164,107,0.15);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(196,164,107,0.15);">
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">01</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">姿勢が悪くて、老けて見える</p>
-        </div>
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">02</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">肩こり・腰痛がずっと続いている</p>
-        </div>
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">03</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">何度やっても続かなかった</p>
-        </div>
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">04</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">運動しているのに、見た目が変わらない</p>
-        </div>
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">05</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">自分のカラダに自信が持てない</p>
-        </div>
-        <div style="background:#1e1c18;padding:22px 24px;display:flex;align-items:center;gap:14px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;">06</span>
-          <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;font-weight:400;">仕事・育児で自分が後回しになっている</p>
-        </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">01</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">姿勢が悪くて、老けて見える</p>
+      </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">02</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">肩こり・腰痛がずっと続いている</p>
+      </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">03</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">何度やっても続かなかった</p>
+      </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">04</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">運動しているのに、見た目が変わらない</p>
+      </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">05</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">自分のカラダに自信が持てない</p>
+      </div>
+      <div style="background:#1e1c18;padding:16px 24px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);opacity:0.5;flex-shrink:0;line-height:1;width:28px;">06</span>
+        <p style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.5;font-weight:400;">仕事・育児で自分が後回しになっている</p>
       </div>
     </div>
     <p style="text-align:center;margin-top:28px;font-size:13px;color:rgba(255,255,255,0.55);letter-spacing:0.12em;">ひとつでも当てはまったら、続きを読んでください。<br><span style="font-size:18px;display:block;margin-top:8px;color:var(--gold);">↓</span></p>
@@ -539,53 +550,6 @@
 
 
 
-
-<!-- EMPATHY -->
-<section class="empathy-section" id="about" id="empathy">
-  <div class="section-inner">
-    <p class="section-eyebrow fade-in">YOUR STORY</p>
-    <h2 class="section-title fade-in delay-1">
-      その悩み、<br>ずっと抱えてきましたよね。
-    </h2>
-    <div class="divider fade-in delay-2"></div>
-    <div class="empathy-intro fade-in delay-2">
-      <p class="lead">「なんとかしなきゃ」と思いながら、今日まで来てしまった。そんな方が、5toolgymには多くいらっしゃいます。</p>
-      <p style="margin-top:20px;">運動不足はわかってる。でも、何から始めればいいかわからない。ジムに行っても続かなかった経験がある。忙しくて自分のことが後回しになってしまう。そういう方ほど、プロの力が必要なんだと、私たちは考えています。</p>
-    </div>
-    <div class="empathy-cards fade-in delay-2">
-      <div class="empathy-card">
-        <span class="empathy-card-num">01</span>
-        <p><strong>姿勢が悪くて、老けて見える</strong><br>体重は変わっていないのに、なんか老けた気がする——それは姿勢と動きが原因です。正しい動き方を身につけると、同じ体重でも見た目が別人のように変わります。</p>
-      </div>
-      <div class="empathy-card">
-        <span class="empathy-card-num">02</span>
-        <p><strong>肩こり・腰痛がずっと続いている</strong><br>不調は「カラダの使い方のクセ」から来ることがほとんどです。動き方が変わると、薬や整体に頼らずに改善できます。</p>
-      </div>
-      <div class="empathy-card">
-        <span class="empathy-card-num">03</span>
-        <p><strong>何度やっても続かなかった</strong><br>続かないのは意志の問題ではありません。自分のカラダに合った方法を、プロと一緒に見つけられていないだけです。</p>
-      </div>
-      <div class="empathy-card">
-        <span class="empathy-card-num">04</span>
-        <p><strong>運動しているのに、見た目が変わらない</strong><br>やり方が合っていないだけです。体重より、姿勢と筋肉のバランスが見た目を決めています。カラダの使い方から変えると、結果が出やすくなります。</p>
-      </div>
-      <div class="empathy-card">
-        <span class="empathy-card-num">05</span>
-        <p><strong>自分のカラダに自信が持てない</strong><br>鏡を見るのが億劫。写真に写りたくない。その感覚が変わるとき、生き方そのものが少しずつ変わっていきます。</p>
-      </div>
-      <div class="empathy-card">
-        <span class="empathy-card-num">06</span>
-        <p><strong>仕事・育児で自分が後回しになっている</strong><br>自分を大切にすることは、わがままじゃない。カラダが整うと、仕事も育児も、もっと楽しくなります。</p>
-      </div>
-    </div>
-    <div class="empathy-bridge fade-in">
-      <p style="font-size:15px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;margin-bottom:24px;">どれかひとつでも</p>
-      <p style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,38px);font-weight:400;color:var(--white);line-height:1.7;margin-bottom:32px;">「<em style="font-style:normal;color:var(--gold-light);">自分のことだ</em>」<br>と感じましたか？</p>
-      <div style="width:32px;height:1px;background:var(--gold);margin-bottom:28px;"></div>
-      <p class="strong-line">その悩みには、必ず<em>理由</em>があります。<br>そして、理由がわかれば、<em>解決できます。</em></p>
-    </div>
-  </div>
-</section>
 
 <!-- SOLUTION -->
 <section class="solution-section" id="solution">
@@ -626,30 +590,7 @@
           <p class="solution-step-desc">「週1回のパーソナルだけ」では、変化はゆっくりです。薬院店では、パーソナルセッション以外の日も追加料金なしで24時間ジムを利用できます。教わった動きを自分のペースで繰り返すことが、習慣化の一番の近道です。</p>
         </div>
       </div>
-      <div class="solution-step">
-        <div class="solution-step-num"><span>05</span></div>
-        <div class="solution-step-content">
-          <p class="solution-step-label">SAFE ENVIRONMENT</p>
-          <h3 class="solution-step-title">どんな人でも受け入れる環境だから、長く通える</h3>
-          <p class="solution-step-desc">5toolgymのトレーナーは全員、はじめての方・運動が久しぶりの方・女性の方も含め、どんな状態からでも安心して通っていただける指導を心がけています。「何から始めればいいかわからない」「久しぶりすぎて恥ずかしい」そんな方こそ、まず体験に来てください。</p>
-        </div>
-      </div>
     </div>
-    <!-- 疑問回収ブロック -->
-    <div class="fade-in" style="margin-top:64px;padding:52px 56px;background:var(--dark);position:relative;">
-      <p style="font-size:9px;letter-spacing:0.5em;color:var(--gold);margin-bottom:24px;">TOMORROW</p>
-      <p style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(18px,2.5vw,26px);color:var(--white);line-height:1.9;margin-bottom:28px;">
-        カラダの悩みが解決すると、<br>毎日が変わります。
-      </p>
-      <div style="width:32px;height:1px;background:var(--gold);margin-bottom:24px;"></div>
-      <p style="font-size:14px;line-height:2.2;color:rgba(255,255,255,0.75);margin-bottom:8px;">姿勢が変わり、<br>自分に自信が持てるようになる。</p>
-      <p style="font-size:14px;line-height:2.2;color:rgba(255,255,255,0.75);margin-bottom:8px;">動きが変わり、<br>ストレスがなくなり、行動的になる。</p>
-      <p style="font-size:14px;line-height:2.2;color:rgba(255,255,255,0.75);margin-bottom:28px;">自信があり行動的になると、<br>好きなことに没頭したり、<br>新しいことにチャレンジしたくなる。</p>
-      <p style="font-family:'Noto Serif JP',serif;font-size:clamp(16px,2vw,22px);color:var(--gold-light);line-height:1.9;margin-bottom:16px;">「明日何しようかな？明日が待ち遠しいな！」</p>
-      <p style="font-size:13px;line-height:2;color:rgba(255,255,255,0.6);">そんな気持ちに自然となるのが、<br><span style="color:var(--white);font-weight:500;">明日が楽しみになるカラダ</span>です。
-      </p>
-    </div>
-
     <div class="solution-cta fade-in">
       <p style="font-size:12px;color:var(--text-light);letter-spacing:0.15em;margin-bottom:8px;">今月の体験枠、<strong style="color:#C0392B;">残りわずか</strong></p>
       <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="campaign-cta" style="background:#2D7A3A;font-size:16px;font-weight:700;letter-spacing:0.1em;border-radius:8px;box-shadow:0 6px 20px rgba(45,122,58,0.4);padding:22px 48px;">今すぐ体験トレーニングを予約する
@@ -711,16 +652,16 @@
     <h2 class="section-title fade-in delay-1">変わった方の声</h2>
     <div class="proof-stats fade-in delay-2">
       <div class="proof-stat">
+        <div class="proof-stat-num">13.1<span style="font-size:20px">ヶ月</span></div>
+        <span class="proof-stat-label">会員の平均継続期間</span>
+      </div>
+      <div class="proof-stat">
         <div class="proof-stat-num">★ 4.9</div>
         <span class="proof-stat-label">Google 平均評価</span>
       </div>
       <div class="proof-stat">
         <div class="proof-stat-num">90<span style="font-size:20px">%</span></div>
         <span class="proof-stat-label">体験→入会 転換率</span>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-num">4<span style="font-size:20px">名</span></div>
-        <span class="proof-stat-label">専任トレーナー在籍</span>
       </div>
     </div>
     <div class="reviews-grid fade-in delay-2">
@@ -761,18 +702,6 @@
         <div class="review-stars">★★★★★</div>
         <p class="review-title">「産後2年、諦めていた体型が変わり始めました。」</p>
         <p class="review-text">子育てで自分のことが後回しになっていて、体型の変化も「仕方ない」と思っていました。でも体験に来てみると、無理に追い込むのではなく、今の自分のカラダに合ったやり方を一緒に考えてくれて。「相談できる場所がある」という安心感が、続けられている一番の理由だと思います。</p>
-      </div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="8" r="4"/>
-  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-</svg></div>
-          <div class="review-meta"><div class="reviewer">K.N.さん</div><div class="reviewer-detail">20代男性・エンジニア / 習慣化・体力向上</div></div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-title">「ここに来るまで、3回ジムを辞めた私が続いています。」</p>
-        <p class="review-text">過去にいくつかジムに入会しては辞めを繰り返していました。ここが違うのは、「なぜやるか」を教えてくれること。意味がわかると続く、という経験を初めてしました。24時間ジムが使えるのも、不規則な仕事には本当に助かっています。</p>
       </div>
     </div>
   </div>
@@ -882,7 +811,7 @@
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="campaign-cta fade-in delay-3">今すぐ体験を予約する →</a>
     <p style="font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:0.08em;margin-bottom:8px;">※ お気に入りのウェアをご持参ください</p>
     <div class="campaign-notes fade-in">
-      <p>※ ご予約はかんざしまたはお電話にて承ります。相談だけでも大丈夫です。</p>
+      <p>※ ご予約はWEBもしくはお電話にて承ります。相談だけでも大丈夫です。</p>
       <p>※ キャンペーンは予告なく終了する場合がございます</p>
       <p>※ 同業者の方は通常料金でのご案内となります</p>
     </div>
@@ -947,14 +876,6 @@
         <div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">女性ひとりでも行きやすいですか？</span><span class="faq-toggle">+</span></div>
         <div class="faq-a"><div class="faq-a-inner">女性のお客様が多くいらっしゃいます。女性トレーナー（manamiトレーナー）も在籍していますので、担当のご指定も可能です。「女性スタッフに担当してほしい」とお気軽にお申し付けください。</div></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">体験トレーニングに来る際、何を持参すればいいですか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">動きやすい服装とシューズをご用意ください。タオルと飲み物もご持参いただけると安心です。更衣室もございます。</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-label">Q</span><span class="faq-q-text">24時間ジムはいつから使えますか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">ご入会後すぐにご利用いただけます。パーソナルセッションのない日も自由にご利用いただけるため、習慣化しやすい環境です。</div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -997,7 +918,6 @@
     </h2>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="campaign-cta fade-in delay-1">今すぐ体験を予約する →</a>
     <p class="final-note fade-in">当日入会で体験0円 / 相談だけでもOK</p>
-    <p style="font-size:11px;color:var(--text-light);letter-spacing:0.08em;margin-top:8px;">※ お気に入りのウェアをご持参ください</p>
   </div>
 </section>
 
