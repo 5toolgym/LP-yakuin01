@@ -496,7 +496,7 @@
     <div class="hero-actions">
       <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-primary">
         体験トレーニングを予約する
-        <span class="price-tag">初回90分 5,500円 · 当日入会で0円</span>
+        <span class="price-tag">当日入会で0円（通常 初回90分 5,500円）</span>
       </a>
     </div>
   </div>
@@ -929,11 +929,11 @@
 <script>
   // fade-in animation disabled
 
-  const hero = document.querySelector(".hero");
+  const heroActions = document.querySelector(".hero-actions");
   const sticky = document.getElementById("stickyCta");
   new IntersectionObserver(([e]) => {
     sticky.classList.toggle("visible", !e.isIntersecting);
-  }).observe(hero);
+  }).observe(heroActions);
 
   document.querySelectorAll(".faq-q").forEach(q => {
     q.addEventListener("click", () => {
