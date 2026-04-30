@@ -99,7 +99,7 @@ body.menu-open{overflow:hidden}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(52px + 40px) var(--sp) 80px;overflow:hidden;background:#1a1814}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(52px + 100px) var(--sp) calc(env(safe-area-inset-bottom,0px) + 120px);overflow:hidden;background:#1a1814}
 .hero-photo{position:absolute;inset:0;z-index:0}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
 .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,16,12,.92) 0%,rgba(20,16,12,.65) 45%,rgba(20,16,12,.18) 100%)}
@@ -113,7 +113,7 @@ body.menu-open{overflow:hidden}
 .hero-h1{font-family:'Noto Serif JP',serif;font-size:clamp(25px,6vw,38px);font-weight:400;line-height:1.6;color:#fff;margin-bottom:14px;letter-spacing:.02em}
 .hero-h1 em{font-style:normal;color:var(--gold-light)}
 .hero-sub{font-size:14px;color:rgba(255,255,255,.68);line-height:1.9;margin-bottom:28px;letter-spacing:.04em}
-#heroCta{width:100%}
+#heroCta{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px)+24px);left:var(--sp);right:var(--sp);z-index:2}
 
 /* ── PAIN POINTS ── */
 .pain{background:var(--dark);padding:64px var(--sp)}
@@ -304,10 +304,10 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
   <div class="hero-body">
     <h1 class="hero-h1">肩こり・腰痛を<br>改善しながら、<br><em>自然に痩せる身体になる。</em></h1>
     <p class="hero-sub">機能改善のプロが、<br>不調の「原因」から変えます。</p>
-    <div id="heroCta">
-      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
-      <p class="btn-note">当日入会で0円（初回90分 5,500円）</p>
-    </div>
+  </div>
+  <div id="heroCta">
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <p class="btn-note">当日入会で0円（初回90分 5,500円）</p>
   </div>
 </section>
 
