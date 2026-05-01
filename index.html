@@ -192,6 +192,18 @@ body.menu-open .btn-main{animation:none;transform:none}
 .tc-tag{font-size:11px;color:var(--light);margin-top:2px}
 .tc-story{padding:18px;font-size:13px;color:var(--mid);line-height:1.9}
 
+/* ── PLANS ── */
+.plans{background:var(--bg);padding:64px var(--sp)}
+.plans-inner{max-width:var(--max);margin:0 auto}
+.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.plan-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px 14px;text-align:center;position:relative}
+.plan-card.popular{border-color:var(--green);border-width:2px}
+.plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:9px;letter-spacing:.1em;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.plan-freq{font-size:11px;color:var(--light);letter-spacing:.12em;margin-bottom:10px}
+.plan-price{font-family:'Outfit',sans-serif;font-size:26px;font-weight:300;color:var(--dark);line-height:1;margin-bottom:4px}
+.plan-price sup{font-size:11px;vertical-align:top;margin-top:5px}
+.plan-unit{font-size:10px;color:var(--light);letter-spacing:.06em;margin-top:6px}
+
 /* ── OFFER ── */
 .offer{background:var(--dark);padding:64px var(--sp)}
 .offer-inner{max-width:var(--max);margin:0 auto;text-align:center}
@@ -634,6 +646,38 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
+
+<!-- ══ PLANS ══ -->
+<section class="plans" id="plans">
+  <div class="plans-inner">
+    <p class="sec-eyebrow">MONTHLY PLAN</p>
+    <h2 class="sec-ttl">料金プラン</h2>
+    <div class="sec-bar"></div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <p class="plan-freq">月 2 回</p>
+        <div class="plan-price"><sup>¥</sup>19,400</div>
+        <p class="plan-unit">月額・税込</p>
+      </div>
+      <div class="plan-card popular">
+        <span class="plan-badge">最も多くのお客様が選ぶコース</span>
+        <p class="plan-freq">月 4 回</p>
+        <div class="plan-price"><sup>¥</sup>38,000</div>
+        <p class="plan-unit">月額・税込</p>
+      </div>
+      <div class="plan-card">
+        <p class="plan-freq">月 6 回</p>
+        <div class="plan-price"><sup>¥</sup>55,800</div>
+        <p class="plan-unit">月額・税込</p>
+      </div>
+      <div class="plan-card">
+        <p class="plan-freq">月 8 回</p>
+        <div class="plan-price"><sup>¥</sup>72,800</div>
+        <p class="plan-unit">月額・税込</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ OFFER ══ -->
 <section class="offer" id="offer">
