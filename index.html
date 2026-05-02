@@ -35,7 +35,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;background:#FAF8F5;color:#2A2420;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:80px}
 :root{
   --gold:#C4A46B;--gold-light:#D4B882;
-  --green:#3E6B4E;--green2:#5A8C6A;
+  --green:#3E6B4E;--green2:#5A8C6A;--green-pale:#EAF2EC;
   --dark:#2A2420;--mid:#4A4540;--text:#2A2420;--light:#6A6560;
   --bg:#FAF8F5;--bg2:#F5EDE0;--bg3:#F0EAE0;--white:#FFFFFF;
   --border:#E8E0D4;--border-gold:rgba(196,164,107,0.25);
@@ -228,6 +228,19 @@ body.menu-open .btn-main{animation:none;transform:none}
 .offer-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;text-align:left}
 .offer-check{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.78)}
 .offer-check::before{content:'✓';color:var(--green2);font-weight:700;flex-shrink:0;font-size:14px}
+
+/* ── FLOW ── */
+.flow{background:var(--bg2);padding:64px var(--sp)}
+.flow-inner{max-width:var(--max);margin:0 auto}
+.flow-list{display:flex;flex-direction:column;gap:0;position:relative;margin-top:4px}
+.flow-list::before{content:'';position:absolute;left:19px;top:24px;bottom:24px;width:1px;background:var(--border)}
+.flow-item{display:flex;gap:16px;align-items:flex-start;padding:0 0 24px;position:relative}
+.flow-item:last-child{padding-bottom:0}
+.flow-num{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:400;flex-shrink:0;position:relative;z-index:1}
+.flow-body{padding-top:8px}
+.flow-ttl{font-size:16px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.flow-desc{font-size:15px;color:var(--mid);line-height:1.85}
+.flow-time{display:inline-block;font-size:10px;letter-spacing:.1em;color:var(--green2);background:var(--green-pale);padding:2px 8px;border-radius:2px;margin-bottom:6px}
 
 /* ── ANXIETY ── */
 .anxiety{background:var(--bg);padding:64px var(--sp)}
@@ -729,6 +742,57 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
     </div>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
     <p class="btn-note" style="color:rgba(255,255,255,.4);margin-top:10px">当日入会で0円 / 今月残りわずか</p>
+  </div>
+</section>
+
+<!-- ══ FLOW ══ -->
+<section class="flow" id="flow">
+  <div class="flow-inner">
+    <p class="sec-eyebrow">TRIAL FLOW</p>
+    <h2 class="sec-ttl">体験トレーニングの<em>流れ</em></h2>
+    <div class="sec-bar"></div>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <span class="flow-time">〜5分</span>
+          <p class="flow-ttl">まず予約する</p>
+          <p class="flow-desc">このページのボタンから予約フォームに必要事項を入力するだけ。ご都合の良い日時を選んで送信してください。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <span class="flow-time">20分</span>
+          <p class="flow-ttl">カウンセリング</p>
+          <p class="flow-desc">現在のお悩み・目標・生活習慣などをじっくりヒアリング。あなたの体の現状を一緒に確認します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <span class="flow-time">60分</span>
+          <p class="flow-ttl">骨格チェック・トレーニング・コンディショニング</p>
+          <p class="flow-desc">骨格・姿勢・動きのクセを分析し、あなたに合ったトレーニングを実施。ストレッチ・歪み改善まで含みます。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <span class="flow-time">5分</span>
+          <p class="flow-ttl">パーソナルストレッチ</p>
+          <p class="flow-desc">トレーニング後のクールダウン。体の変化をその場で実感できます。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div class="flow-body">
+          <span class="flow-time">5分</span>
+          <p class="flow-ttl">今後のご提案</p>
+          <p class="flow-desc">体験を踏まえて、最適なコースや通い方をご提案します。当日ご入会の場合、体験料は全額無料になります。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
