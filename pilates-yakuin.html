@@ -299,6 +299,58 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 .foot-links{display:flex;justify-content:center;gap:24px;margin-bottom:10px}
 .foot-links a{font-size:10px;color:rgba(255,255,255,.32);letter-spacing:.1em}
 .foot-copy{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.12em}
+
+/* ── STOP BLOCK ── */
+.stop-block{background:var(--accent-dark);padding:48px var(--sp)}
+.stop-block-inner{max-width:var(--max);margin:0 auto;text-align:center}
+.stop-block-line{width:80px;height:1px;background:rgba(123,158,135,.4);margin:0 auto 20px}
+.stop-block-text{font-family:'Noto Serif JP',serif;font-size:clamp(17px,4.5vw,22px);font-weight:300;color:rgba(255,255,255,.88);line-height:2.2;letter-spacing:.04em}
+.stop-block-text em{font-style:normal;color:#9ABFA8;font-weight:400}
+
+/* ── PILATES ALERT ── */
+.pilates-alert{background:rgba(79,112,88,.06);border:1px solid rgba(79,112,88,.3);border-radius:var(--r);padding:24px 20px;margin-bottom:28px;text-align:center}
+.pilates-alert-text{font-family:'Noto Serif JP',serif;font-size:clamp(17px,4.5vw,22px);font-weight:400;color:var(--dark);line-height:1.85;letter-spacing:.04em}
+.pilates-alert-text em{font-style:normal;color:var(--accent)}
+
+/* ── WHY DIAGRAM ── */
+.why-diagram{display:flex;flex-direction:column;align-items:center;gap:10px;margin:28px 0 0}
+.why-diag-box{background:var(--bg2);border:1px solid var(--border-main);border-radius:var(--r);padding:16px 24px;text-align:center;width:100%;max-width:360px}
+.why-diag-label{font-size:10px;letter-spacing:.2em;color:var(--main);margin-bottom:4px;font-weight:400}
+.why-diag-text{font-size:14px;font-weight:500;color:var(--dark);line-height:1.6}
+.why-diag-plus{font-family:'Outfit',sans-serif;font-size:24px;color:var(--main);opacity:.7;line-height:1;text-align:center}
+.why-diag-arrow{font-size:22px;color:var(--main);opacity:.7;text-align:center}
+.why-diag-result{background:var(--accent);border-radius:var(--r);padding:16px 24px;text-align:center;width:100%;max-width:360px}
+.why-diag-result-text{font-size:16px;font-weight:700;color:#fff;letter-spacing:.04em}
+
+/* ── ACTUAL ── */
+.actual{background:var(--bg2);padding:80px var(--sp)}
+.actual-inner{max-width:var(--max);margin:0 auto}
+.actual-list{display:flex;flex-direction:column;gap:1px;background:var(--border);margin:4px 0 24px}
+.actual-item{background:var(--white);padding:18px 20px;display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--dark);line-height:1.65}
+.actual-item::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0}
+.actual-sub{font-family:'Noto Serif JP',serif;font-size:14px;color:var(--mid);line-height:1.95;text-align:center}
+
+/* ── COMPARE ── */
+.compare{background:var(--bg);padding:80px var(--sp)}
+.compare-inner{max-width:var(--max);margin:0 auto}
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px}
+.compare-table{width:100%;border-collapse:collapse;min-width:300px}
+.compare-table th,.compare-table td{border:1px solid var(--border);padding:10px 6px;font-size:12px;text-align:center;vertical-align:middle;line-height:1.5}
+.compare-table th{background:var(--bg2);font-weight:500;font-size:11px;letter-spacing:.04em;color:var(--dark)}
+.compare-table th:first-child,.compare-table td:first-child{text-align:left;font-size:12px;color:var(--mid);padding-left:12px;min-width:120px}
+.compare-table th:last-child{background:var(--accent);color:#fff}
+.compare-table td:last-child{background:rgba(79,112,88,.05)}
+.compare-best{color:var(--accent);font-weight:700;font-size:15px}
+.compare-ok{color:var(--mid);font-size:14px}
+.compare-ng{color:var(--light);font-size:14px;opacity:.7}
+.compare-note{font-size:11px;color:var(--light);text-align:right;margin-top:8px;letter-spacing:.04em}
+
+/* ── PRE-CTA REASSURE ── */
+.pre-cta-reassure{display:flex;flex-direction:column;gap:8px;margin:0 auto 20px;max-width:480px}
+.pre-cta-reassure-item{font-size:13px;color:var(--mid);display:flex;align-items:flex-start;gap:8px;text-align:left;line-height:1.7}
+.pre-cta-reassure-item::before{content:'·';color:var(--main);font-size:22px;line-height:1;flex-shrink:0;margin-top:-2px}
+.offer .pre-cta-reassure-item{color:rgba(255,255,255,.7)}
+.offer .pre-cta-reassure-item::before{color:rgba(255,255,255,.45)}
 </style>
 </head>
 <body>
@@ -306,7 +358,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <!-- ══ STICKY BAR ══ -->
 <div id="sbar">
   <p class="sbar-note">今月の体験枠、残りわずかです</p>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">体験トレーニングを予約する</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">まずは、自分の身体の使い方を知る</a>
   <p class="sbar-sub">当日入会で0円 / 相談だけでもOK</p>
 </div>
 
@@ -335,7 +387,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <a href="#offer">体験について <span>→</span></a>
       <a href="#access">アクセス <span>→</span></a>
     </nav>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="drawer-cta">体験トレーニングを予約する</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="drawer-cta">まずは、自分の身体の使い方を知る</a>
     <div class="drawer-info">〒810-0022 福岡県福岡市中央区薬院3丁目13-22 新宝ビル3F<br>地下鉄「薬院大通」駅 徒歩2分 ／ TEL: 092-600-0296</div>
   </div>
 </div>
@@ -360,12 +412,12 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     </div>
   </div>
   <div class="hero-body">
-    <p class="hero-eyebrow">福岡薬院・女性向けパーソナルジム</p>
+    <p class="hero-eyebrow">薬院・浄水エリアのピラティス経験者の方へ</p>
     <h1 class="hero-h1">ピラティスで<em>姿勢</em>は変わった。<br>でも、体重は変わらなかった。</h1>
     <p class="hero-sub">ピラティスの次に必要な運動が、ここにあります。</p>
   </div>
   <div id="heroCta">
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
     <p class="btn-note">当日入会で0円（初回90分 5,500円）</p>
   </div>
 </section>
@@ -383,6 +435,15 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     </div>
   </div>
 </section>
+
+<!-- ══ STOP BLOCK ══ -->
+<div class="stop-block">
+  <div class="stop-block-inner">
+    <div class="stop-block-line"></div>
+    <p class="stop-block-text">週1〜2回、<br>半年以上ピラティスに通った。<br><br>食事も気をつけた。<br><br>でも、<br><em>脚だけ変わらなかった。</em></p>
+    <div class="stop-block-line" style="margin-top:24px;margin-bottom:0"></div>
+  </div>
+</div>
 
 <!-- ══ HOOK / EMPATHY ══ -->
 <section class="empathy">
@@ -423,6 +484,9 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p class="sec-eyebrow">WHY PILATES DOESN'T SLIM YOU</p>
     <h2 class="sec-ttl">「ピラティスをやっても痩せなかった」<br>本当の理由は、<br><em>順番が違うから</em>です。</h2>
     <div class="sec-bar"></div>
+    <div class="pilates-alert">
+      <p class="pilates-alert-text">ピラティスは、<br><em>"痩せる運動"ではありません。</em></p>
+    </div>
     <p class="solution-intro">ピラティスは姿勢・呼吸・インナーマッスルを整える運動です。痩せるための運動ではありません。だからピラティスで姿勢は変わっても、体重は変わらない。</p>
     <p class="solution-lead">それだけじゃありません。<br><br>ピラティスで整えられるのは「静止した姿勢」です。でも日常生活は常に動いています。歩く・立つ・座る・階段を上る。その「動きの姿勢」が崩れたままだと、太ももやふくらはぎに余計な負担がかかり続けます。<br><br>これが太ももの張り・大転子の出っ張り・ふくらはぎのパンパンの本当の原因です。</p>
     <div class="solution-flow">
@@ -477,6 +541,21 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <div class="solution-note">
       ピラティスは正解でした。ただ、次が必要だっただけです。
     </div>
+    <div class="why-diagram">
+      <div class="why-diag-box">
+        <p class="why-diag-label">PILATES</p>
+        <p class="why-diag-text">静的な姿勢を整える</p>
+      </div>
+      <p class="why-diag-plus">＋</p>
+      <div class="why-diag-box">
+        <p class="why-diag-label">5TOOLGYM</p>
+        <p class="why-diag-text">動きの姿勢を整えて<br>代謝を上げる</p>
+      </div>
+      <p class="why-diag-arrow">↓</p>
+      <div class="why-diag-result">
+        <p class="why-diag-result-text">だから、体型が変わる</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -496,6 +575,24 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="diff-step diff-step-last">その上で鍛える</div>
     </div>
     <p class="diff-close">という順番で、身体を根本から整えていきます。<br>ただ鍛えるだけでは変わらなかった方が、<br>ここで変わり始める理由がこれです。</p>
+  </div>
+</section>
+
+<!-- ══ ACTUAL ══ -->
+<section class="actual">
+  <div class="actual-inner">
+    <p class="sec-eyebrow">WHAT WE ACTUALLY DO</p>
+    <h2 class="sec-ttl">5toolgymで<em>実際にやること</em></h2>
+    <div class="sec-bar"></div>
+    <div class="actual-list">
+      <div class="actual-item">太もも前ばかり使う歩き方を修正する</div>
+      <div class="actual-item">股関節を正しく使えるようにする</div>
+      <div class="actual-item">ピラティスで使えていなかったお尻を使えるようにする</div>
+      <div class="actual-item">反り腰のままスクワットしない身体をつくる</div>
+      <div class="actual-item">「ふくらはぎで立つクセ」を改善する</div>
+      <div class="actual-item">インナーマッスルの感覚を活かして代謝に貢献する筋肉をつける</div>
+    </div>
+    <p class="actual-sub">これが「姿勢は変わったのに、体型が変わらなかった」を<br>解決する順番です。</p>
   </div>
 </section>
 
@@ -552,11 +649,49 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   </div>
 </section>
 
+<!-- ══ COMPARE ══ -->
+<section class="compare">
+  <div class="compare-inner">
+    <p class="sec-eyebrow">COMPARISON</p>
+    <h2 class="sec-ttl">なぜ<em>5toolgymなのか</em></h2>
+    <div class="sec-bar"></div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>一般的なジム</th>
+            <th>ピラティス</th>
+            <th>5toolgym</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>体重・体型改善</td><td class="compare-ok">◯</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
+          <tr><td>姿勢改善</td><td class="compare-ng">△</td><td class="compare-ok">◯</td><td class="compare-best">◎</td></tr>
+          <tr><td>下半身（太もも・ふくらはぎ）改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
+          <tr><td>日常の動作改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
+          <tr><td>不調・痛みへの対応</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
+          <tr><td>24時間利用可能</td><td class="compare-ok">◯</td><td class="compare-ng">×</td><td class="compare-best">◎</td></tr>
+          <tr><td>ピラティスの感覚を活かせる</td><td class="compare-ng">×</td><td class="compare-ok">◯</td><td class="compare-best">◎</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note">※ 5toolgym調べ</p>
+  </div>
+</section>
+
 <!-- ══ CTA BLOCK ══ -->
 <div class="cta-block">
   <div class="cta-block-inner">
     <p class="urgency-label">今月の体験枠、残りわずかです</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <div class="pre-cta-reassure">
+      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
+      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
+      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
+      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
+      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
@@ -751,7 +886,14 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="cta-block">
   <div class="cta-block-inner">
     <p class="urgency-label">今月の体験枠、残りわずかです</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <div class="pre-cta-reassure">
+      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
+      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
+      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
+      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
+      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
@@ -812,7 +954,14 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="offer-check">無理な勧誘なし</div>
       <div class="offer-check">相談だけでもOK</div>
     </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <div class="pre-cta-reassure">
+      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
+      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
+      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
+      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
+      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
     <p class="btn-note" style="color:rgba(255,255,255,.4);margin-top:10px">当日入会で0円 / 今月残りわずか</p>
   </div>
 </section>
@@ -912,7 +1061,14 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="final-cta-inner">
     <h2 class="final-cta-ttl">ピラティスは正解でした。<br><em>ただ、次が必要だっただけです。</em></h2>
     <p class="final-cta-sub">変わりたいと思ったその日が、始め時です。<br>まず90分、体験してみてください。</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験トレーニングを予約する</a>
+    <div class="pre-cta-reassure">
+      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
+      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
+      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
+      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
+      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 今月残りわずか / 相談だけでもOK</p>
   </div>
 </section>
@@ -938,7 +1094,14 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <dt class="access-dt">電話</dt>
       <dd class="access-dd"><a href="tel:0926000296">092-600-0296</a></dd>
     </dl>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ体験を予約する</a>
+    <div class="pre-cta-reassure">
+      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
+      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
+      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
+      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
+      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
   </div>
 </section>
 
