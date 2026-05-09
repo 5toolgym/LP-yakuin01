@@ -52,7 +52,8 @@ a{color:inherit;text-decoration:none}
 
 /* ── NAV ── */
 nav:not(.drawer-nav){position:fixed;top:0;left:0;right:0;z-index:300;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp);background:rgba(247,245,240,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Noto Serif JP',serif;font-size:13px;letter-spacing:.08em;color:var(--text);line-height:1.2}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:13px;letter-spacing:.08em;color:var(--text);line-height:1.2;display:flex;align-items:center;gap:8px}
+.nav-logo-img{width:28px;height:28px;flex-shrink:0}
 .nav-logo-sub{display:block;font-size:8px;letter-spacing:.2em;color:var(--main);margin-bottom:1px;font-weight:500}
 .nav-rsv{display:flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:8px 14px;border-radius:var(--r)}
 .hmb{width:40px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;background:none;border:none;padding:4px;flex-shrink:0}
@@ -120,7 +121,7 @@ body.menu-open .btn-main{animation:none;transform:none}
 .target-inner{max-width:var(--max);margin:0 auto}
 .target-ttl{font-size:11px;letter-spacing:.4em;color:var(--main);margin-bottom:18px;font-weight:400}
 .target-list{display:flex;flex-direction:column;gap:8px}
-.target-item{font-size:15px;color:var(--dark);padding:14px 18px;background:var(--white);border-left:3px solid var(--main);border-radius:0 var(--r) var(--r) 0;line-height:1.55;display:flex;align-items:center;gap:10px}
+.target-item{font-size:17px;color:var(--dark);padding:14px 18px;background:var(--white);border-left:3px solid var(--main);border-radius:0 var(--r) var(--r) 0;line-height:1.6;display:flex;align-items:center;gap:10px}
 .target-item::before{content:'✓';color:var(--main);font-weight:700;flex-shrink:0;font-size:14px}
 
 /* ── EMPATHY ── */
@@ -304,7 +305,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 .stop-block{background:var(--accent-dark);padding:48px var(--sp)}
 .stop-block-inner{max-width:var(--max);margin:0 auto;text-align:center}
 .stop-block-line{width:80px;height:1px;background:rgba(123,158,135,.4);margin:0 auto 20px}
-.stop-block-text{font-family:'Noto Serif JP',serif;font-size:clamp(17px,4.5vw,22px);font-weight:300;color:rgba(255,255,255,.88);line-height:2.2;letter-spacing:.04em}
+.stop-block-text{font-family:'Noto Serif JP',serif;font-size:clamp(20px,5.5vw,26px);font-weight:300;color:rgba(255,255,255,.88);line-height:2.2;letter-spacing:.04em}
 .stop-block-text em{font-style:normal;color:#9ABFA8;font-weight:400}
 
 /* ── PILATES ALERT ── */
@@ -365,15 +366,18 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <!-- ══ STICKY BAR ══ -->
 <div id="sbar">
   <p class="sbar-note">毎月3名限定・体験受付中</p>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">まずは、自分の身体の使い方を知る</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">体験予約はこちら</a>
   <p class="sbar-sub">当日入会で0円 / 相談だけでもOK</p>
 </div>
 
 <!-- ══ NAV ══ -->
 <nav>
   <a href="#top" class="nav-logo">
-    <span class="nav-logo-sub">AKASAKA PERSONAL TRAINING GYM</span>
-    5toolgym
+    <img src="favicon.svg" alt="5toolgym" class="nav-logo-img">
+    <span>
+      <span class="nav-logo-sub">AKASAKA PERSONAL TRAINING GYM</span>
+      5toolgym 赤坂店
+    </span>
   </a>
   <div style="display:flex;align-items:center;gap:8px">
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="nav-rsv">体験予約</a>
@@ -394,7 +398,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <a href="#offer">体験について <span>→</span></a>
       <a href="#access">アクセス <span>→</span></a>
     </nav>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="drawer-cta">まずは、自分の身体の使い方を知る</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="drawer-cta">体験予約はこちら</a>
   </div>
 </div>
 <div class="drawer-overlay" id="drawerOverlay"></div>
@@ -408,7 +412,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="hero-top">
     <div class="hero-trust">
       <div class="hero-trust-item">
-        <strong>90%</strong>
+        <strong>72%</strong>
         <span>体験→入会率</span>
       </div>
       <div class="hero-trust-item">
@@ -416,16 +420,16 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
         <span>平均継続期間</span>
       </div>
     </div>
-    <p style="font-size:10px;color:rgba(255,255,255,.38);margin-top:6px;letter-spacing:.04em">※2024年1月〜12月・5toolgym会員データ（薬院店・赤坂店合算）</p>
+    <p style="font-size:10px;color:rgba(255,255,255,.38);margin-top:6px;letter-spacing:.04em">※2022年10月〜2026年4月・5toolgym会員データ（薬院店・赤坂店合算）</p>
   </div>
   <div class="hero-body">
     <p class="hero-eyebrow">赤坂・大濠公園エリアのピラティス経験者の方へ</p>
-    <h1 class="hero-h1">ピラティスで<em>姿勢</em>は変わった。<br>でも、体型は変わらなかった。</h1>
+    <h1 class="hero-h1">ピラティスで<br><em>姿勢</em>は変わった。<br>でも体型は<br>変わらなかった。</h1>
     <p class="hero-sub">完全個室・マンツーマン専用スタジオ</p>
-    <p class="hero-sub">ピラティスの次に必要な運動が、ここにあります。</p>
+    <p class="hero-sub">ピラティスの次に必要な運動が、<br>ここにあります。</p>
   </div>
   <div id="heroCta">
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験予約はこちら</a>
     <p class="btn-note">当日入会で0円（初回90分 5,500円）</p>
   </div>
 </section>
@@ -435,11 +439,11 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="target-inner">
     <p class="target-ttl">こんな方へ</p>
     <div class="target-list">
-      <div class="target-item">ピラティスに通ったのに、体重が変わらなかった</div>
-      <div class="target-item">姿勢は良くなったけど、下半身がスッキリしない</div>
-      <div class="target-item">ピラティスの次に何をすればいいかわからない</div>
-      <div class="target-item">太もも・ふくらはぎのラインがどうしても気になる</div>
-      <div class="target-item">人目を気にせず、自分だけの空間でトレーニングしたい</div>
+      <div class="target-item">ピラティスに通ったのに、<br>体重が変わらなかった</div>
+      <div class="target-item">姿勢は良くなったけど、<br>下半身がスッキリしない</div>
+      <div class="target-item">ピラティスの次に<br>何をすればいいかわからない</div>
+      <div class="target-item">太もも・ふくらはぎのラインが<br>どうしても気になる</div>
+      <div class="target-item">人目を気にせず、<br>自分だけの空間でトレーニングしたい</div>
     </div>
   </div>
 </section>
@@ -448,7 +452,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="stop-block">
   <div class="stop-block-inner">
     <div class="stop-block-line"></div>
-    <p class="stop-block-text">週1〜2回、<br>半年以上ピラティスに通った。<br><br>食事も気をつけた。<br><br>でも、<br><em>脚だけ変わらなかった。</em></p>
+    <p class="stop-block-text">週1〜2回、半年以上ピラティスに通った。<br>食事も気をつけた。でも、脚だけ変わらなかった。</p>
     <div class="stop-block-line" style="margin-top:24px;margin-bottom:0"></div>
   </div>
 </div>
@@ -461,7 +465,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <p class="empathy-p">SNSで見かける綺麗な女性はみんなピラティスに通っている。<br>私もそうなれるはず、と思っていた。<br>でも現実は甘くなかった。</p>
       <p class="empathy-p">スタジオでは常に誰かの視線が気になって、動きに集中できなかった。</p>
       <p class="empathy-p">スッキリするし、背筋が伸びる感じはある。<br>でも正直、ピラティスに通う自分を信じ続けていただけで、<br>体重は変わらなかった。</p>
-      <p class="empathy-close">ピラティスは痩せるための運動ではない。<br>通ってから、気づいた。<br><em>そう感じているのは、あなただけじゃありません。</em></p>
+      <p class="empathy-close">ピラティスは痩せるための運動ではない。<br>通ってから、気づいた。<br><em>そう感じているのは、<br>あなただけじゃありません。</em></p>
     </div>
   </div>
 </section>
@@ -471,18 +475,18 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="pain-inner">
     <p class="pain-ttl">もしかして、<br>こんなこと感じていませんか？</p>
     <div class="pain-list">
-      <div class="pain-item">ピラティスに通い続けたのに、体重が変わらなかった</div>
-      <div class="pain-item">姿勢が良くなったと言われる。でも痩せたいのはそこじゃない</div>
-      <div class="pain-item">レッスン後にプロテインを飲んで、食事にも気をつけた。それでも変わらなかった</div>
-      <div class="pain-item">ジーンズを履くと、太ももだけパツパツになる</div>
-      <div class="pain-item">レギンスを履くと、大転子の出っ張りが目立つ</div>
-      <div class="pain-item">ふくらはぎがやたら筋肉質で、隠したくなる</div>
-      <div class="pain-item">食べたいものを食べたい。お酒もやめたくない。でも痩せたい</div>
-      <div class="pain-item">正直、自分は一生痩せられない気がしている</div>
+      <div class="pain-item">ピラティスに通い続けたのに、<br>体重が変わらなかった</div>
+      <div class="pain-item">姿勢が良くなったと言われる。<br>でも痩せたいのはそこじゃない</div>
+      <div class="pain-item">レッスン後にプロテインを飲んで、<br>食事にも気をつけた。<br>それでも変わらなかった</div>
+      <div class="pain-item">ジーンズを履くと、<br>太ももだけパツパツになる</div>
+      <div class="pain-item">レギンスを履くと、<br>大転子の出っ張りが目立つ</div>
+      <div class="pain-item">ふくらはぎがやたら筋肉質で、<br>隠したくなる</div>
+      <div class="pain-item">食べたいものを食べたい。<br>お酒もやめたくない。でも痩せたい</div>
+      <div class="pain-item">正直、自分は<br>一生痩せられない気がしている</div>
     </div>
     <p class="pain-close">
-      ひとつでも当てはまったら、続きを読んでください。<br>
-      <strong>ピラティスで変わらなかった本当の理由があります。</strong>
+      ひとつでも当てはまったら、<br>続きを読んでください。<br>
+      <strong>ピラティスで変わらなかった<br>本当の理由があります。</strong>
     </p>
   </div>
 </section>
@@ -491,7 +495,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <section class="solution" id="solution">
   <div class="solution-inner">
     <p class="sec-eyebrow" aria-hidden="true">WHY PILATES DOESN'T SLIM YOU</p>
-    <h2 class="sec-ttl">「ピラティスをやっても痩せなかった」<br>本当の理由は、<br><em>順番が違うから</em>です。</h2>
+    <h2 class="sec-ttl">「ピラティスをやっても<br>痩せなかった」<br>本当の理由は、<br><em>順番が違うから</em>です。</h2>
     <div class="sec-bar"></div>
     <div class="pilates-alert">
       <p class="pilates-alert-text">ピラティスは、<br><em>"痩せる運動"ではありません。</em></p>
@@ -506,7 +510,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
           </div>
           <div>
             <p class="sol-ttl">身体の使い方（動き）を整える</p>
-            <p class="sol-desc">ピラティスで整えた静的姿勢を、動きの姿勢に変換する</p>
+            <p class="sol-desc">ピラティスで整えた静的姿勢を、<br>動きの姿勢に変換する</p>
           </div>
         </div>
       </div>
@@ -518,7 +522,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
           </div>
           <div>
             <p class="sol-ttl">余計な負担が取れて下半身がスッキリする</p>
-            <p class="sol-desc">太もも・大転子・ふくらはぎへの過剰な負荷がなくなる</p>
+            <p class="sol-desc">太もも・大転子・ふくらはぎへの<br>過剰な負荷がなくなる</p>
           </div>
         </div>
       </div>
@@ -530,7 +534,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
           </div>
           <div>
             <p class="sol-ttl">代謝が上がる筋肉がつく</p>
-            <p class="sol-desc">インナーマッスルの感覚を活かしながら、代謝に貢献する筋肉を鍛える</p>
+            <p class="sol-desc">インナーマッスルの感覚を活かしながら、<br>代謝に貢献する筋肉を鍛える</p>
           </div>
         </div>
       </div>
@@ -601,7 +605,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="actual-item">「ふくらはぎで立つクセ」を改善する</div>
       <div class="actual-item">インナーマッスルの感覚を活かして代謝に貢献する筋肉をつける</div>
     </div>
-    <p class="actual-sub">これが「姿勢は変わったのに、体型が変わらなかった」を<br>解決する順番です。</p>
+    <p class="actual-sub">これが<br>「姿勢は変わったのに、体型が変わらなかった」<br>を解決する順番です。</p>
   </div>
 </section>
 
@@ -609,7 +613,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <section class="usp" id="usp">
   <div class="usp-inner">
     <p class="sec-eyebrow" aria-hidden="true">WHY 5TOOLGYM</p>
-    <h2 class="sec-ttl">ピラティス経験者に、<em>5toolgymが選ばれる理由。</em></h2>
+    <h2 class="sec-ttl">ピラティス経験者に、<br><em>5toolgymが選ばれる理由。</em></h2>
     <div class="sec-bar"></div>
     <div class="usp-grid">
       <div class="usp-item">
@@ -622,7 +626,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="usp-item">
         <span class="usp-num">02</span>
         <div>
-          <p class="usp-ttl">ピラティスで変わらなかった下半身を変える</p>
+          <p class="usp-ttl">ピラティスで変わらなかった<br>下半身を変える</p>
           <p class="usp-desc">太もも・大転子・ふくらはぎが変わらないのは、動きのクセが原因です。ピラティスでは届かなかった「動きの姿勢」から直すことで、今まで変わらなかった部分が変わり始めます。</p>
         </div>
       </div>
@@ -650,7 +654,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="usp-item">
         <span class="usp-num">06</span>
         <div>
-          <p class="usp-ttl">当日キャンセルOK・縛りなし・繰越可能</p>
+          <p class="usp-ttl">当日キャンセルOK<br>縛りなし・繰越可能</p>
           <p class="usp-desc">子育て・仕事・急な予定変更にも対応。月額制で最低契約期間の縛りもありません。消化できなかった回数はコースの半分まで翌月に繰越可能。家族間でのコース回数シェアもOKです。続けられない理由をひとつずつ潰します。</p>
         </div>
       </div>
@@ -701,7 +705,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
       <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
     </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">まずは、自分の身体の使い方を知る</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">空き時間を確認してみる</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
@@ -1068,8 +1072,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p class="letter-text">新しいことを始めるときは<br>楽しみと同じくらい、不安もありますよね。</p>
     <p class="letter-text">5toolgymってどんな場所なんだろう？<br>トレーナーはどんな人なんだろう？<br>自分の悩みを、本当に解決してもらえるんだろうか？</p>
     <p class="letter-text">その気持ち、とてもよくわかります。<br>だからこそ、一つお伝えさせてください。</p>
-    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、<br>9割近くがそのままご入会されています。<br>また、入会後も長く通い続けてくださる方が多く、<br>平均継続期間は13ヶ月以上です。</p>
-    <p class="letter-text">これは、私たちが数字を誇りたいのではなく、<br>「ご来店いただければ、きっとわかる」<br>という自信の表れです。</p>
+    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、<br>7割以上がそのままご入会されています。<br>また、入会後も長く通い続けてくださる方が多く、<br>平均継続期間は13ヶ月以上です。</p>
+    <p class="letter-text">これは、私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
     <p class="letter-text">5toolgymのトレーナー全員で、あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、心待ちにしています。</p>
     <p class="letter-sig">5toolgym代表　柴山 智幸</p>
   </div>
@@ -1080,14 +1084,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="final-cta-inner">
     <h2 class="final-cta-ttl">ピラティスは正解でした。<br><em>ただ、次が必要だっただけです。</em></h2>
     <p class="final-cta-sub">変わりたいと思ったその日が、始め時です。<br>まず90分、体験してみてください。</p>
-    <div class="pre-cta-reassure">
-      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
-      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
-      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
-      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
-      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
-    </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ予約する</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 毎月3名限定 / 相談だけでもOK</p>
   </div>
 </section>
