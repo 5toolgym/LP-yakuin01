@@ -359,6 +359,9 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 .letter-text:last-of-type{margin-bottom:0}
 .letter-sig{font-family:'Zen Kurenaido',sans-serif;font-size:15px;line-height:2.4;color:#3a3a3a;text-align:right;margin-top:36px}
 @media(max-width:640px){.letter-inner{padding:32px 20px}.letter-text,.letter-sig{font-size:14px}}
+.scroll-arrow{display:inline-block;font-style:normal;font-size:18px;color:rgba(255,255,255,.55);animation:scrollBounce 1.5s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.compare-table th:last-child{background-color:#1D9E75;color:white;font-weight:bold;position:relative}
 </style>
 </head>
 <body>
@@ -366,7 +369,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <!-- ══ STICKY BAR ══ -->
 <div id="sbar">
   <p class="sbar-note">毎月3名限定・体験受付中</p>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">体験予約はこちら</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">体験を予約する（当日入会で0円）</a>
   <p class="sbar-sub">当日入会で0円 / 相談だけでもOK</p>
 </div>
 
@@ -426,8 +429,11 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p class="hero-sub">ピラティスの次に必要な運動が、<br>ここにあります。</p>
   </div>
   <div id="heroCta">
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験予約はこちら</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
     <p class="btn-note">当日入会で0円（初回90分 5,500円）</p>
+  </div>
+  <div style="text-align: center; padding: 12px 0 0;">
+    <i class="scroll-arrow" aria-hidden="true">&#8595;</i>
   </div>
 </section>
 
@@ -672,17 +678,17 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
             <th>項目</th>
             <th>一般的なジム</th>
             <th>ピラティス</th>
-            <th>5toolgym</th>
+            <th><span style="display:block;font-size:10px;background:white;color:#1D9E75;border-radius:999px;padding:2px 8px;margin-bottom:4px;font-weight:bold;">おすすめ</span>5toolgym</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>体重・体型改善</td><td class="compare-ok">◯</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
-          <tr><td>姿勢改善</td><td class="compare-ng">△</td><td class="compare-ok">◯</td><td class="compare-best">◎</td></tr>
-          <tr><td>下半身（太もも・ふくらはぎ）改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
-          <tr><td>日常の動作改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
-          <tr><td>不調・痛みへの対応</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best">◎</td></tr>
-          <tr><td>完全個室・プライベート空間</td><td class="compare-ng">×</td><td class="compare-ng">×</td><td class="compare-best">◎</td></tr>
-          <tr><td>ピラティスの感覚を活かせる</td><td class="compare-ng">×</td><td class="compare-ok">◯</td><td class="compare-best">◎</td></tr>
+          <tr><td>体重・体型改善</td><td class="compare-ok">◯</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>姿勢改善</td><td class="compare-ng">△</td><td class="compare-ok">◯</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>下半身（太もも・ふくらはぎ）改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>日常の動作改善</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>不調・痛みへの対応</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>完全個室・プライベート空間</td><td class="compare-ng">×</td><td class="compare-ng">×</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>ピラティスの感覚を活かせる</td><td class="compare-ng">×</td><td class="compare-ok">◯</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -695,14 +701,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="cta-block">
   <div class="cta-block-inner">
     <p class="urgency-label">毎月3名限定・体験受付中</p>
-    <div class="pre-cta-reassure">
-      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
-      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
-      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
-      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
-      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
-    </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">空き時間を確認してみる</a>
+    <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
@@ -795,6 +795,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B9E87" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           </div>
           <div>
+            <div style="color:#EF9F27;font-size:13px;margin-bottom:4px;">★★★★★</div>
             <p class="vc-name">T.K.さん</p>
             <p class="vc-info">40代女性 / ピラティス経験者</p>
           </div>
@@ -810,6 +811,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B9E87" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           </div>
           <div>
+            <div style="color:#EF9F27;font-size:13px;margin-bottom:4px;">★★★★★</div>
             <p class="vc-name">C.E.さん</p>
             <p class="vc-info">30代後半・主婦 / ダイエット目的</p>
           </div>
@@ -825,6 +827,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B9E87" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           </div>
           <div>
+            <div style="color:#EF9F27;font-size:13px;margin-bottom:4px;">★★★★★</div>
             <p class="vc-name">S.K.さん</p>
             <p class="vc-info">30代前半・会社員 / 運動習慣づくり</p>
           </div>
@@ -887,14 +890,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="cta-block">
   <div class="cta-block-inner">
     <p class="urgency-label">毎月3名限定・体験受付中</p>
-    <div class="pre-cta-reassure">
-      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
-      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
-      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
-      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
-      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
-    </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
+    <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 相談だけでもOK</p>
   </div>
 </div>
@@ -936,10 +933,11 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="offer-inner">
     <h2 class="offer-ttl">まず、体験してみてください。</h2>
     <div class="offer-box">
-      <p class="offer-original">通常価格 ¥13,200（税込）<span style="font-size:11px;display:block;margin-top:4px;opacity:.7">※90分マンツーマン指導の単発セッション料金</span></p>
-      <span class="offer-arrow">↓</span>
-      <div class="offer-price"><sup>¥</sup>5,500</div>
-      <p class="offer-price-note">初回体験 / 90分 / 税込</p>
+      <div style="display:flex;align-items:baseline;gap:12px;justify-content:center;margin-bottom:8px;">
+        <span style="font-size:1.05rem;color:rgba(255,255,255,.5);text-decoration:line-through;">通常 ¥13,200</span>
+        <span style="font-size:1.8rem;font-weight:bold;color:inherit;">¥5,500</span>
+        <span style="font-size:0.85rem;color:rgba(255,255,255,.5);">（税込）</span>
+      </div>
     </div>
     <div class="offer-free">
       さらに、<strong>体験当日にご入会の方は</strong><br>
@@ -955,14 +953,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="offer-check">無理な勧誘なし</div>
       <div class="offer-check">相談だけでもOK</div>
     </div>
-    <div class="pre-cta-reassure">
-      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
-      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
-      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
-      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
-      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
-    </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
+    <p style="font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
     <p class="btn-note" style="color:rgba(255,255,255,.4);margin-top:10px">当日入会で0円 / 毎月3名限定</p>
   </div>
 </section>
@@ -1081,7 +1073,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="final-cta-inner">
     <h2 class="final-cta-ttl">ピラティスは正解でした。<br><em>ただ、次が必要だっただけです。</em></h2>
     <p class="final-cta-sub">変わりたいと思ったその日が、始め時です。<br>まず90分、体験してみてください。</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ予約する</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ予約する →</a>
     <p class="btn-note" style="margin-top:10px">当日入会で0円 / 毎月3名限定 / 相談だけでもOK</p>
   </div>
 </section>
@@ -1113,7 +1105,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
       <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
     </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
   </div>
 </section>
 
