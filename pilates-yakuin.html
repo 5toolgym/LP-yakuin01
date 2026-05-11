@@ -121,7 +121,7 @@ body.menu-open .btn-main{animation:none;transform:none}
 .target-inner{max-width:var(--max);margin:0 auto}
 .target-ttl{font-size:11px;letter-spacing:.4em;color:var(--main);margin-bottom:18px;font-weight:400}
 .target-list{display:flex;flex-direction:column;gap:8px}
-.target-item{font-size:17px;color:var(--dark);padding:14px 18px;background:var(--white);border-left:3px solid var(--main);border-radius:0 var(--r) var(--r) 0;line-height:1.6;display:flex;align-items:center;gap:10px}
+.target-item{font-size:19px;color:var(--dark);padding:14px 18px;background:var(--white);border-left:3px solid var(--main);border-radius:0 var(--r) var(--r) 0;line-height:1.6;display:flex;align-items:center;gap:10px}
 .target-item::before{content:'✓';color:var(--main);font-weight:700;flex-shrink:0;font-size:14px}
 
 /* ── EMPATHY ── */
@@ -305,7 +305,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 .stop-block{background:var(--accent-dark);padding:48px var(--sp)}
 .stop-block-inner{max-width:var(--max);margin:0 auto;text-align:center}
 .stop-block-line{width:80px;height:1px;background:rgba(123,158,135,.4);margin:0 auto 20px}
-.stop-block-text{font-family:'Noto Serif JP',serif;font-size:clamp(20px,5.5vw,26px);font-weight:300;color:rgba(255,255,255,.88);line-height:2.2;letter-spacing:.04em}
+.stop-block-text{font-family:'Noto Serif JP',serif;font-size:clamp(22px,5.5vw,28px);font-weight:300;color:rgba(255,255,255,.88);line-height:2.2;letter-spacing:.04em}
 .stop-block-text em{font-style:normal;color:#9ABFA8;font-weight:400}
 
 /* ── PILATES ALERT ── */
@@ -375,9 +375,12 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 
 <!-- ══ NAV ══ -->
 <nav>
-  <a href="#top" class="nav-logo">
+  <a href="#top" class="nav-logo" style="flex-direction:row;align-items:center;gap:8px">
     <img src="images/logo.png" alt="5toolgym" class="nav-logo-img">
-    <span class="nav-logo-sub">YAKUIN PERSONAL TRAINING GYM</span>
+    <div>
+      <span style="display:block;font-family:'Noto Serif JP',serif;font-size:13px;color:var(--text);letter-spacing:.04em;line-height:1.3">5toolgym 薬院店</span>
+      <span class="nav-logo-sub" style="margin-bottom:0">YAKUIN PERSONAL TRAINING GYM</span>
+    </div>
   </a>
   <div style="display:flex;align-items:center;gap:8px">
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="nav-rsv">体験予約</a>
@@ -1107,13 +1110,6 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <dt class="access-dt">電話</dt>
       <dd class="access-dd"><a href="tel:0926000296">092-600-0296</a></dd>
     </dl>
-    <div class="pre-cta-reassure">
-      <p class="pre-cta-reassure-item">ピラティス経験者の方が多数来られています</p>
-      <p class="pre-cta-reassure-item">無理な食事制限はありません</p>
-      <p class="pre-cta-reassure-item">キツい筋トレだけ、はしません</p>
-      <p class="pre-cta-reassure-item">運動が苦手な方がほとんどです</p>
-      <p class="pre-cta-reassure-item">無理な勧誘は一切ありません</p>
-    </div>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
   </div>
 </section>
