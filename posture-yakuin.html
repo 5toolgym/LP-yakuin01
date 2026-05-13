@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
 .sbar-sub{font-size:10px;color:rgba(255,255,255,.3);margin-top:5px;letter-spacing:.04em}
 
 /* ── NAV ── */
-nav:not(.drawer-nav){position:fixed;top:36px;left:0;right:0;z-index:500;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav:not(.drawer-nav){position:fixed;top:36px;left:0;right:0;z-index:500;min-height:52px;display:flex;align-items:center;justify-content:space-between;padding:14px var(--sp);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;flex-direction:row;align-items:center;gap:8px}
 .nav-logo-img{height:24px;width:auto;flex-shrink:0}
 .nav-logo-text{font-size:13px;color:var(--dark);letter-spacing:.04em;line-height:1.3}
@@ -104,13 +104,13 @@ body.menu-open{overflow:hidden}
 .hero-badge-num{font-family:'Outfit',sans-serif;font-size:2rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px}
 .hero-badge-unit{font-size:1rem;font-weight:400}
 .hero-badge-label{font-size:11px;color:var(--mid);letter-spacing:.04em}
-.hero-price{display:flex;align-items:baseline;gap:8px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.hero-price{display:flex;align-items:baseline;gap:8px;justify-content:center;margin-top:40px;margin-bottom:24px;flex-wrap:wrap}
 .hero-price-orig{font-size:14px;color:#999;text-decoration:line-through}
 .hero-price-main{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:var(--dark)}
 .hero-price-note{font-size:12px;color:#999}
 
 /* ── EMPATHY LIST ── */
-.elist-item{font-size:15px;line-height:1.8;padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
+.elist-item{font-size:16px;line-height:2.0;padding:18px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
 .elist-item:last-child{border-bottom:none}
 .elist-check{color:var(--green);font-weight:700;flex-shrink:0;font-size:15px;margin-top:1px}
 .elist-wrap{max-width:600px;margin:0 auto}
@@ -130,7 +130,7 @@ body.menu-open{overflow:hidden}
 
 /* ── WHY ── */
 .why-head{font-size:clamp(18px,4.5vw,26px);font-weight:600;line-height:1.65;text-align:center;margin-bottom:48px;color:var(--dark)}
-.why-body{max-width:600px;margin:0 auto;font-size:15px;color:var(--mid);line-height:2.0}
+.why-body{max-width:600px;margin:0 auto;font-size:16px;color:var(--mid);line-height:2.0}
 .why-body p{margin-bottom:20px}
 .why-diagram{border:1px solid var(--border);border-radius:8px;padding:32px;margin-top:48px;max-width:540px;margin-left:auto;margin-right:auto}
 .why-diag-row{text-align:center;padding:12px 0}
@@ -142,16 +142,16 @@ body.menu-open{overflow:hidden}
 .why-green{color:var(--green);font-weight:700}
 
 /* ── PASSIVE ── */
-.passive-body{max-width:600px;margin:0 auto;font-size:15px;color:var(--mid);line-height:2.0}
+.passive-body{max-width:600px;margin:0 auto;font-size:16px;color:var(--mid);line-height:2.0}
 .passive-body p{margin-bottom:20px}
 
 /* ── STEP ── */
-.step-lead{font-size:15px;color:var(--mid);text-align:center;margin-bottom:48px;line-height:1.8}
+.step-lead{font-size:16px;color:var(--mid);text-align:center;margin-bottom:48px;line-height:2.0}
 .step-cards{display:flex;flex-direction:column;gap:24px;max-width:600px;margin:0 auto}
 .step-card{border-left:3px solid var(--green);padding:24px 24px 24px 28px}
 .step-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--green);letter-spacing:.15em;margin-bottom:8px}
 .step-ttl{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.5}
-.step-desc{font-size:14px;color:var(--mid);line-height:1.85}
+.step-desc{font-size:16px;color:var(--mid);line-height:2.0}
 .step-close{font-size:1.05rem;font-weight:600;color:var(--green);text-align:center;margin-top:48px;line-height:1.7}
 
 /* ── USP ── */
@@ -241,7 +241,7 @@ body.menu-open{overflow:hidden}
 .faq-item.open .faq-chevron{transform:rotate(180deg)}
 .faq-body{overflow:hidden;max-height:0;transition:max-height .35s ease}
 .faq-item.open .faq-body{max-height:600px}
-.faq-a{font-size:14px;color:var(--mid);line-height:1.95;padding:0 0 20px 26px}
+.faq-a{font-size:16px;color:var(--mid);line-height:1.9;padding:0 0 20px 26px}
 
 /* ── LETTER ── */
 .letter-wrap{background:var(--bg);border:1px solid rgba(0,0,0,.07);border-radius:8px;padding:48px 40px;box-shadow:0 2px 12px rgba(0,0,0,.04);max-width:600px;margin:0 auto}
@@ -326,8 +326,9 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
 <div class="drawer-overlay" id="drawerOverlay"></div>
 
 <!-- ══ HERO ══ -->
-<section class="hero" id="top">
-  <div class="hero-inner">
+<section class="hero" id="top" style="position:relative;overflow:hidden">
+  <img src="images/img1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;pointer-events:none;z-index:0" aria-hidden="true">
+  <div class="hero-inner" style="position:relative;z-index:1">
     <p class="hero-eyebrow">猫背・巻き肩コンプレックスから脱却したい方へ</p>
     <h1 class="hero-h1">マッサージでも、ストレッチでも<br>変わらなかった。<br>原因は筋力じゃなく、<br>身体の使い方だったから。</h1>
     <p class="hero-sub">姿勢が崩れる本当の原因を直すから、<br>変わり続ける。</p>
@@ -496,6 +497,9 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
   </div>
 </section>
 
+<!-- ══ SCENE IMAGE ══ -->
+<div style="width:100%;height:280px;overflow:hidden"><img src="images/img2.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" aria-hidden="true"></div>
+
 <!-- ══ USP ══ -->
 <section class="sec sec-bg2" id="usp">
   <div class="sec-inner">
@@ -552,7 +556,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <tbody>
           <tr><td>姿勢の根本原因を特定する</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
           <tr><td>動きのクセを修正する</td><td class="compare-ng">×</td><td class="compare-ng">×</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
-          <tr><td>不調（肩こり・首こり）への対応</td><td class="compare-ok">◯</td><td class="compare-ok">◯</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
+          <tr><td>不調（肩こり・首こり）への対応</td><td class="compare-ok">◎</td><td class="compare-ok">◎</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
           <tr><td>日常動作まで改善する</td><td class="compare-ng">×</td><td class="compare-ng">×</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
           <tr><td>マンツーマン指導</td><td class="compare-ng">△</td><td class="compare-ng">△</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
           <tr><td>自分で動いて身体を変える</td><td class="compare-ng">×</td><td class="compare-ng">×</td><td class="compare-best"><span style="color:#1D9E75;font-weight:bold;">◎</span></td></tr>
@@ -581,6 +585,9 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     <p class="stats-note">※2022年10月〜2026年4月・5toolgym会員データ（薬院店・赤坂店合算）</p>
   </div>
 </section>
+
+<!-- ══ VOICE IMAGE ══ -->
+<div style="width:100%;height:200px;overflow:hidden"><img src="images/img1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" aria-hidden="true"></div>
 
 <!-- ══ 口コミ ══ -->
 <section class="sec" id="voice">
@@ -833,7 +840,10 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
       <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、9割以上がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は13ヶ月以上です。</p>
       <p class="letter-text">これは、私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
       <p class="letter-text">5toolgymのトレーナー全員で、あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、心待ちにしています。</p>
-      <p class="letter-sig">5toolgym代表　柴山 智幸</p>
+      <div class="letter-sig" style="display:flex;align-items:center;justify-content:flex-end;gap:16px">
+        <img src="images/img3.jpg" alt="柴山智幸" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+        <span>5toolgym代表　柴山 智幸</span>
+      </div>
     </div>
   </div>
 </section>
