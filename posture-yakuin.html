@@ -205,8 +205,8 @@ body.menu-open{overflow:hidden}
 /* ── PLANS ── */
 .plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
 .plan-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:26px 14px;text-align:center;position:relative}
-.plan-card.popular{border-color:var(--green);border-width:2px;background:var(--bg)}
-.plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:9px;letter-spacing:.1em;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.plan-card.popular{border:2px solid #1D9E75;background:#F0FBF7}
+.plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#1D9E75;color:#fff;font-size:11px;padding:3px 12px;border-radius:999px;white-space:nowrap}
 .plan-freq{font-size:11px;color:var(--light);letter-spacing:.12em;margin-bottom:10px}
 .plan-price{font-family:'Outfit',sans-serif;font-size:26px;font-weight:400;color:var(--dark);line-height:1;margin-bottom:4px}
 .plan-price sup{font-size:11px;vertical-align:top;margin-top:5px}
@@ -331,7 +331,13 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     <p class="hero-eyebrow">猫背・巻き肩コンプレックスから脱却したい方へ</p>
     <h1 class="hero-h1">マッサージでも、ストレッチでも<br>変わらなかった。<br>原因は筋力じゃなく、<br>身体の使い方だったから。</h1>
     <p class="hero-sub">姿勢が崩れる本当の原因を直すから、<br>変わり続ける。</p>
-    <div class="hero-badges">
+    <div class="hero-price">
+      <span class="hero-price-orig">通常 ¥13,200</span>
+      <span class="hero-price-main">¥5,500</span>
+      <span class="hero-price-note">（初回体験 / 90分 / 税込）</span>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main" style="margin-top:32px;max-width:360px" id="heroCta">体験を予約する（当日入会で0円）</a>
+    <div class="hero-badges" style="margin-top:20px;margin-bottom:12px">
       <div class="hero-badge">
         <div class="hero-badge-num">90<span class="hero-badge-unit">%</span></div>
         <div class="hero-badge-label">体験→入会率</div>
@@ -341,12 +347,6 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <div class="hero-badge-label">平均継続期間</div>
       </div>
     </div>
-    <div class="hero-price">
-      <span class="hero-price-orig">通常 ¥13,200</span>
-      <span class="hero-price-main">¥5,500</span>
-      <span class="hero-price-note">（初回体験 / 90分 / 税込）</span>
-    </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main" style="margin-top:32px;max-width:360px" id="heroCta">体験を予約する（当日入会で0円）</a>
     <p class="btn-sub">無理な勧誘なし　／　当日キャンセルOK　／　相談だけでもOK</p>
     <span class="scroll-arrow" aria-hidden="true">&#8595;</span>
   </div>
@@ -416,6 +416,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     </div>
     <div style="margin-top:40px;text-align:center">
       <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
+      <p style="font-size:11px;color:#999999;text-align:center;margin-top:6px">予約フォームに入力するだけ（約1分）→ 日時確定 → 来店</p>
       <p class="btn-sub">無理な勧誘なし　／　当日キャンセルOK　／　相談だけでもOK</p>
     </div>
   </div>
@@ -611,6 +612,18 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <p class="vc-text">とても丁寧に教えて頂きました。今までのフォームが間違っていた事に気づきました。筋トレはなかなか続きませんでしたが、パーソナルトレーニングだと続きそうです。</p>
         <p class="vc-meta">T.K.さん・男性・30代後半・会社員</p>
       </div>
+      <div class="vc">
+        <div class="vc-stars">★★★★★</div>
+        <p class="vc-title">「歪みを見てくれて、ただ筋トレするより体の悩みが解決できそうです」</p>
+        <p class="vc-text">当日予約で行きました。歪みを見てくれ、ストレッチもあり、ただ筋トレをするより体の悩みが解決できそうです。教え方がすごく丁寧でした。</p>
+        <p class="vc-meta">女性</p>
+      </div>
+      <div class="vc">
+        <div class="vc-stars">★★★★★</div>
+        <p class="vc-title">「姿勢や肩凝りも少しずつ良くなってきました」</p>
+        <p class="vc-text">パーソナルトレーニングを週1回でお願いしています。筋肉量が増えてきたので代謝が上がり太りにくくなりました。姿勢や肩凝りも少しずつ良くなった気がします。周りの視線もないので、とても良いです。</p>
+        <p class="vc-meta">男性・30代後半</p>
+      </div>
     </div>
     <p style="font-size:11px;color:var(--light);text-align:center;margin-top:16px">※ 個人の感想です。効果には個人差があります。</p>
   </div>
@@ -622,6 +635,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     <p class="urgency-label">毎月5名限定・体験受付中</p>
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
+    <p style="font-size:11px;color:#999999;text-align:center;margin-top:6px">予約フォームに入力するだけ（約1分）→ 日時確定 → 来店</p>
   </div>
 </div>
 
@@ -688,13 +702,13 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <div class="plan-price"><sup>¥</sup>19,400</div>
         <p class="plan-unit">月額・税込</p>
       </div>
-      <div class="plan-card">
+      <div class="plan-card popular">
+        <span class="plan-badge">おすすめ</span>
         <p class="plan-freq">月 4 回</p>
         <div class="plan-price"><sup>¥</sup>38,000</div>
         <p class="plan-unit">月額・税込</p>
       </div>
-      <div class="plan-card popular">
-        <span class="plan-badge">最も多くのお客様が選ぶコース</span>
+      <div class="plan-card">
         <p class="plan-freq">月 6 回</p>
         <div class="plan-price"><sup>¥</sup>55,800</div>
         <p class="plan-unit">月額・税込</p>
@@ -734,6 +748,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     </div>
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（当日入会で0円）</a>
+    <p style="font-size:11px;color:#999999;text-align:center;margin-top:6px">予約フォームに入力するだけ（約1分）→ 日時確定 → 来店</p>
   </div>
 </section>
 
@@ -747,7 +762,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <div class="flow-body">
           <span class="flow-time">〜5分</span>
           <p class="flow-ttl">まず予約する</p>
-          <p class="flow-desc">このページのボタンから予約フォームに必要事項を入力するだけ。ご都合の良い日時を選んで送信してください。</p>
+          <p class="flow-desc">お名前・ご希望日時を入力するだけ。約1分で完了します。このページのボタンから予約フォームに必要事項を入力するだけ。ご都合の良い日時を選んで送信してください。</p>
         </div>
       </div>
       <div class="flow-item">
@@ -844,11 +859,27 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
   </div>
 </section>
 
+<!-- ══ ミニ数値バッジ ══ -->
+<div style="background:#F7F7F5;padding:24px;text-align:center">
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <div style="text-align:center;flex:1;min-width:120px;max-width:160px">
+      <div style="font-family:'Outfit',sans-serif;font-size:1.68rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px">90<span style="font-size:1rem;font-weight:400">%</span></div>
+      <div style="font-size:11px;color:var(--mid);letter-spacing:.04em">体験→入会率</div>
+    </div>
+    <div style="text-align:center;flex:1;min-width:120px;max-width:160px">
+      <div style="font-family:'Outfit',sans-serif;font-size:1.68rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px">13.1<span style="font-size:.84rem;font-weight:400">ヶ月</span></div>
+      <div style="font-size:11px;color:var(--mid);letter-spacing:.04em">平均継続期間</div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--light);margin-top:12px;letter-spacing:.04em">※2022年10月〜2026年4月・5toolgym会員データ</p>
+</div>
+
 <!-- ══ CLOSING CTA ══ -->
 <section class="closing-cta">
   <div class="closing-cta-inner">
     <p class="closing-ttl">姿勢は、意志の問題じゃない。<br>動き方の問題です。</p>
     <p class="closing-sub">変わりたいと思ったその日が、始め時です。<br>まず90分、体験してみてください。</p>
+    <p style="background:#FCEBEB;color:#A32D2D;font-size:12px;font-weight:500;padding:6px 16px;border-radius:999px;display:inline-block;margin-bottom:16px;text-align:center">今月の体験枠 残り5名</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-white">今すぐ予約する →</a>
     <p class="closing-note">当日入会で0円 / 毎月5名限定 / 相談だけでもOK</p>
   </div>
