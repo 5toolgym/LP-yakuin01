@@ -414,48 +414,68 @@
     margin-bottom: 16px;
   }
   .store-select-label {
-    font-size: 12px;
-    color: var(--muted);
+    font-size: 13px;
+    color: var(--text);
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     letter-spacing: 1px;
+    font-weight: 700;
   }
   .store-btns {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   .store-btn {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
     background: var(--surface2);
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
+    border: 2px solid rgba(0,255,127,0.4);
+    border-radius: 16px;
+    padding: 22px 24px;
     cursor: pointer;
     text-align: left;
-    transition: all 0.18s;
+    transition: all 0.2s;
     width: 100%;
+    box-shadow: 0 0 16px rgba(0,255,127,0.1), inset 0 0 20px rgba(0,255,127,0.03);
+    position: relative;
+    overflow: hidden;
+  }
+  .store-btn::before {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 20px;
+    opacity: 0.6;
+    transition: all 0.2s;
   }
   .store-btn:hover {
     border-color: var(--accent);
-    background: rgba(0,255,127,0.06);
-    box-shadow: 0 0 16px rgba(0,255,127,0.12);
-    transform: translateY(-2px);
+    background: rgba(0,255,127,0.08);
+    box-shadow: 0 0 30px rgba(0,255,127,0.3), inset 0 0 30px rgba(0,255,127,0.05);
+    transform: translateY(-3px);
+  }
+  .store-btn:hover::before {
+    right: 16px;
+    opacity: 1;
   }
   .store-btn-name {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--accent);
-    text-shadow: 0 0 10px rgba(0,255,127,0.4);
+    text-shadow: 0 0 16px rgba(0,255,127,0.6);
+    letter-spacing: 1px;
   }
   .store-btn-desc {
     font-size: 12px;
-    color: var(--muted);
-    line-height: 1.5;
+    color: #6a8a6a;
+    line-height: 1.6;
   }
 
   .hidden { display: none !important; }
@@ -810,20 +830,20 @@ const lpMap = {
     akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
   },
   muscle: {
-    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
-    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/muscle-yakuin.html',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/muscle-akasaka.html',
   },
   fatigue: {
-    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
-    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/fatigue-yakuin.html',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/fatigue-akasaka.html',
   },
   functional: {
     yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/pilates-yakuin.html',
     akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/pilates-akasaka.html',
   },
   beginner: {
-    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
-    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/beginner-yakuin.html',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/beginner-akasaka.html',
   },
 };
 
