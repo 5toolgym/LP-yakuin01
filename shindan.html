@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの体のクセ診断 | 5toolgym</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-28580FZYHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-28580FZYHB');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #020202;
+    --surface: #0a0a0a;
+    --surface2: #111111;
+    --accent: #00ff7f;
+    --accent2: #00e5ff;
+    --text: #e8f5e8;
+    --muted: #4a6a4a;
+    --border: #0a2a0a;
+    --radius: 16px;
+  }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .container {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  /* ===== INTRO ===== */
+  .intro {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .intro::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(0,255,127,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .intro::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .intro-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    background: rgba(0,255,127,0.08);
+    border: 1px solid rgba(0,255,127,0.3);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(0,255,127,0.6);
+  }
+  .intro h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .intro h2 span {
+    color: var(--accent);
+  }
+  .intro p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .btn-start {
+    display: inline-block;
+    background: var(--accent);
+    color: #020202;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    padding: 18px 48px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 0 20px rgba(0,255,127,0.5), 0 0 60px rgba(0,255,127,0.2);
+    text-shadow: 0 0 10px rgba(0,255,127,0.3);
+  }
+  .btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0,255,127,0.7), 0 0 80px rgba(0,255,127,0.35);
+  }
+  .btn-start:active { transform: translateY(0); }
+  .intro-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  /* ===== QUIZ ===== */
+  .quiz { display: none; }
+  .quiz.active { display: block; }
+
+  .progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .progress-bar-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .progress-label {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 32px 24px;
+    animation: slideIn 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-num {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .q-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(17px, 4vw, 22px);
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .q-emoji {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .option-btn {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .option-btn:hover {
+    border-color: var(--accent);
+    background: rgba(0,255,127,0.06);
+    transform: translateX(4px);
+    box-shadow: 0 0 12px rgba(0,255,127,0.15);
+  }
+  .option-btn .opt-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+  }
+  .option-btn .opt-text { flex: 1; }
+
+  /* ===== RESULT ===== */
+  .result { display: none; }
+  .result.active { display: block; animation: slideIn 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+  .result-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px 24px 0 0;
+    padding: 32px 24px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(0,255,127,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .result-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #020202;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 0 16px rgba(0,255,127,0.5);
+  }
+  .result-type {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .result-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .result-title span { color: var(--accent); }
+  .result-emoji { font-size: 48px; margin-bottom: 12px; display: block; }
+
+  .result-body {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 24px;
+  }
+  .result-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #a8c8a8;
+    margin-bottom: 24px;
+  }
+
+  .result-issues {
+    background: var(--surface2);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .result-issues-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent2);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .issue-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .issue-item:last-child { margin-bottom: 0; }
+  .issue-dot {
+    width: 6px; height: 6px;
+    background: var(--accent2);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .result-approach {
+    background: rgba(0,255,127,0.05);
+    border: 1px solid rgba(0,255,127,0.2);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .result-approach-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .approach-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .approach-item:last-child { margin-bottom: 0; }
+  .approach-num {
+    background: var(--accent);
+    color: #0e0e0e;
+    font-weight: 900;
+    font-size: 11px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .result-cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+    padding: 24px;
+    text-align: center;
+  }
+  .cta-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .cta-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .btn-cta {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: #020202;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 18px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0,255,127,0.45), 0 0 60px rgba(0,255,127,0.15);
+  }
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0,255,127,0.65), 0 0 80px rgba(0,255,127,0.25);
+  }
+  .btn-retry {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 13px;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .btn-retry:hover { color: var(--text); border-color: var(--muted); }
+
+  /* 店舗選択 */
+  .store-select {
+    margin-bottom: 16px;
+  }
+  .store-select-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .store-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .store-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s;
+    width: 100%;
+  }
+  .store-btn:hover {
+    border-color: var(--accent);
+    background: rgba(0,255,127,0.06);
+    box-shadow: 0 0 16px rgba(0,255,127,0.12);
+    transform: translateY(-2px);
+  }
+  .store-btn-name {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0,255,127,0.4);
+  }
+  .store-btn-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro" id="intro">
+    <div class="intro-label">✦ Body Check</div>
+    <h2>あなたの体に<span>何が足りない？</span><br>5問でわかる診断</h2>
+    <p>腰痛・疲れ・体型崩れ・運動不足…<br>原因は人それぞれ違います。<br>タップするだけで、あなたに必要なトレーニングがわかります。</p>
+    <button class="btn-start" onclick="startQuiz()">診断スタート →</button>
+    <p class="intro-note">所要時間：約30秒 ／ 登録不要</p>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz" id="quiz">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">1 / 5</div>
+    </div>
+    <div class="question-card" id="questionCard"></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+    <div class="result-header">
+      <div class="result-tag">診断結果</div>
+      <span class="result-emoji" id="resultEmoji"></span>
+      <div class="result-type" id="resultType"></div>
+      <div class="result-title" id="resultTitle"></div>
+    </div>
+    <div class="result-body">
+      <div class="result-desc" id="resultDesc"></div>
+      <div class="result-issues">
+        <div class="result-issues-title">⚠ あなたに起きやすいこと</div>
+        <div id="resultIssues"></div>
+      </div>
+      <div class="result-approach">
+        <div class="result-approach-title">✦ 5toolgymが提案するアプローチ</div>
+        <div id="resultApproach"></div>
+      </div>
+    </div>
+    <div class="result-cta">
+      <div class="cta-label">次のステップ</div>
+      <div class="cta-heading" id="ctaHeading"></div>
+      <div class="store-select" id="storeSelect">
+        <div class="store-select-label">通いやすい店舗を選んでください</div>
+        <div class="store-btns">
+          <button class="store-btn" onclick="goToLP('yakuin')">
+            <span class="store-btn-name">薬院店</span>
+            <span class="store-btn-desc">24時間ジム付き｜薬院大通駅 徒歩2分</span>
+          </button>
+          <button class="store-btn" onclick="goToLP('akasaka')">
+            <span class="store-btn-name">赤坂・大濠公園店</span>
+            <span class="store-btn-desc">完全個室｜赤坂駅 徒歩5分</span>
+          </button>
+        </div>
+      </div>
+      <button class="btn-retry" onclick="retryQuiz()">もう一度診断する</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  {
+    emoji: "🧍",
+    text: "最近、体のどこかに「違和感」を感じますか？",
+    options: [
+      { icon: "😣", text: "腰や首・肩がよく痛む・重い", tags: ["pain"] },
+      { icon: "😴", text: "疲れやすい・だるさが抜けない", tags: ["fatigue"] },
+      { icon: "😕", text: "姿勢が悪いとよく言われる", tags: ["posture"] },
+      { icon: "🙂", text: "特に違和感はない", tags: ["goal"] },
+    ]
+  },
+  {
+    emoji: "🎯",
+    text: "今、一番叶えたいことはどれですか？",
+    options: [
+      { icon: "⚡", text: "痩せたい・体型を変えたい", tags: ["diet"] },
+      { icon: "💪", text: "筋肉をつけて引き締めたい", tags: ["muscle"] },
+      { icon: "🏃", text: "体力・動ける体をつくりたい", tags: ["functional"] },
+      { icon: "🌿", text: "痛みや不調を改善したい", tags: ["rehab"] },
+    ]
+  },
+  {
+    emoji: "🧠",
+    text: "仕事や生活のスタイルに近いのは？",
+    options: [
+      { icon: "💻", text: "デスクワークが多く、座りっぱなし", tags: ["sedentary", "posture"] },
+      { icon: "🚶", text: "立ち仕事・移動が多い", tags: ["fatigue"] },
+      { icon: "🏠", text: "家にいる時間が長く、運動不足を感じる", tags: ["sedentary", "diet"] },
+      { icon: "⚽", text: "たまにスポーツや運動をしている", tags: ["functional"] },
+    ]
+  },
+  {
+    emoji: "🛌",
+    text: "睡眠・疲労の回復について当てはまるのは？",
+    options: [
+      { icon: "😪", text: "寝ても疲れが取れないことが多い", tags: ["fatigue", "pain"] },
+      { icon: "🌙", text: "寝つきが悪い・眠りが浅い", tags: ["fatigue"] },
+      { icon: "✅", text: "睡眠は特に問題ない", tags: ["goal", "muscle"] },
+      { icon: "🤔", text: "あまり気にしたことがなかった", tags: ["goal"] },
+    ]
+  },
+  {
+    emoji: "🏋️",
+    text: "これまでの運動経験はどのくらいですか？",
+    options: [
+      { icon: "🔰", text: "ほぼなし・久しぶり", tags: ["beginner", "posture"] },
+      { icon: "🚶", text: "ウォーキング程度はしている", tags: ["functional"] },
+      { icon: "🏃", text: "ジムや運動を少しやっていた", tags: ["muscle"] },
+      { icon: "💪", text: "わりと継続的に運動してきた", tags: ["muscle", "functional"] },
+    ]
+  }
+];
+
+const results = {
+  rehab: {
+    emoji: "🔧",
+    type: "タイプA ／ 機能回復型",
+    title: "<span>まず「痛みと歪み」を</span>リセットするべきです",
+    desc: "あなたはカラダの緊張が強く、長年の姿勢や動きのクセでカラダに結構な負担がかかっています。鍛えることも重要ですが、まず今の段階ではハードに鍛えるよりも、カラダの緊張を抜いて、力をコントロールし、カラダへの負担を少なくすることが最重要です。カラダへの負担がかからない状態を運動とコンディショニングで作っていきましょう。そうすることで、不調が減り、日々が過ごしやすくなります。",
+    issues: [
+      "筋肉のアンバランスによる慢性的な腰痛・肩こり",
+      "関節への負担が大きく、普通の運動でも痛みが出やすい",
+      "姿勢の崩れが内臓の圧迫・代謝低下を招いている可能性"
+    ],
+    approach: [
+      "コンディショニング：カラダの無駄な緊張をとることが必要です。特に背面の筋肉がかなり緊張し、前面の筋肉は上手に働いていません。筋肉の緊張のバランスを整えます。",
+      "トレーニング：動きを鍛える必要があります。下半身で床を押す動きや上半身で物を押す動きから鍛える必要があります。",
+      "姿勢：筋肉でガチガチに固めて立っている状態なので、自然と楽に立てる状態をつくります。その後、歩行や様々な運動でも良い姿勢で動ける状態にするアプローチをおこないます。"
+    ],
+    cta: {
+      heading: "まずはあなた自身のクセを知り、<br>解決できるイメージを体験してみませんか？",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  },
+  diet_posture: {
+    emoji: "🔥",
+    type: "タイプB ／ 代謝改善型",
+    title: "<span>「筋肉×姿勢」を同時に</span>整えるべきです",
+    desc: "あなたは単なる体重が増えたと感じるだけでなく、脂肪量が増えた、筋肉が落ちた、猫背になっている、巻き肩になっている、太ももがパンパンなど体型の問題が複数重なって今のカラダを作っているタイプです。このタイプの方はランニングなどの有酸素運動だけやって脂肪を落としても、見た目は大きく変わりにくいです。あなたに必要なのは姿勢を整え、動きを鍛えて、楽に動けるカラダをつくり、必要な筋肉をつけていくことです。",
+    issues: [
+      "体幹が弱く、ぽっこりお腹・猫背が改善しない",
+      "有酸素だけでは体型が変わらず、リバウンドしやすい",
+      "姿勢不良のまま運動すると膝・腰に負担がかかる"
+    ],
+    approach: [
+      "使いすぎている筋肉は押さえる",
+      "呼吸機能を体幹と連動して、整え、鍛える",
+      "動きを鍛えるトレーニングで、あなたに必要な筋肉を自然に増やし、勝手に引き締まる状態にする"
+    ],
+    cta: {
+      heading: "自己流で遠回りするのはやめませんか？<br>体験トレーニングであなたに必要な運動をトライしてみましょう！",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  },
+  muscle: {
+    emoji: "⚡",
+    type: "タイプC ／ 筋力強化型",
+    title: "<span>「効率的な筋肥大」に</span>フォーカスするべきです",
+    desc: "あなたは運動経験があるが、求めている程の効果が出ていないと感じているのではないでしょうか？トレーニングにおいては頑張って正しくフォームができている気がするけど、なんかしっくりこない、みたいなこともあるかと思います。あなたの努力は無駄ではありません。ただ、必要な要素が欠けているだけです。トレーニングの前段階で、あなたに必要なコンディショニングとエクササイズをおこなうだけで、大きく変化します。「効かせるトレーニング」ではなく、「勝手に効くトレーニング」へ。",
+    issues: [
+      "同じトレーニングを繰り返しても変化が出にくい",
+      "特定の筋肉だけ発達してアンバランスになりやすい",
+      "フォームのクセで関節に無駄な負担がかかっている"
+    ],
+    approach: [
+      "脳や目などの感覚を見直す",
+      "カラダの緊張をコントロール",
+      "動作を鍛えるトレーニングを追加する"
+    ],
+    cta: {
+      heading: "停滞を突破するフォーム分析を<br>体験セッションで受けてみませんか？",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  },
+  fatigue: {
+    emoji: "🌿",
+    type: "タイプD ／ 自律神経・回復型",
+    title: "<span>「疲れない体」を</span>先につくるべきです",
+    desc: "あなたは日々、重だるい状態で過ごされていますね。今のあなたは活動できる体力もないし、気力もない。だから、とにかく休めるときは休もう・・・と考えているはずです。ただ、とにかく寝る、ゆっくりするだけで今まであまり効果を感じてこなかったのも事実としてあるかと思います。実は今のあなたに大切なのは、以下の３つです。\n◯カラダの無駄な緊張を取り除く\n◯適切な呼吸へ調整する（酸素をカラダに取り込みにくい状態）\n◯しっかりカラダを動かす",
+    issues: [
+      "筋肉が慢性的に緊張し、深呼吸がしづらい状態",
+      "血流が悪く、栄養・酸素が末端まで届いていない",
+      "睡眠の質が低く、成長ホルモンの分泌が不十分"
+    ],
+    approach: [
+      "コンディショニングで自律神経のバランスを整える",
+      "呼吸・インナーマッスルトレーニングで体の土台を作る",
+      "強度を段階的に上げ、回復力を高めながら進める"
+    ],
+    cta: {
+      heading: "今までにない、活動的な、過ごしやすいカラダで<br>日々を過ごしてみませんか？",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  },
+  functional: {
+    emoji: "🏃",
+    type: "タイプE ／ 機能的体力型",
+    title: "<span>「動ける体」の質を</span>一段上げるべきです",
+    desc: "あなたは今まで運動した経験と自信をお持ちのはずです。だからこそ、現状で動けていない箇所がある、正しい動きができていないという自覚があるはずです。また、あなたがまだ自覚していない、正しくできない動きもあるだろうと感じているはずです。\n\n◯過剰に使われている部位があり、バランスが崩れている\n◯筋力や柔軟性の左右差があり、上手に動けない、不調が出る、張りやすい\n◯頭では理解しているが、実際にその通りに動かせない\n\nこういったことが当てはまるのではないでしょうか？\n日常も運動も、足を引っ張る原因を無くし、動きを鍛えることで、今までとガラリとカラダが変化します。",
+    issues: [
+      "片側の筋肉だけ強くなり、左右差が生まれている",
+      "動きの中でどこかに余計な力みが生まれている",
+      "柔軟性と筋力のバランスが取れていない"
+    ],
+    approach: [
+      "カラダを動かす感覚から整えて、無駄な緊張をとり、カラダをコントロールしやすくする",
+      "カラダの安定性・可動性を状況に応じて最大限発揮できる状態にする",
+      "場面場面で必要な動きをイメージ通りに再現できるように動きを鍛える"
+    ],
+    cta: {
+      heading: "動きを鍛えて、もっと動けるカラダに<br>なりませんか？",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  },
+  beginner: {
+    emoji: "🌱",
+    type: "タイプF ／ 習慣定着型",
+    title: "<span>「続けられる仕組み」から</span>始めるべきです",
+    desc: "あなたは、運動習慣がない、運動って何やったらいいかわからない、今までジムに入会してみたけどすぐ辞めた、運動の必要性は感じているといった感じかと思います。ただ、１歩踏み出せない、怖い、キツいのが苦手、筋肉痛が嫌だ、などのネガティブなイメージをお持ちなのではないでしょうか。\nそんなあなたにおすすめなのがパーソナルトレーニングです。自分ではやり方がわからない、自分に甘くしちゃうので、今日は運動するのはやめておこう、ちょびっとだけにしておこうなどの自分のさじ加減で運動の質や量が決まってしまうことがありません。また、予約してその日に行く必要があるので、自分だけの都合で運動をしないという判断がしにくいです。そして、運動の強度は専門家であるパーソナルトレーナーがあなたに合わせたメニューをちょうど良いキツさで選んでくれます。楽すぎず、キツすぎずを継続することで、運動習慣がつき、カラダの状態も大きく変化します。",
+    issues: [
+      "急に始めた運動で筋肉痛・怪我をして挫折しやすい",
+      "どこから始めればいいかわからず、間違った方法を続けてしまう",
+      "モチベーションの波に左右されてやめてしまう"
+    ],
+    approach: [
+      "現在の体の状態を正確に把握してから始める",
+      "無理のない強度で「運動が楽しい」という感覚を育てる",
+      "習慣化のためのマインドセットと環境づくりをサポート"
+    ],
+    cta: {
+      heading: "あなたでもきっと運動を続けられます！",
+      button: "体験セッションを予約する（¥5,500）"
+    }
+  }
+};
+
+let currentQ = 0;
+let scores = {};
+
+function startQuiz() {
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('quiz').classList.add('active');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  const fill = ((currentQ) / questions.length) * 100;
+  document.getElementById('progressFill').style.width = fill + '%';
+  document.getElementById('progressLabel').textContent = (currentQ + 1) + ' / ' + questions.length;
+
+  const card = document.getElementById('questionCard');
+  card.innerHTML = `
+    <div class="q-num">Q${currentQ + 1}</div>
+    <span class="q-emoji">${q.emoji}</span>
+    <div class="q-text">${q.text}</div>
+    <div class="options">
+      ${q.options.map((opt, i) => `
+        <button class="option-btn" onclick="selectOption(${i})">
+          <span class="opt-icon">${opt.icon}</span>
+          <span class="opt-text">${opt.text}</span>
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+function selectOption(idx) {
+  const tags = questions[currentQ].options[idx].tags;
+  tags.forEach(t => { scores[t] = (scores[t] || 0) + 1; });
+
+  currentQ++;
+  if (currentQ < questions.length) {
+    document.getElementById('progressFill').style.width = (currentQ / questions.length * 100) + '%';
+    document.getElementById('progressLabel').textContent = (currentQ + 1) + ' / ' + questions.length;
+    document.getElementById('questionCard').style.animation = 'none';
+    setTimeout(() => {
+      document.getElementById('questionCard').style.animation = '';
+      renderQuestion();
+    }, 50);
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('quiz').classList.remove('active');
+
+  // スコアで結果を決定
+  const priority = [
+    { key: 'pain',      type: 'rehab' },
+    { key: 'rehab',     type: 'rehab' },
+    { key: 'fatigue',   type: 'fatigue' },
+    { key: 'beginner',  type: 'beginner' },
+    { key: 'diet',      type: 'diet_posture' },
+    { key: 'posture',   type: 'diet_posture' },
+    { key: 'muscle',    type: 'muscle' },
+    { key: 'sedentary', type: 'diet_posture' },
+    { key: 'functional',type: 'functional' },
+    { key: 'goal',      type: 'muscle' },
+  ];
+
+  let bestType = 'beginner';
+  let bestScore = 0;
+  for (const p of priority) {
+    const s = scores[p.key] || 0;
+    if (s > bestScore) { bestScore = s; bestType = p.type; }
+  }
+
+  const r = results[bestType];
+  currentType = bestType;
+  document.getElementById('resultEmoji').textContent = r.emoji;
+  document.getElementById('resultType').textContent = r.type;
+  document.getElementById('resultTitle').innerHTML = r.title;
+  document.getElementById('resultDesc').textContent = r.desc;
+
+  document.getElementById('resultIssues').innerHTML = r.issues.map(i =>
+    `<div class="issue-item"><div class="issue-dot"></div><div>${i}</div></div>`
+  ).join('');
+  document.getElementById('resultApproach').innerHTML = r.approach.map((a, i) =>
+    `<div class="approach-item"><div class="approach-num">${i+1}</div><div>${a}</div></div>`
+  ).join('');
+
+  document.getElementById('ctaHeading').innerHTML = r.cta.heading;
+
+  document.getElementById('result').classList.add('active');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  gtag('event', 'shindan_result', {
+    result_type: bestType
+  });
+}
+
+// タイプ × 店舗 → LP URL
+const lpMap = {
+  rehab: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/posture-yakuin.html',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/posture-akasaka.html',
+  },
+  diet_posture: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+  },
+  muscle: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+  },
+  fatigue: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+  },
+  functional: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/pilates-yakuin.html',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/pilates-akasaka.html',
+  },
+  beginner: {
+    yakuin:  'https://lp-yakuin01.5toolgym.workers.dev/',
+    akasaka: 'https://lp-akasaka01.5toolgym.workers.dev/',
+  },
+};
+
+let currentType = 'beginner';
+
+function goToLP(store) {
+  gtag('event', 'store_select', {
+    result_type: currentType,
+    store: store
+  });
+  const url = lpMap[currentType][store];
+  window.location.href = url;
+}
+
+function retryQuiz() {
+  gtag('event', 'shindan_retry');
+  currentQ = 0;
+  scores = {};
+  document.getElementById('result').classList.remove('active');
+  document.getElementById('quiz').classList.add('active');
+  renderQuestion();
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
