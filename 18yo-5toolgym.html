@@ -210,6 +210,128 @@
     .contact-info p {
       margin-bottom: 10px;
     }
+    /* メソッドフロー */
+    .method-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 28px 0;
+    }
+    .method-flow-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .method-flow-item:last-child { border-bottom: none; }
+    .method-flow-icon {
+      width: 34px;
+      height: 34px;
+      background: #2D7A7A;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .method-flow-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+    .method-flow-text span {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+    .method-badge {
+      background: #f7f7f5;
+      border-left: 3px solid #2D7A7A;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.8;
+    }
+    /* 体験フロー */
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .flow-step {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 18px 18px 18px 64px;
+      position: relative;
+    }
+    .flow-step-num {
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 34px;
+      height: 34px;
+      background: #2D7A7A;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .flow-step-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .flow-step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .flow-step-time {
+      font-size: 12px;
+      color: #888;
+      font-family: 'Outfit', sans-serif;
+    }
+    .flow-step-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 6px !important;
+    }
+    .flow-step-feel {
+      font-size: 13px;
+      color: #2D7A7A;
+      line-height: 1.6;
+      margin-bottom: 0 !important;
+    }
+    .flow-closing {
+      background: #2D7A7A;
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .flow-closing p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 !important;
+      color: #fff !important;
+    }
   </style>
 </head>
 <body>
@@ -319,30 +441,52 @@
 <!-- 哲学 -->
 <section class="section">
   <div class="container">
-    <h2>5toolgymの考え方。</h2>
-    
-    <p>5toolgymが大事にしてることは、<br>
-    「楽に、強く、心地よく」という3つのキーワード。</p>
-    
-    <p>「楽に」とは、<br>
-    カラダに無理がない。疲れない。続きやすい。</p>
-    
-    <p>「強く」とは、<br>
-    見た目だけじゃなく、動きが強い。<br>
-    走れる、飛べる、日常のあらゆる動きが強い。</p>
-    
-    <p>「心地よく」とは、<br>
-    トレーニングそのものが楽しい。<br>
-    カラダが整うことで、心も安定する。<br>
-    朝起きるのが楽しくなる。</p>
-    
-    <p>つまり、5toolgymのゴールは、<br>
-    「ムキムキになること」ではなく、<br>
-    「カラダが整ったことを、毎日感じられる状態」。</p>
-    
-    <p>それが、18歳のあの感覚。<br>
-    「何でも挑戦したい、毎日を全力で楽しみたい」<br>
-    という感覚なんです。</p>
+    <h2>5toolgymが「筋肉」ではなく<br>「動き」を整える理由</h2>
+
+    <p>多くのジムは「筋肉量を増やす」ことを目指します。<br>
+    でも5toolgymが最初に整えるのは、「動きの質」です。<br>
+    なぜなら、動きが整わないと筋肉は正しく機能しないから。</p>
+
+    <div class="method-flow">
+      <div class="method-flow-item">
+        <div class="method-flow-icon">1</div>
+        <div class="method-flow-text">
+          <strong>関節が正しく動く</strong>
+          <span>硬くなった関節を解放し、本来の可動域を取り戻す</span>
+        </div>
+      </div>
+      <div class="method-flow-item">
+        <div class="method-flow-icon">2</div>
+        <div class="method-flow-text">
+          <strong>神経系が活性化する</strong>
+          <span>動きの情報が脳に正しく伝わるようになる</span>
+        </div>
+      </div>
+      <div class="method-flow-item">
+        <div class="method-flow-icon">3</div>
+        <div class="method-flow-text">
+          <strong>脳がカラダを正確にコントロールする</strong>
+          <span>「無意識に正しい動き」ができるようになる</span>
+        </div>
+      </div>
+      <div class="method-flow-item">
+        <div class="method-flow-icon">4</div>
+        <div class="method-flow-text">
+          <strong>姿勢が整い、日常が変わる</strong>
+          <span>疲れにくい・痛みが減る・見た目が整う</span>
+        </div>
+      </div>
+    </div>
+
+    <p>つまり、5toolgymのゴールは「ムキムキになること」ではなく、<br>
+    「カラダが整ったことを、毎日感じられる状態」。<br>
+    それが「楽に、強く、心地よく」という哲学です。</p>
+
+    <div class="method-badge">
+      NCCA（全日本コンディショニングコーチ協会）講師資格とは、<br>
+      トレーナーを育てる側の資格です。<br>
+      カラダの根本から整えるアプローチを、高い専門性で指導しています。
+    </div>
   </div>
 </section>
 
@@ -374,33 +518,64 @@
 <!-- 体験の流れ -->
 <section class="section">
   <div class="container">
-    <h2>体験トレーニング当日の流れ。トータル90分です。</h2>
-    
-    <p><strong>1. カウンセリング</strong><br>
-    最初に、あなたの悩みや目標をお聞きします。<br>
-    「今のカラダのどこが問題なのか」を一緒に整理する時間です。</p>
-    
-    <p><strong>2. カラダの評価</strong><br>
-    姿勢、動き、不調の原因を見ていきます。<br>
-    「あ、ここが硬い」「ここが弱い」という発見が起きます。</p>
-    
-    <p><strong>3. 改善エクササイズ</strong><br>
-    あなたのボトルネックに対して、<br>
-    その場で改善するエクササイズを実施。<br>
-    「さっきより動きやすくなった」という変化を体感します。</p>
-    
-    <p><strong>4. トレーニング</strong><br>
-    本格的なトレーニング。<br>
-    疲れすぎない、でも効く、という強度で進めます。</p>
-    
-    <p><strong>5. パーソナルストレッチ</strong><br>
-    セッション後のストレッチ。<br>
-    心地よい疲れと、カラダの軽さを感じます。</p>
-    
-    <p><strong>重要：勧誘はしません。</strong><br>
-    体験を受けて「合わないな」と思ったら、<br>
-    そのまま帰ってもらってOK。<br>
-    強引に入会を促すことは一切ありません。</p>
+    <h2>体験セッション90分、<br>何が起きるか</h2>
+
+    <p>「体験って、入会を勧められるだけじゃないの？」<br>
+    そう思っている方へ。5toolgymの体験は違います。</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">①</div>
+        <div class="flow-step-header">
+          <span class="flow-step-title">カウンセリング</span>
+          <span class="flow-step-time">約10分</span>
+        </div>
+        <p class="flow-step-desc">今の悩み・目標・生活スタイルをじっくりヒアリング。「何から始めればいいか」を一緒に整理します。</p>
+        <p class="flow-step-feel">「腰痛だと思っていたのに、股関節の問題だとわかった」という気づきが起きる場です。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">②</div>
+        <div class="flow-step-header">
+          <span class="flow-step-title">カラダの評価</span>
+          <span class="flow-step-time">約15分</span>
+        </div>
+        <p class="flow-step-desc">姿勢・関節の動き・筋肉のバランスをチェック。写真で記録し、あなたの現状を「見える化」します。</p>
+        <p class="flow-step-feel">「え、こんなに姿勢が悪かったんですか？」という驚きが生まれる瞬間。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">③</div>
+        <div class="flow-step-header">
+          <span class="flow-step-title">改善エクササイズ＆トレーニング</span>
+          <span class="flow-step-time">約30分</span>
+        </div>
+        <p class="flow-step-desc">評価に基づいた改善エクサ＋トレーニング。「動きが変わる感覚」をその場で体感します。</p>
+        <p class="flow-step-feel">「さっきまで固かった部分が、今は動いている」という実感。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">④</div>
+        <div class="flow-step-header">
+          <span class="flow-step-title">パーソナルストレッチ</span>
+          <span class="flow-step-time">約20分</span>
+        </div>
+        <p class="flow-step-desc">トレーニング後の疲労・こわばりをケア。「疲れを取る」ではなく「カラダを整えて終わる」時間です。</p>
+        <p class="flow-step-feel">「あ、これが楽になるってことか」という体感。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">⑤</div>
+        <div class="flow-step-header">
+          <span class="flow-step-title">フィードバック＆ご提案</span>
+          <span class="flow-step-time">約15分</span>
+        </div>
+        <p class="flow-step-desc">今日の気づきと、これからの改善プランを共有。ご質問も遠慮なくどうぞ。無理な勧誘はしません。</p>
+        <p class="flow-step-feel">「自分のカラダに何が必要か、わかった」という明確さが残ります。</p>
+      </div>
+    </div>
+
+    <div class="flow-closing">
+      <p><strong>「体験だけのつもりが、続けたくなった」</strong><br>
+      体験→入会転換率90%。多くの方がその場で「続けたい」と言ってくれます。<br>
+      それはテクニックではなく、あなたのカラダが変化を感じるから。</p>
+    </div>
   </div>
 </section>
 
