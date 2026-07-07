@@ -119,6 +119,36 @@
       line-height: 1.8;
     }
     
+    /* トレーナーカード */
+    .trainer-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .trainer-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .trainer-card .trainer-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .trainer-card .trainer-desc {
+      font-size: 12px !important;
+      color: #555;
+      line-height: 1.7 !important;
+      margin-bottom: 0 !important;
+    }
+    @media (max-width: 500px) {
+      .trainer-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+
     /* 挨拶画像 */
     .greeting-image {
       width: 100%;
@@ -387,27 +417,28 @@
     3ヶ月、6ヶ月先のゴールに向かって<br>
     一緒に歩んでいく人です。</p>
     
-    <p><strong>柴山（オーナートレーナー）</strong><br>
-    5toolgymの理念である「楽に、強く、心地よく」を体現するトレーナー。<br>
-    カラダ評価から改善まで、<br>
-    全領域を見ることができる。</p>
-    
-    <p><strong>伊良部</strong><br>
-    男性トレーナー。<br>
-    丁寧なカウンセリングと、<br>
-    わかりやすい指導が特徴。<br>
-    初めての方も安心して任せられます。</p>
-    
-    <p><strong>髙須</strong><br>
-    男性トレーナー。<br>
-    強度の高いトレーニングが得意。<br>
-    「もっと追い込みたい」という方向き。</p>
-    
-    <p><strong>manami</strong><br>
-    女性トレーナー。<br>
-    女性ならではの視点で、<br>
-    姿勢や動きを細かく指導。<br>
-    女性ならではの悩みにも対応します。</p>
+    <div class="trainer-cards">
+      <div class="trainer-card">
+        <img src="/images/trainer-shibayama-plain.webp" alt="柴山トレーナー">
+        <p class="trainer-name">柴山（オーナートレーナー）</p>
+        <p class="trainer-desc">「楽に、強く、心地よく」を体現するトレーナー。カラダ評価から改善まで全領域を担当。</p>
+      </div>
+      <div class="trainer-card">
+        <img src="/images/trainer-irabe.webp" alt="伊良部トレーナー">
+        <p class="trainer-name">伊良部</p>
+        <p class="trainer-desc">丁寧なカウンセリングとわかりやすい指導が特徴。初めての方も安心して任せられます。</p>
+      </div>
+      <div class="trainer-card">
+        <img src="/images/trainer-takasu.webp" alt="髙須トレーナー">
+        <p class="trainer-name">髙須</p>
+        <p class="trainer-desc">強度の高いトレーニングが得意。「もっと追い込みたい」という方に。</p>
+      </div>
+      <div class="trainer-card">
+        <img src="/images/trainer-manami-plain.webp" alt="manamiトレーナー">
+        <p class="trainer-name">manami</p>
+        <p class="trainer-desc">女性ならではの視点で姿勢や動きを細かく指導。女性特有の悩みにも対応します。</p>
+      </div>
+    </div>
     
     <p>どのトレーナーが担当になっても、<br>
     5toolgymの哲学は共通。<br>
