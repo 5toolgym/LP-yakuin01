@@ -4,7 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>5toolgym 薬院店 | パーソナルトレーニングジム 福岡</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<meta name="description" content="福岡・薬院のパーソナルジム5toolgym。筋肉を鍛えるのではなく、動きを鍛える。体型・姿勢・不調がまとめて整うトレーニング。体験90分¥5,500、当日入会で無料。薬院大通駅徒歩2分。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="5toolgym 薬院店 | 動きを鍛える、パーソナルジム 福岡">
+<meta property="og:description" content="食事制限でも激しい運動でもない。体の使い方を変えることで、体型・姿勢・不調がまとめて整っていく。体験90分¥5,500。">
+<meta property="og:image" content="https://lp-yakuin01.5toolgym.workers.dev/images/fv-sns-card.webp">
+<meta property="og:url" content="https://lp-yakuin01.5toolgym.workers.dev/5toolgym_lp_yakuin_sasaru">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+<!-- GA4（LP用プロパティIDに差し替えること。G-28580FZYHBはFitLab用のため使用禁止） -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script> -->
+<!-- Microsoft Clarity（既存プロジェクトIDをCLARITY_PROJECT_IDに差し替えること） -->
+<!-- <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window, document, "clarity", "script", "CLARITY_PROJECT_ID");</script> -->
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -447,13 +465,145 @@ section { padding: 88px 0; }
   .trust-cards, .price-cards, .trainer-cards { grid-template-columns: 1fr; }
   .dig-answer, .diff-body, .trust-body, .cta-card, .after-scene { padding: 24px 20px; }
 }
+
+/* スマホ用下部固定CTA */
+.sticky-cta-mobile {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; padding: 12px 16px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.12);
+  z-index: 1000; align-items: center; gap: 12px;
+  border-top: 2px solid var(--coral-mid);
+}
+.sticky-cta-mobile p { font-size: 13px; font-weight: 700; line-height: 1.4; color: var(--text); flex: 1; }
+.sticky-cta-mobile p span { font-size: 11px; color: #777; display: block; font-weight: 500; }
+.sticky-cta-mobile-btn {
+  background: var(--coral); color: #fff; font-size: 14px; font-weight: 900;
+  font-family: var(--sans); border-radius: 50px; padding: 12px 20px;
+  text-decoration: none; white-space: nowrap; letter-spacing: 0.04em;
+}
+@media (max-width: 768px) {
+  .sticky-cta-mobile { display: flex; }
+  .sticky-bar { display: none; }
+  body { font-size: 19px; }
+  .footer { padding-bottom: 80px; }
+}
+
+/* 中間CTA */
+.cta-mid { background: var(--coral-bg); padding: 48px 0; }
+.cta-mid-card {
+  max-width: 700px; margin: 0 auto; padding: 32px 28px;
+  background: #fff; border-radius: 20px; border: 2px solid var(--coral-mid);
+  text-align: center;
+}
+.cta-mid-card h3 {
+  font-family: var(--serif); font-size: clamp(18px, 3vw, 22px);
+  font-weight: 700; color: var(--text); margin-bottom: 6px;
+}
+.cta-mid-card p { font-size: 14px; color: var(--text); margin-bottom: 20px; font-weight: 500; }
+.btn-cta-mid {
+  display: inline-block; background: var(--coral); color: #fff;
+  font-family: var(--sans); font-size: 17px; font-weight: 900;
+  padding: 16px 36px; border-radius: 50px; text-decoration: none; letter-spacing: 0.04em;
+}
+
+/* HONESTY section */
+.honesty-section { background: var(--mint); }
+.honesty-inner {
+  background: #fff; border-radius: 0 16px 16px 0;
+  padding: 36px 40px; border-left: 5px solid var(--teal);
+}
+.honesty-inner p {
+  font-family: var(--serif); font-size: clamp(18px, 2.8vw, 22px);
+  line-height: 2.1; color: var(--text);
+}
+.honesty-inner p + p { margin-top: 24px; }
+@media (max-width: 520px) { .honesty-inner { padding: 24px 20px; } }
+
+/* 種明かしセクション */
+.reveal-section { background: var(--mint); }
+.reveal-bridge {
+  font-family: var(--serif); font-size: clamp(21px, 3.5vw, 29px);
+  line-height: 2.0; color: var(--text); margin-bottom: 40px; font-weight: 700;
+}
+.reveal-divider {
+  text-align: center; font-size: 14px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--teal-dark); margin: 40px 0 32px;
+  display: flex; align-items: center; gap: 16px;
+}
+.reveal-divider::before, .reveal-divider::after { content: ''; flex: 1; height: 2px; background: var(--mint-mid); }
+.reveal-body { font-size: clamp(18px, 2.8vw, 22px); line-height: 2.1; color: var(--text); }
+
+/* 個人の感想注記 */
+.individual-note {
+  font-size: 12px !important; color: #aaa !important;
+  margin-top: 8px !important; line-height: 1.4 !important;
+  text-align: right; display: block;
+}
+
+/* TRUST 証拠B */
+.trust-evidence-b {
+  font-size: clamp(16px, 2.3vw, 18px); color: var(--text);
+  line-height: 2.0; font-weight: 500; margin-top: 28px;
+  padding-top: 24px; border-top: 2px solid var(--mint-mid);
+  font-family: var(--serif);
+}
+
+/* 料金テーブル（新デザイン） */
+.price-experience-box {
+  background: var(--coral-bg); border: 2px solid var(--coral-mid);
+  border-radius: 16px; padding: 28px 24px; margin-bottom: 24px; text-align: center;
+}
+.price-experience-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--coral); margin-bottom: 10px; display: block;
+}
+.price-experience-amount {
+  font-family: 'Outfit', var(--serif); font-size: clamp(44px, 8vw, 60px);
+  font-weight: 900; color: var(--coral); line-height: 1.1;
+}
+.price-experience-yen { font-size: 0.5em; vertical-align: middle; }
+.price-experience-note { font-size: 15px; color: var(--text); margin-top: 10px; font-weight: 500; }
+.price-table {
+  background: #fff; border-radius: 16px; border: 2px solid var(--mint-mid);
+  overflow: hidden; margin-bottom: 24px;
+}
+.price-section-label {
+  background: var(--mint); padding: 10px 24px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em; color: var(--teal);
+}
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px; border-bottom: 1px solid var(--mint);
+}
+.price-row:last-child { border-bottom: none; }
+.price-row.featured { background: var(--coral-bg); }
+.price-row-left { display: flex; flex-direction: column; gap: 2px; }
+.price-row-label {
+  font-family: var(--serif); font-size: clamp(16px, 2.5vw, 18px); font-weight: 700; color: var(--text);
+}
+.price-row-sub { font-size: 12px; color: #888; font-weight: 500; }
+.price-tag-popular {
+  font-size: 11px; font-weight: 700; background: var(--coral); color: #fff;
+  padding: 2px 8px; border-radius: 50px; margin-left: 6px; vertical-align: middle;
+}
+.price-row-amount {
+  font-family: 'Outfit', var(--sans); font-size: clamp(18px, 3vw, 22px);
+  font-weight: 900; color: var(--teal-dark); white-space: nowrap;
+}
 </style>
 </head>
 <body>
 
 <div class="sticky-bar">
   <p>体験セッション 90分<span>当日入会で無料</span></p>
-  <a href="#cta" class="sticky-btn">今すぐ予約 ¥5,500</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="gtag('event','cta_click',{section:'stickybar'})" class="sticky-btn">今すぐ予約 ¥5,500</a>
+</div>
+
+<!-- スマホ用下部固定CTA（768px以下のみ表示） -->
+<div class="sticky-cta-mobile">
+  <p>体験90分 ¥5,500<span>当日入会で無料になります</span></p>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="gtag('event','cta_click',{section:'stickybar_mobile'})" class="sticky-cta-mobile-btn">体験を予約する</a>
 </div>
 
 <!-- ① HERO -->
@@ -463,7 +613,7 @@ section { padding: 88px 0; }
     <img src="/images/fv-sns-card.webp" alt="食事を我慢して運動すれば痩せるよね？というあの頃の会話" class="fv-sns-card" loading="eager">
     <div class="hero-quote">「結局、食事を我慢して<br>運動すれば痩せるんでしょ?」</div>
     <p class="hero-sub">あの頃の私に戻って、<br>本当に足りないものを教えてあげたい。</p>
-    <a href="#cta" class="btn-coral">体験予約はこちら →</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=fv" onclick="gtag('event','cta_click',{section:'fv'})" class="btn-coral">体験予約はこちら →</a>
     <span class="btn-note">¥5,500 ／ 当日入会で無料になります</span>
   </div>
 </section>
@@ -505,6 +655,19 @@ section { padding: 88px 0; }
   </div>
 </section>
 
+<!-- HONESTY -->
+<section class="honesty-section">
+  <div class="container">
+    <span class="eyebrow">HONESTY</span>
+    <div class="honesty-inner">
+      <p>正直に言うと、<br>5toolgymが向かない方もいます。</p>
+      <p>とにかく最短で、体重の数字だけを落としたい方。<br>追い込まれる激しいトレーニングを求める方。<br>この2つなら、短期減量に特化したジムのほうが合っています。</p>
+      <p>私たちがやるのは、体の使い方を変えて、<br>体型・姿勢・不調がまとめて整っていく道です。<br>時間は少しかかります。<br>その代わり、「やめたら戻る」を繰り返さない体になっていきます。</p>
+      <p>体験して合わなければ、入会しなくて大丈夫です。</p>
+    </div>
+  </div>
+</section>
+
 <!-- ④ 5toolgym -->
 <section class="gym-section">
   <div class="container">
@@ -513,7 +676,7 @@ section { padding: 88px 0; }
     <ul class="gym-list">
       <li><span class="num">01</span>体型が変わり</li>
       <li><span class="num">02</span>姿勢が整い</li>
-      <li><span class="num">03</span>不調が消え</li>
+      <li><span class="num">03</span>不調が起きにくくなり</li>
       <li><span class="num">04</span>動きやすくなり</li>
       <li><span class="num">05</span>メンタルまで安定する</li>
     </ul>
@@ -534,7 +697,7 @@ section { padding: 88px 0; }
         人生で一度も腕立て伏せができなかった。<br>
         それが、1回だけできるようになった。<br>
         「先生、できました！」<br>
-        そう報告してくれた顔が、忘れられない。
+        そう報告した日のことを、今も覚えている。
       </p>
       <p>
         階段を上っても息が切れなくなって、<br>
@@ -570,8 +733,18 @@ section { padding: 88px 0; }
       そういう場所になっているから、続いているんです。
     </div>
     <picture style="display:block;width:100%;aspect-ratio:4/3;margin:40px 0;border-radius:12px;overflow:hidden;"><source srcset="images/gym-interior-yakuin.webp" type="image/webp"><img src="images/gym-interior-yakuin.jpg" alt="5toolgym薬院店 店舗内装" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
+    <p class="trust-evidence-b">派手なビフォーアフター写真は、ここには載せていません。<br>当ジムの新しいお客様の多くは、広告ではなく、<br>Googleマップの評価と、通っている方からの紹介で来られます。</p>
   </div>
 </section>
+
+<!-- TRUST後 中間CTA -->
+<div class="cta-mid">
+  <div class="cta-mid-card">
+    <h3>体験セッション（90分）</h3>
+    <p>¥5,500 ／ 当日入会で無料になります</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=trust" onclick="gtag('event','cta_click',{section:'trust'})" class="btn-cta-mid">体験を予約する →</a>
+  </div>
+</div>
 
 <!-- Google評価 -->
 <section class="google-metrics">
@@ -591,31 +764,6 @@ section { padding: 88px 0; }
   </div>
 </section>
 
-<!-- アメニティ（薬院） -->
-<section class="amenity-sasaru">
-  <div class="container">
-    <span class="eyebrow">FACILITIES</span>
-    <h2>24時間ジム併設だから、<br>トレーニング後も自由</h2>
-    <p class="amenity-sasaru-lead">パーソナルセッションで整えたカラダを、フリーエリアで自分のペースで鍛えられる。週1のパーソナル＋自主練のサイクルが作れる環境です。</p>
-    <div class="amenity-sasaru-grid">
-      <div class="amenity-sasaru-card">
-        <img src="/images/amenity-24h-gym.webp" alt="24時間フリーウェイトエリア" loading="lazy">
-        <div class="amenity-sasaru-body">
-          <h3>24時間フリートレーニング</h3>
-          <p>パーソナル以外の時間もいつでも使える。</p>
-        </div>
-      </div>
-      <div class="amenity-sasaru-card">
-        <img src="/images/amenity-locker.webp" alt="ロッカー・パウダールーム" loading="lazy">
-        <div class="amenity-sasaru-body">
-          <h3>パウダー＆ロッカー</h3>
-          <p>着替えも荷物も安心して預けられます。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ⑥ 会員エピソード -->
 <section class="episode-section">
   <div class="container">
@@ -628,20 +776,40 @@ section { padding: 88px 0; }
       <div class="episode-card">
         <p class="episode-voice">「お願いだから、痩せて」</p>
         <p class="episode-story">息子にそう言われた日、初めて本気になれたというお母さん。カウンセリングで泣きながら話してくれました。今は一緒に走れるようになったと報告をくれました。</p>
+        <span class="individual-note">※個人の感想です</span>
       </div>
       <div class="episode-card">
         <p class="episode-voice">集合写真を見て、怖くなった。</p>
         <p class="episode-story">自分の姿勢の悪さに気づいたのが体験のきっかけ。「写真を撮られるのが嫌じゃなくなった」と3ヶ月後に話してくれました。</p>
+        <span class="individual-note">※個人の感想です</span>
       </div>
       <div class="episode-card">
         <p class="episode-voice">10年間、やってはやめを繰り返してきた。</p>
         <p class="episode-story">誕生日を機に本気を出すと決めて来店。「ここは続く理由がある」と今も通い続けてくれています。</p>
+        <span class="individual-note">※個人の感想です</span>
       </div>
       <div class="episode-highlight">
         <p class="episode-voice">「あと5年、ゴルフを続けられるカラダにしてほしい」</p>
-        <p class="episode-story">80代の女性会員さんの言葉です。<br>その方は5年が経った今も、「またあと5年、ゴルフを続けられるように」とおっしゃっています。<br><br>年齢は関係ありません。動きを鍛えれば、カラダはいくつからでも変わります。</p>
+        <p class="episode-story">80代の女性会員さんの言葉です。<br>その方は5年が経った今も、「またあと5年、ゴルフを続けられるように」とおっしゃっています。<br><br>年齢は関係ありません。動きを鍛えれば、カラダはいくつからでも変わっていきます。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 種明かし（はじめまして、5toolgymです） -->
+<section class="reveal-section">
+  <div class="container">
+    <p class="reveal-bridge">
+      私がそのことに気づけたのは、<br>
+      あるジムに出会ったからでした。
+    </p>
+    <p class="reveal-divider">はじめまして、5toolgymです</p>
+    <p class="reveal-body">
+      今読んでいただいた言葉は、<br>
+      実際に通ってくださっている会員さんの声をもとに書きました。<br><br>
+      「続かない」「変わらない」「年だから仕方ない」<br>
+      そう思って諦めかけていた方が、今日も5toolgymに通い続けてくれています。
+    </p>
   </div>
 </section>
 
@@ -707,6 +875,15 @@ section { padding: 88px 0; }
   </div>
 </section>
 
+<!-- EXPERIENCE後 中間CTA -->
+<div class="cta-mid">
+  <div class="cta-mid-card">
+    <h3>体験セッション（90分）</h3>
+    <p>¥5,500 ／ 当日入会で無料になります</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=experience" onclick="gtag('event','cta_click',{section:'experience'})" class="btn-cta-mid">体験を予約する →</a>
+  </div>
+</div>
+
 <!-- ⑧ FAQ -->
 <section class="faq-section">
   <div class="container">
@@ -715,7 +892,7 @@ section { padding: 88px 0; }
     <ul class="faq-list">
       <li class="faq-item">
         <p class="faq-q">筋肉がムキムキになりませんか?</p>
-        <p class="faq-a">なりません。5toolgymのトレーニングは「動きを整える」ことが目的なので、ボディビルダーのような筋肉にはなりません。引き締まって、動きやすくなる体になります。</p>
+        <p class="faq-a">ボディビルダーのような体を目指すトレーニングではありません。引き締まって、動きやすい体に近づいていきます。</p>
       </li>
       <li class="faq-item">
         <p class="faq-q">運動が苦手でも大丈夫ですか?</p>
@@ -733,6 +910,14 @@ section { padding: 88px 0; }
         <p class="faq-q">年齢が高くても大丈夫ですか?</p>
         <p class="faq-a">もちろんです。80代の会員さんも現役で通ってくださっています。年齢は関係ありません。今のカラダの状態に合わせてプログラムを組みます。</p>
       </li>
+      <li class="faq-item">
+        <p class="faq-q">何回くらいで変化を感じられますか?</p>
+        <p class="faq-a">個人差はありますが、動きやすさや姿勢の変化は初回〜数回で感じる方が多いです。体型の変化は、月4回ペースで2〜3ヶ月が一つの目安です。</p>
+      </li>
+      <li class="faq-item">
+        <p class="faq-q">他のパーソナルジムと何が違うんですか?</p>
+        <p class="faq-a">多くのジムは「筋肉を鍛える」ことから始めます。私たちは「体の使い方」から始めます。順番が逆なだけですが、この順番で、続かなかった方が続くようになっています。</p>
+      </li>
     </ul>
   </div>
 </section>
@@ -743,34 +928,69 @@ section { padding: 88px 0; }
     <span class="eyebrow">PRICE</span>
     <h2>料金プラン</h2>
     <p class="price-sub">
-      私がここを選んだ理由の一つは、<br>
-      自分のペースに合わせたプランを選べたことでした。
+      体験のあと、あなたのペースに合うプランを<br>
+      一緒に選べます。
     </p>
-    <div class="price-cards">
-      <div class="price-card featured">
-        <span class="price-card-label">PERSONAL</span>
-        <h3>パーソナル</h3>
-        <p class="price-range">
-          <span class="from"><span>¥</span>11,000</span>
-          <span class="to">〜 ¥72,800 / 月（8回）</span>
-        </p>
+
+    <div class="price-experience-box">
+      <span class="price-experience-label">TRIAL SESSION</span>
+      <p class="price-experience-amount"><span class="price-experience-yen">¥</span>5,500</p>
+      <p class="price-experience-note">体験セッション（90分）／ 当日入会で無料になります</p>
+    </div>
+
+    <div class="price-table">
+      <div class="price-section-label">入会</div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <span class="price-row-label">入会金</span>
+        </div>
+        <span class="price-row-amount">¥11,000</span>
       </div>
-      <div class="price-card">
-        <span class="price-card-label">PAIR</span>
-        <h3>ペアトレーニング</h3>
-        <p class="price-range">
-          <span class="from"><span>¥</span>7,700</span>
-          <span class="to">〜 ¥40,800 / 月（8回）</span>
-        </p>
+      <div class="price-section-label">パーソナルトレーニング（月額）</div>
+      <div class="price-row featured">
+        <div class="price-row-left">
+          <span class="price-row-label">月4回 <span class="price-tag-popular">おすすめ</span></span>
+          <span class="price-row-sub">1回あたり ¥9,500 ／ 多くの方はここから始めます</span>
+        </div>
+        <span class="price-row-amount">¥38,000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <span class="price-row-label">月6回</span>
+        </div>
+        <span class="price-row-amount">¥55,800</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <span class="price-row-label">月8回</span>
+        </div>
+        <span class="price-row-amount">¥72,800</span>
+      </div>
+      <div class="price-section-label">ペアトレーニング（お1人あたり）</div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <span class="price-row-label">月4回 ほか</span>
+        </div>
+        <span class="price-row-amount">¥22,000〜</span>
       </div>
     </div>
+
     <div class="price-note-box">
-      ご予算やご希望のペースに合わせてプランを選べます。<br>
-      まずは体験セッション（90分 ¥5,500）でお気軽にご相談ください。<br>
-      当日ご入会の場合、体験料は無料になります。
+      すべて税込です。<br>
+      体験のあと、あなたのペースに合うプランを一緒に選べます。<br>
+      合わなければ、入会しなくて大丈夫です。
     </div>
   </div>
 </section>
+
+<!-- PRICE後 中間CTA -->
+<div class="cta-mid">
+  <div class="cta-mid-card">
+    <h3>体験セッション（90分）</h3>
+    <p>¥5,500 ／ 当日入会で無料になります</p>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=price" onclick="gtag('event','cta_click',{section:'price'})" class="btn-cta-mid">体験を予約する →</a>
+  </div>
+</div>
 
 <!-- ⑩ トレーナー -->
 <section class="trainer-section">
@@ -801,7 +1021,7 @@ section { padding: 88px 0; }
         <p class="trainer-name">伊良部</p>
         <span class="trainer-role">トレーナー</span>
         <span class="trainer-store">薬院店・赤坂店</span>
-        <p class="trainer-desc">「続けられる」が一番大切だと思っています。どんなに正しいトレーニングも、続かなければ意味がない。一人ひとりのペースに合わせながら、着実に変化を積み上げていくサポートをします。</p>
+        <p class="trainer-desc">「正しく動けるようになると、トレーニングは楽しくなります。まず動きを見せてください。何が足りないか、一緒に確認しましょう。」</p>
       </div>
       <div class="trainer-card">
         <div class="trainer-avatar"><img src="images/trainer-takasu.webp" alt="髙須" loading="lazy"></div>
@@ -809,6 +1029,31 @@ section { padding: 88px 0; }
         <span class="trainer-role">トレーナー</span>
         <span class="trainer-store">薬院店</span>
         <p class="trainer-desc">ピラティススタジオで、姿勢改善・不調ケアを数多く担当してきました。正しいトレーニングには、正しい身体の動きを学ぶことが鍵です。レッスンを通して、みなさまの毎日を少し楽にしたい。それが私のやりたいことです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑫ アメニティ（薬院） -->
+<section class="amenity-sasaru">
+  <div class="container">
+    <span class="eyebrow">FACILITIES</span>
+    <h2>24時間ジム併設だから、<br>トレーニング後も自由</h2>
+    <p class="amenity-sasaru-lead">パーソナルセッションで整えたカラダを、フリーエリアで自分のペースで鍛えられる。週1のパーソナル＋自主練のサイクルが作れる環境です。</p>
+    <div class="amenity-sasaru-grid">
+      <div class="amenity-sasaru-card">
+        <img src="/images/amenity-24h-gym.webp" alt="24時間フリーウェイトエリア" loading="lazy">
+        <div class="amenity-sasaru-body">
+          <h3>24時間フリートレーニング</h3>
+          <p>パーソナル以外の時間もいつでも使える。</p>
+        </div>
+      </div>
+      <div class="amenity-sasaru-card">
+        <img src="/images/amenity-locker.webp" alt="ロッカー・パウダールーム" loading="lazy">
+        <div class="amenity-sasaru-body">
+          <h3>パウダー＆ロッカー</h3>
+          <p>着替えも荷物も安心して預けられます。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -837,28 +1082,20 @@ section { padding: 88px 0; }
   </div>
 </section>
 
-<!-- ⑫ CTA -->
+<!-- ⑭ 最終CTA -->
 <section class="cta-section" id="cta">
   <div class="container">
     <span class="eyebrow">GET STARTED</span>
-    <p class="cta-bridge">
-      私がそのことに気づけたのは、<br>
-      あるジムに出会ったからでした。
-    </p>
-    <p class="cta-divider">はじめまして、5toolgymです</p>
     <p class="cta-body">
-      今読んでいただいた言葉は、<br>
-      実際に通ってくださっている会員さんの声をもとに書きました。<br><br>
-      「続かない」「変わらない」「年だから仕方ない」<br>
-      そう思って諦めかけていた方が、今日も5toolgymに通い続けてくれています。<br><br>
       まず、一度だけ来てみてください。<br>
-      90分で、しっかり変わる未来がイメージできます。
+      90分で、あなたのカラダに何が足りなかったのかがわかります。<br>
+      合わなければ、入会しなくて大丈夫です。
     </p>
     <div class="cta-card">
       <h3>体験セッション（90分）</h3>
       <p class="cta-price"><span class="cta-price-yen">¥</span>5,500</p>
       <p class="cta-price-note">当日ご入会の場合、体験料は無料になります</p>
-      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-cta">今すぐ体験予約をする →</a>
+      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=final" onclick="gtag('event','cta_click',{section:'final'})" class="btn-cta">今すぐ体験予約をする →</a>
     </div>
   </div>
 </section>
