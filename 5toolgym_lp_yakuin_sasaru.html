@@ -54,6 +54,14 @@ section { padding: 88px 0; }
 
 /* HERO */
 .hero { padding: 80px 0 72px; background: #fff; }
+.fv-sns-card {
+  display: block;
+  width: 260px;
+  margin: 0 auto 44px;
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+}
+@media (max-width: 500px) { .fv-sns-card { width: 210px; } }
 .hero-badge {
   display: inline-block; background: var(--teal); color: #fff;
   font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
@@ -452,6 +460,7 @@ section { padding: 88px 0; }
 <section class="hero">
   <div class="container">
     <span class="hero-badge">5toolgym 薬院店</span>
+    <img src="/images/fv-sns-card.webp" alt="食事を我慢して運動すれば痩せるよね？というあの頃の会話" class="fv-sns-card" loading="eager">
     <div class="hero-quote">「結局、食事を我慢して<br>運動すれば痩せるんでしょ?」</div>
     <p class="hero-sub">あの頃の私に戻って、<br>本当に足りないものを教えてあげたい。</p>
     <a href="#cta" class="btn-coral">体験予約はこちら →</a>
