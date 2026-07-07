@@ -386,6 +386,49 @@ section { padding: 88px 0; }
   border: 2px dashed #C8C5BE; font-weight: 500;
 }
 
+/* Google評価バナー */
+.google-metrics { background: var(--mint); padding: 48px 0; }
+.google-metrics-inner {
+  max-width: 700px; margin: 0 auto; padding: 0 28px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.g-metric {
+  background: #fff; border-radius: 16px; padding: 24px 16px;
+  text-align: center; border: 2px solid var(--mint-mid);
+}
+.g-num {
+  display: block;
+  font-family: 'Outfit', var(--serif);
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 900; color: var(--teal-dark); line-height: 1.1; margin-bottom: 8px;
+}
+.g-num small { font-size: 0.5em; font-weight: 700; }
+.g-label { font-size: 13px; color: var(--text); line-height: 1.5; font-weight: 500; }
+@media (max-width: 520px) {
+  .google-metrics-inner { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 16px; }
+  .g-num { font-size: 24px; }
+}
+/* アメニティ（sasaru版） */
+.amenity-sasaru { background: #fff; padding: 88px 0; border-top: 2px solid var(--mint); }
+.amenity-sasaru .eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--teal); margin-bottom: 24px; }
+.amenity-sasaru h2 {
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 32px);
+  font-weight: 900; line-height: 1.5; margin-bottom: 16px; color: var(--text);
+}
+.amenity-sasaru-lead { font-size: clamp(16px, 2.4vw, 18px); color: #555; line-height: 1.9; margin-bottom: 40px; }
+.amenity-sasaru-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.amenity-sasaru-card { border-radius: 16px; overflow: hidden; border: 2px solid var(--mint-mid); }
+.amenity-sasaru-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.amenity-sasaru-ph {
+  width: 100%; aspect-ratio: 4/3; background: #F0EDEA;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: #999; border-bottom: 2px solid var(--mint-mid);
+}
+.amenity-sasaru-body { padding: 16px 18px; background: #fff; }
+.amenity-sasaru-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.amenity-sasaru-body p { font-size: 14px; color: #666; line-height: 1.7; }
+@media (max-width: 520px) { .amenity-sasaru-grid { grid-template-columns: 1fr 1fr; } }
+
 /* FOOTER */
 .footer { padding: 56px 0 100px; text-align: center; border-top: 2px solid var(--mint); background: #fff; }
 .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 900; color: var(--teal-dark); margin-bottom: 16px; letter-spacing: 0.08em; }
@@ -518,6 +561,56 @@ section { padding: 88px 0; }
       そういう場所になっているから、続いているんです。
     </div>
     <picture style="display:block;width:100%;aspect-ratio:4/3;margin:40px 0;border-radius:12px;overflow:hidden;"><source srcset="images/gym-interior-yakuin.webp" type="image/webp"><img src="images/gym-interior-yakuin.jpg" alt="5toolgym薬院店 店舗内装" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
+  </div>
+</section>
+
+<!-- Google評価 -->
+<section class="google-metrics">
+  <div class="google-metrics-inner">
+    <div class="g-metric">
+      <span class="g-num">★4.9</span>
+      <span class="g-label">Google評価<br>（30件）</span>
+    </div>
+    <div class="g-metric">
+      <span class="g-num">13.1<small>ヶ月</small></span>
+      <span class="g-label">平均継続期間</span>
+    </div>
+    <div class="g-metric">
+      <span class="g-num">90<small>%</small></span>
+      <span class="g-label">体験→入会<br>転換率</span>
+    </div>
+  </div>
+</section>
+
+<!-- アメニティ（薬院） -->
+<section class="amenity-sasaru">
+  <div class="container">
+    <span class="eyebrow">FACILITIES</span>
+    <h2>24時間ジム併設だから、<br>トレーニング後も自由</h2>
+    <p class="amenity-sasaru-lead">パーソナルセッションで整えたカラダを、フリーエリアで自分のペースで鍛えられる。週1のパーソナル＋自主練のサイクルが作れる環境です。</p>
+    <div class="amenity-sasaru-grid">
+      <div class="amenity-sasaru-card">
+        <div class="amenity-sasaru-ph">📷 準備中</div>
+        <div class="amenity-sasaru-body">
+          <h3>24時間フリートレーニング</h3>
+          <p>パーソナル以外の時間もいつでも使える。</p>
+        </div>
+      </div>
+      <div class="amenity-sasaru-card">
+        <div class="amenity-sasaru-ph">📷 準備中</div>
+        <div class="amenity-sasaru-body">
+          <h3>シャワー完備</h3>
+          <p>セッション後、そのまま仕事へ。急いでいてもOK。</p>
+        </div>
+      </div>
+      <div class="amenity-sasaru-card">
+        <div class="amenity-sasaru-ph">📷 準備中</div>
+        <div class="amenity-sasaru-body">
+          <h3>パウダー＆ロッカー</h3>
+          <p>着替えも荷物も安心して預けられます。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
