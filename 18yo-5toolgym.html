@@ -219,7 +219,7 @@
     /* 挨拶画像 */
     .greeting-image {
       width: 100%;
-      max-width: 600px;
+      max-width: 100%;
       margin: 40px auto;
       text-align: center;
     }
@@ -418,6 +418,26 @@
       padding: 12px 28px; border-radius: 4px;
       font-weight: 700; font-size: 15px; text-decoration: none;
       margin: 6px;
+    }
+
+    /* 差し込み画像 */
+    .section-img-wrap {
+      padding: 0 20px;
+      margin: 40px auto;
+      max-width: 680px;
+    }
+    .section-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* アクセス見出し */
+    .access-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: #1a1a1a;
     }
 
     /* Googleマップ */
@@ -626,6 +646,11 @@
   </div>
 </section>
 
+<!-- 差し込み画像1 -->
+<div class="section-img-wrap">
+  <img src="/images/img1.webp" alt="5toolgym薬院店 トレーニング指導" class="section-img" width="680" height="453" loading="lazy">
+</div>
+
 <!-- ギャップ開示 -->
 <section class="section">
   <div class="container">
@@ -657,6 +682,11 @@
     <p>そういう人なら、5toolgymは力になれます。</p>
   </div>
 </section>
+
+<!-- 差し込み画像2 -->
+<div class="section-img-wrap">
+  <img src="/images/img2.webp" alt="カウンセリングの様子" class="section-img" width="680" height="453" loading="lazy">
+</div>
 
 <!-- 中間CTA 1 -->
 <div class="mid-cta">
@@ -711,6 +741,11 @@
   </div>
 </section>
 
+<!-- 差し込み画像3 -->
+<div class="section-img-wrap">
+  <img src="/images/img3.webp" alt="トレーニング指導 関節アプローチ" class="section-img" width="680" height="453" loading="lazy">
+</div>
+
 <!-- 信頼/社会的証明 -->
 <section class="section">
   <div class="container">
@@ -748,6 +783,11 @@
   </div>
 </div>
 
+<!-- 差し込み画像4 -->
+<div class="section-img-wrap">
+  <img src="/images/img4.webp" alt="5toolgym薬院店 会員とトレーナー" class="section-img" width="680" height="453" loading="lazy">
+</div>
+
 <!-- アメニティ（薬院） -->
 <section class="amenities">
   <div class="container">
@@ -771,6 +811,11 @@
     </div>
   </div>
 </section>
+
+<!-- 差し込み画像5 -->
+<div class="section-img-wrap">
+  <img src="/images/img5.webp" alt="5toolgym薬院店 施設内装" class="section-img" width="680" height="453" loading="lazy">
+</div>
 
 <!-- 体験の流れ -->
 <section class="section" id="experience">
@@ -837,6 +882,11 @@
   <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="mid-cta-btn" onclick="gtag('event','reserve_click',{position:'mid2'})">体験を予約する</a>
 </div>
 
+<!-- 差し込み画像6 -->
+<div class="section-img-wrap">
+  <img src="/images/img6.webp" alt="パーソナルトレーニング指導の様子" class="section-img" width="680" height="453" loading="lazy">
+</div>
+
 <!-- トレーナー紹介 -->
 <section class="section">
   <div class="container">
@@ -879,6 +929,12 @@
     全力でサポートします。</p>
   </div>
 </section>
+
+<!-- 中間CTA 3 -->
+<div class="mid-cta">
+  <p>トレーナーに、まず会ってみてください。</p>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="mid-cta-btn" onclick="gtag('event','reserve_click',{position:'mid3'})">体験を予約する</a>
+</div>
 
 <!-- 料金 -->
 <section class="section">
@@ -960,18 +1016,24 @@
   </div>
 </section>
 
+<!-- 中間CTA 4 -->
+<div class="mid-cta">
+  <p>疑問が解決したら、次は体験で確かめてください。</p>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="mid-cta-btn" onclick="gtag('event','reserve_click',{position:'mid4'})">体験の空きを確認する</a>
+</div>
+
 <!-- 挨拶画像 -->
 <section class="section">
   <div class="container">
     <div class="greeting-image">
-      <img src="/images/18yo-greeting.webp" alt="柴山からのご挨拶" width="600" height="400" loading="lazy" style="max-width: 600px; width: 100%;">
+      <img src="/images/18yo-greeting.webp" alt="柴山からのご挨拶" width="680" height="453" loading="lazy">
       <!-- 注：実際には18歳挨拶文.pngの画像URLに置き換えてください -->
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
+<!-- アクセス & 最終CTA -->
+<section class="cta" id="access">
   <div class="container">
     <p>まず、一度だけ来てみてください。<br>
     90分で、あなたのカラダに何が足りなかったのかがわかります。<br>
@@ -983,6 +1045,7 @@
       <a href="tel:0926000296" class="tel-link" style="display:block;font-size:1.1rem;color:#1a1a1a;text-decoration:none;" onclick="gtag('event','tel_click',{position:'footer'})">電話：<span style="font-family:'Outfit',sans-serif;font-weight:700;">092-600-0296</span></a>
     </div>
 
+    <h3 class="access-heading">アクセス</h3>
     <div class="contact-info">
       <p><strong>5toolgym 薬院店</strong></p>
       <p>〒810-0022 福岡県福岡市中央区薬院3丁目13-22 新宝ビル3F</p>
