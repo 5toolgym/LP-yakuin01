@@ -4,6 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>18歳の自分に戻りませんか？ | 5toolgym 薬院店</title>
+  <meta name="description" content="朝起きても疲れが取れない。飲み会の翌日は廃人。毎日うっすらどこかしら痛い。それ、老化じゃなくてカラダが整っていないせいかもしれません。福岡・薬院のパーソナルジム5toolgym。体験90分¥5,500。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="18歳の自分に戻りませんか？ | 5toolgym 薬院店">
+  <meta property="og:description" content="朝起きても疲れが取れない。飲み会の翌日は廃人。毎日うっすらどこかしら痛い。それ、老化じゃなくてカラダが整っていないせいかもしれません。体験90分¥5,500。">
+  <meta property="og:image" content="https://lp-yakuin01.5toolgym.workers.dev/images/ogp-18yo.webp"><!-- 後日1200x630でアップ予定 -->
+  <meta property="og:url" content="https://lp-yakuin01.5toolgym.workers.dev/18yo-5toolgym">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://lp-yakuin01.5toolgym.workers.dev/18yo-5toolgym">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+  <!-- GA4: LP共通プロパティ G-8P5K4FSDEF を使用。専用プロパティを発行した場合はIDを差し替えること -->
+  <script>
+    var GA_ID = 'G-8P5K4FSDEF';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    window.addEventListener('load', function(){
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      s.async = true;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    });
+  </script>
+  <!-- Microsoft Clarity（プロジェクトIDは vx3scpfrrn = 薬院LP共通） -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","vx3scpfrrn");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "5toolgym薬院店",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "810-0022",
+      "addressRegion": "福岡県",
+      "addressLocality": "福岡市中央区",
+      "streetAddress": "薬院3丁目13-22 新宝ビル3F"
+    },
+    "telephone": "+81-92-600-0296",
+    "openingHours": "Mo-Su 09:30-22:30",
+    "geo": {"@type": "GeoCoordinates", "latitude": 33.5801, "longitude": 130.3981},
+    "url": "https://lp-yakuin01.5toolgym.workers.dev/18yo-5toolgym"
+  }
+  </script>
   <style>
     * {
       margin: 0;
@@ -12,10 +59,13 @@
     }
     
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       background-color: #ffffff;
       color: #1a1a1a;
       line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      body { padding-bottom: 68px; }
     }
     
     .container {
@@ -73,6 +123,23 @@
       line-height: 1.9;
     }
     
+    /* 症状リスト（共感セクション先頭） */
+    .symptom-list {
+      list-style: none;
+      margin: 16px 0 20px;
+      padding: 0;
+    }
+    .symptom-list li {
+      padding: 6px 0;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .symptom-list li::before {
+      content: '・';
+      position: absolute;
+      left: 0;
+    }
+
     /* 共感セクション */
     .empathy-list {
       background-color: #f9f9f9;
@@ -285,6 +352,80 @@
     .amenity-body p { font-size: 12px !important; color: #666; line-height: 1.6 !important; margin: 0 !important; }
     @media (max-width: 500px) { .amenity-grid { grid-template-columns: 1fr 1fr; } }
 
+    /* 追従フッターCTAバー（スマホのみ） */
+    .sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: #fff;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+      z-index: 999;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .sticky-cta.visible { opacity: 1; transform: translateY(0); }
+    .sticky-line {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      background: #06C755; color: #fff; border-radius: 6px; height: 44px;
+      font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap;
+    }
+    .sticky-reserve {
+      flex: 1.5; display: flex; align-items: center; justify-content: center;
+      background: #2D7A7A; color: #fff; border-radius: 6px; height: 44px;
+      font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap;
+    }
+    @media (max-width: 768px) { .sticky-cta { display: flex; } }
+
+    /* 中間CTA */
+    .mid-cta {
+      padding: 40px 20px;
+      text-align: center;
+      background: #f4f9f9;
+      border-top: 1px solid #e0eeee;
+      border-bottom: 1px solid #e0eeee;
+    }
+    .mid-cta h3 {
+      font-size: 18px; font-weight: 600; color: #1a1a1a;
+      margin-bottom: 16px; line-height: 1.6;
+    }
+    .mid-cta-btn {
+      display: inline-block; background: #2D7A7A; color: #fff;
+      padding: 14px 32px; border-radius: 4px;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+    }
+
+    /* FVヒーロー画像 */
+    .hero-img {
+      width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+      border-radius: 8px; margin: 20px 0 24px; display: block;
+    }
+
+    /* FV CTAボタン */
+    .fv-cta-btn {
+      display: inline-block; background: #2D7A7A; color: #fff;
+      padding: 16px 40px; border-radius: 4px;
+      font-weight: 700; font-size: 16px; text-decoration: none;
+    }
+
+    /* LINEボタン */
+    .line-btn {
+      display: inline-block; background: #06C755; color: #fff;
+      padding: 12px 28px; border-radius: 4px;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      margin: 6px;
+    }
+
+    /* Googleマップ */
+    .map-embed {
+      margin-top: 20px; border-radius: 8px; overflow: hidden;
+    }
+    .map-embed iframe { width: 100%; height: 300px; border: none; display: block; }
+
     /* メソッドフロー */
     .method-flow {
       display: flex;
@@ -411,26 +552,20 @@
 </head>
 <body>
 
+<!-- 追従フッターCTAバー（スマホのみ表示） -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://lin.ee/Y1P0dZl" class="sticky-line" onclick="gtag('event','line_click',{position:'sticky'})">LINEで相談</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sticky-reserve" onclick="gtag('event','reserve_click',{position:'sticky'})">体験を予約する</a>
+</div>
+
 <!-- ファーストビュー -->
-<section class="fv">
+<section class="fv" id="fv-section">
   <div class="container">
     <h1>18歳の自分に戻りませんか？</h1>
     <p class="subtitle">疲れ知らず、エネルギー溢れるあの感覚。</p>
-    
-    <p>30代、40代のあなたはおそらく、18歳のころと比べて</p>
-    <p>「よく寝たのに疲れが取れない」<br>
-    「飲み会の次の日は廃人になっている」<br>
-    「毎日うっすらどこかしらが調子が悪い」<br>
-    「明らかに走れなくなっている」<br>
-    「筋力が衰えている」</p>
-    <p>と感じているかもしれません。</p>
-    
-    <p>でも、実はそれは老化だけが原因ではなく、<br>
-    カラダが整ってないことも原因です。</p>
-    
-    <p>5toolgymでは、あの頃みたいに<br>
-    「何でも挑戦したい、毎日を全力で楽しみたい」という感覚を<br>
-    トレーニングを通じて取り戻すお手伝いをしています。</p>
+    <!-- ヒーロー画像：/images/hero-18yo.webp を制作後に差し替え -->
+    <img src="/images/hero-18yo.webp" alt="5toolgym薬院店 トレーニング風景" class="hero-img" width="640" height="360" fetchpriority="high" onerror="this.style.display='none'">
+    <a href="#experience" class="fv-cta-btn" onclick="gtag('event','reserve_click',{position:'fv'})">体験について見る</a>
   </div>
 </section>
 
@@ -438,7 +573,17 @@
 <section class="section">
   <div class="container">
     <h2>こんなことありませんか？</h2>
-    
+
+    <p>30代、40代、50代のあなたはおそらく、18歳のころと比べて</p>
+    <ul class="symptom-list">
+      <li>「よく寝たのに疲れが取れない」</li>
+      <li>「飲み会の次の日は廃人になっている」</li>
+      <li>「毎日うっすらどこかしらが調子が悪い」</li>
+      <li>「明らかに走れなくなっている」</li>
+      <li>「筋力が衰えている」</li>
+    </ul>
+    <p>と感じているかもしれません。</p>
+
     <div class="empathy-list">
       <p>朝起きたときから、なんだか重い。<br>
       よく寝たはずなのに、疲れが取れていない。</p>
@@ -513,6 +658,12 @@
   </div>
 </section>
 
+<!-- 中間CTA 1 -->
+<div class="mid-cta">
+  <p>合うかどうかは、体験で確かめられます。</p>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="mid-cta-btn" onclick="gtag('event','reserve_click',{position:'mid1'})">体験の空きを確認する</a>
+</div>
+
 <!-- 哲学 -->
 <section class="section">
   <div class="container">
@@ -557,11 +708,6 @@
     「カラダが整ったことを、毎日感じられる状態」。<br>
     それが「楽に、強く、心地よく」という哲学です。</p>
 
-    <div class="method-badge">
-      NCCA（全日本コンディショニングコーチ協会）講師資格とは、<br>
-      トレーナーを育てる側の資格です。<br>
-      カラダの根本から整えるアプローチを、高い専門性で指導しています。
-    </div>
   </div>
 </section>
 
@@ -597,10 +743,6 @@
     <span class="t-label">Google評価<br>（30件）</span>
   </div>
   <div class="trust-metric">
-    <span class="t-num">13.1<small>ヶ月</small></span>
-    <span class="t-label">平均継続期間</span>
-  </div>
-  <div class="trust-metric">
     <span class="t-num">90<small>%</small></span>
     <span class="t-label">体験→入会<br>転換率</span>
   </div>
@@ -613,14 +755,14 @@
     <p class="amenity-lead">パーソナルセッションで整えたカラダを、フリーエリアで自分のペースで鍛えられる。それが薬院店のスタイルです。</p>
     <div class="amenity-grid">
       <div class="amenity-card">
-        <img src="/images/amenity-24h-gym.webp" alt="24時間フリーウェイトエリア" loading="lazy">
+        <img src="/images/amenity-24h-gym.webp" alt="24時間フリーウェイトエリア" width="400" height="280" loading="lazy">
         <div class="amenity-body">
           <h3>24時間フリートレーニング</h3>
           <p>パーソナル以外の時間もいつでも使える。</p>
         </div>
       </div>
       <div class="amenity-card">
-        <img src="/images/amenity-locker.webp" alt="ロッカー・パウダールーム" loading="lazy">
+        <img src="/images/amenity-locker.webp" alt="ロッカー・パウダールーム" width="400" height="280" loading="lazy">
         <div class="amenity-body">
           <h3>パウダー＆ロッカー</h3>
           <p>着替えも荷物も安心して預けられます。</p>
@@ -631,7 +773,7 @@
 </section>
 
 <!-- 体験の流れ -->
-<section class="section">
+<section class="section" id="experience">
   <div class="container">
     <h2>体験セッション90分、<br>何が起きるか</h2>
 
@@ -686,13 +828,14 @@
       </div>
     </div>
 
-    <div class="flow-closing">
-      <p><strong>「体験だけのつもりが、続けたくなった」</strong><br>
-      体験→入会転換率90%。多くの方がその場で「続けたい」と言ってくれます。<br>
-      それはテクニックではなく、あなたのカラダが変化を感じるから。</p>
-    </div>
   </div>
 </section>
+
+<!-- 中間CTA 2 -->
+<div class="mid-cta">
+  <p>90分、あなたのカラダで試してください。</p>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="mid-cta-btn" onclick="gtag('event','reserve_click',{position:'mid2'})">体験を予約する</a>
+</div>
 
 <!-- トレーナー紹介 -->
 <section class="section">
@@ -709,22 +852,22 @@
     
     <div class="trainer-cards">
       <div class="trainer-card">
-        <img src="/images/trainer-shibayama-plain.webp" alt="柴山トレーナー">
+        <img src="/images/trainer-shibayama-plain.webp" alt="柴山トレーナー" width="400" height="400" loading="lazy">
         <p class="trainer-name">柴山（オーナートレーナー）</p>
-        <p class="trainer-desc">「楽に、強く、心地よく」を体現するトレーナー。カラダ評価から改善まで全領域を担当。</p>
+        <p class="trainer-desc">NCCA（全日本コンディショニングコーチ協会）講師資格を持つ、トレーナーを教える側のトレーナー。カラダ評価から改善まで全領域を担当。</p>
       </div>
       <div class="trainer-card">
-        <img src="/images/trainer-irabe.webp" alt="伊良部トレーナー">
+        <img src="/images/trainer-irabe.webp" alt="伊良部トレーナー" width="400" height="400" loading="lazy">
         <p class="trainer-name">伊良部</p>
         <p class="trainer-desc">丁寧なカウンセリングとわかりやすい指導が特徴。初めての方も安心して任せられます。</p>
       </div>
       <div class="trainer-card">
-        <img src="/images/trainer-takasu.webp" alt="髙須トレーナー">
+        <img src="/images/trainer-takasu.webp" alt="髙須トレーナー" width="400" height="400" loading="lazy">
         <p class="trainer-name">髙須</p>
         <p class="trainer-desc">強度の高いトレーニングが得意。「もっと追い込みたい」という方に。</p>
       </div>
       <div class="trainer-card">
-        <img src="/images/trainer-manami-plain.webp" alt="manamiトレーナー">
+        <img src="/images/trainer-manami-plain.webp" alt="manamiトレーナー" width="400" height="400" loading="lazy">
         <p class="trainer-name">manami</p>
         <p class="trainer-desc">女性ならではの視点で姿勢や動きを細かく指導。女性特有の悩みにも対応します。</p>
       </div>
@@ -743,7 +886,7 @@
     <h2>料金について。</h2>
     
     <p>体験トレーニング：¥5,500<br>
-    ※当日入会で、体験費は全額キャッシュバック</p>
+    ※当日ご入会の場合、体験費¥5,500はいただきません</p>
     
     <p>入会金：¥11,000</p>
     
@@ -779,6 +922,9 @@
     
     <p><strong>重要：合わなければ入会しなくて大丈夫です。</strong><br>
     体験後、無理な勧誘はしません。</p>
+
+    <p>7月の体験枠は、各店5名までです。<br>
+    埋まり次第、翌月のご案内になります。</p>
   </div>
 </section>
 
@@ -818,7 +964,7 @@
 <section class="section">
   <div class="container">
     <div class="greeting-image">
-      <img src="/images/18yo-greeting.webp" alt="柴山からのご挨拶" style="max-width: 600px; width: 100%;">
+      <img src="/images/18yo-greeting.webp" alt="柴山からのご挨拶" width="600" height="400" loading="lazy" style="max-width: 600px; width: 100%;">
       <!-- 注：実際には18歳挨拶文.pngの画像URLに置き換えてください -->
     </div>
   </div>
@@ -827,35 +973,61 @@
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>まずは、体で確かめてください。</h2>
-    
-    <p>あの頃みたいに、<br>
-    疲れ知らず、エネルギー溢れる毎日。</p>
-    
-    <p>それは、トレーニングで取り戻せます。</p>
-    
-    <p>でも、言葉だけでは伝わりません。<br>
-    あなたのカラダで、体感してください。</p>
-    
-    <p>90分の体験で、<br>
-    あなたのカラダがどう変わるか。<br>
-    その違いを感じてみませんか。</p>
-    
-    <div style="margin: 30px 0;">
-      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="cta-button">体験予約</a>
+    <p>まず、一度だけ来てみてください。<br>
+    90分で、あなたのカラダに何が足りなかったのかがわかります。<br>
+    合わなければ、入会しなくて大丈夫です。</p>
+
+    <div style="margin: 30px 0; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="cta-button" onclick="gtag('event','reserve_click',{position:'footer'})">体験を予約する（かんざし）</a>
+      <a href="https://lin.ee/Y1P0dZl" class="line-btn" style="display:block;width:100%;max-width:320px;padding:14px 0;text-align:center;border-radius:8px;font-weight:700;color:#fff;text-decoration:none;" onclick="gtag('event','line_click',{position:'footer'})">LINEで相談する</a>
+      <a href="tel:0926000296" class="tel-link" style="display:block;font-size:1.1rem;color:#1a1a1a;text-decoration:none;" onclick="gtag('event','tel_click',{position:'footer'})">電話：<span style="font-family:'Outfit',sans-serif;font-weight:700;">092-600-0296</span></a>
     </div>
-    
+
     <div class="contact-info">
-      <p><strong>【薬院店について】</strong></p>
-      <p>〒810-0022 福岡県福岡市中央区薬院3丁目13-22 新宝ビル3F 5toolgym薬院店【ファイブツールジム】</p>
-      <p>アクセス：薬院大通駅徒歩2分／薬院駅徒歩6分</p>
-      <p>営業時間：9:30～22:30（24時間ジム併設）</p>
-      <p>電話：092-600-0296</p>
-      <p>公式LINE：https://lin.ee/Y1P0dZl</p>
-      <p>ご連絡をお待ちしています。</p>
+      <p><strong>5toolgym 薬院店</strong></p>
+      <p>〒810-0022 福岡県福岡市中央区薬院3丁目13-22 新宝ビル3F</p>
+      <p>薬院大通駅徒歩2分 ／ 薬院駅徒歩6分</p>
+      <p>営業時間：9:30〜22:30（24時間ジム併設）</p>
+    </div>
+
+    <div class="map-embed">
+      <iframe
+        src="https://maps.google.com/maps?q=福岡県福岡市中央区薬院3丁目13-22+新宝ビル3F&output=embed&hl=ja&z=17"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="5toolgym薬院店 地図"></iframe>
     </div>
   </div>
 </section>
 
+<script>
+  (function(){
+    var fv = document.getElementById('fv-section');
+    var bar = document.getElementById('stickyCta');
+    if(!fv || !bar) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting){
+          bar.classList.add('visible');
+        } else {
+          bar.classList.remove('visible');
+        }
+      });
+    }, {threshold: 0});
+    obs.observe(fv);
+
+    /* scroll_depth イベント（25/50/75/100%） */
+    var depths = [25, 50, 75, 100];
+    var fired = {};
+    window.addEventListener('scroll', function(){
+      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+      depths.forEach(function(d){
+        if(pct >= d && !fired[d]){
+          fired[d] = true;
+          gtag('event','scroll_depth',{depth: d});
+        }
+      });
+    }, {passive: true});
+  })();
+</script>
 </body>
 </html>
