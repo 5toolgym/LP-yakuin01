@@ -228,10 +228,12 @@ section { padding: 88px 0; }
 }
 .flow-steps { list-style: none; margin-bottom: 32px; }
 .flow-steps li {
-  display: flex; gap: 20px; align-items: flex-start;
+  display: block;
   padding: 20px 0; border-bottom: 1px solid var(--mint-mid);
 }
 .flow-steps li:last-child { border-bottom: none; }
+.flow-step-row { display: flex; gap: 20px; align-items: flex-start; }
+.flow-step-img { width: 100%; height: auto; display: block; border-radius: 12px; margin-top: 16px; }
 .flow-num {
   font-family: var(--sans); font-size: 13px; font-weight: 900;
   color: #fff; background: var(--teal); border-radius: 50%;
@@ -927,45 +929,62 @@ section { padding: 88px 0; }
     </p>
     <ul class="flow-steps">
       <li>
-        <span class="flow-num">1</span>
-        <div class="flow-content">
-          <h4>カウンセリング</h4>
-          <p>悩みや目標を聞かせてください。「今の自分に何が足りないのか」を一緒に整理する時間です。ここで初めて、自分のカラダのことがわかる方も多いです。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">1</span>
+          <div class="flow-content">
+            <h4>カウンセリング</h4>
+            <p>悩みや目標を聞かせてください。「今の自分に何が足りないのか」を一緒に整理する時間です。ここで初めて、自分のカラダのことがわかる方も多いです。</p>
+          </div>
         </div>
+        <img src="/images/flow-step1-counseling.webp" alt="カウンセリングの様子" width="1200" height="900" loading="lazy" class="flow-step-img">
       </li>
       <li>
-        <span class="flow-num">2</span>
-        <div class="flow-content">
-          <h4>カラダの評価</h4>
-          <p>姿勢・動き方・体の状態をプロの目で確認します。「なぜ変わらなかったのか」の原因が、ここで見えてきます。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">2</span>
+          <div class="flow-content">
+            <h4>カラダの評価</h4>
+            <p>姿勢・動き方・体の状態をプロの目で確認します。「なぜ変わらなかったのか」の原因が、ここで見えてきます。</p>
+          </div>
         </div>
+        <img src="/images/flow-step2-posture.webp" alt="カラダの評価の様子" width="1200" height="1200" loading="lazy" class="flow-step-img">
       </li>
       <li>
-        <span class="flow-num">3</span>
-        <div class="flow-content">
-          <h4>改善エクササイズ</h4>
-          <p>姿勢・動作・不調に合わせたエクササイズを実施。「こんな動き方があったのか」と感じる方がほとんどです。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">3</span>
+          <div class="flow-content">
+            <h4>改善エクササイズ</h4>
+            <p>姿勢・動作・不調に合わせたエクササイズを実施。「こんな動き方があったのか」と感じる方がほとんどです。</p>
+          </div>
         </div>
+        <img src="/images/flow-step3-exercise.webp" alt="改善エクササイズの様子" width="1200" height="900" loading="lazy" class="flow-step-img">
       </li>
       <li>
-        <span class="flow-num">4</span>
-        <div class="flow-content">
-          <h4>トレーニング</h4>
-          <p>正しい動きをベースにしたトレーニングを体験。通常セッションと同じ内容で行います。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">4</span>
+          <div class="flow-content">
+            <h4>トレーニング</h4>
+            <p>正しい動きをベースにしたトレーニングを体験。通常セッションと同じ内容で行います。</p>
+          </div>
         </div>
+        <img src="/images/flow-step4-training.webp" alt="パーソナルトレーニングの様子" width="1200" height="900" loading="lazy" class="flow-step-img">
       </li>
       <li>
-        <span class="flow-num">5</span>
-        <div class="flow-content">
-          <h4>パーソナルストレッチ</h4>
-          <p>トレーナーが一人ひとりに合わせてストレッチ。終わった後の体の軽さを感じてみてください。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">5</span>
+          <div class="flow-content">
+            <h4>パーソナルストレッチ</h4>
+            <p>トレーナーが一人ひとりに合わせてストレッチ。終わった後の体の軽さを感じてみてください。</p>
+          </div>
         </div>
+        <img src="/images/flow-step5-stretch.webp" alt="パーソナルストレッチの様子" width="1200" height="900" loading="lazy" class="flow-step-img">
       </li>
       <li>
-        <span class="flow-num">6</span>
-        <div class="flow-content">
-          <h4>フィードバック・クロージング</h4>
-          <p>今日わかったこと、これからどう変わっていけるかをお伝えします。無理な勧誘は一切ありません。</p>
+        <div class="flow-step-row">
+          <span class="flow-num">6</span>
+          <div class="flow-content">
+            <h4>フィードバック・クロージング</h4>
+            <p>今日わかったこと、これからどう変わっていけるかをお伝えします。無理な勧誘は一切ありません。</p>
+          </div>
         </div>
       </li>
     </ul>
