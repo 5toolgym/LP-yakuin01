@@ -40,6 +40,7 @@ body {
   font-size: 21px;
   line-height: 1.9;
   -webkit-font-smoothing: antialiased;
+  padding-top: 56px;
 }
 
 .container { max-width: 700px; margin: 0 auto; padding: 0 28px; }
@@ -580,9 +581,90 @@ section { padding: 88px 0; }
   font-family: 'Outfit', var(--sans); font-size: clamp(18px, 3vw, 22px);
   font-weight: 900; color: var(--teal-dark); white-space: nowrap;
 }
+
+/* SITE HEADER & HAMBURGER */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 998;
+  background: #fff; border-bottom: 1px solid #f0f0f0;
+  height: 56px;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 700px; margin: 0 auto; padding: 0 20px; height: 56px;
+}
+.header-logo {
+  font-family: var(--sans); font-size: 17px; font-weight: 900;
+  color: var(--teal); text-decoration: none; letter-spacing: 0.06em;
+}
+.menu-btn {
+  background: none; border: none; padding: 8px; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: center; gap: 5px;
+}
+.menu-btn-bar {
+  display: block; width: 24px; height: 2px; background: #1a1a1a;
+  transition: transform 0.25s, opacity 0.25s; border-radius: 2px;
+}
+.menu-btn.open .menu-btn-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.open .menu-btn-bar:nth-child(2) { opacity: 0; }
+.menu-btn.open .menu-btn-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.drawer-nav {
+  position: fixed; top: 56px; right: -280px; bottom: 0; width: 280px;
+  background: #fff; z-index: 997; transition: right 0.3s ease;
+  border-left: 1px solid #f0f0f0; padding-top: 16px;
+  overflow-y: auto;
+}
+.drawer-nav.open { right: 0; }
+.drawer-list { list-style: none; }
+.drawer-list li a {
+  display: block; padding: 18px 28px; font-size: 16px; font-weight: 700;
+  color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+.drawer-list li a:hover { background: var(--mint); }
+.drawer-list li:last-child a {
+  background: var(--teal); color: #fff; text-align: center; margin: 16px 16px 0;
+  border-radius: 8px; border-bottom: none;
+}
+.drawer-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 996;
+}
+.drawer-overlay.open { display: block; }
+
+/* トレーナー資格 */
+.trainer-quals {
+  margin-top: 8px; padding: 10px 14px;
+  background: var(--mint); border-radius: 8px;
+}
+.trainer-quals ul { list-style: none; margin: 0; padding: 0; }
+.trainer-quals li {
+  font-size: 12px; color: #555; line-height: 1.7;
+  padding-left: 1em; position: relative;
+}
+.trainer-quals li::before { content: '・'; position: absolute; left: 0; }
 </style>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">5toolgym</a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+    </button>
+  </div>
+</header>
+<nav class="drawer-nav" id="drawerNav">
+  <ul class="drawer-list">
+    <li><a href="#price" onclick="closeDrawer()">料金</a></li>
+    <li><a href="#experience" onclick="closeDrawer()">コース</a></li>
+    <li><a href="#trainers" onclick="closeDrawer()">トレーナー</a></li>
+    <li><a href="#access" onclick="closeDrawer()">アクセス</a></li>
+    <li><a href="#cta" onclick="closeDrawer()">予約する</a></li>
+  </ul>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
 
 <div class="sticky-bar">
   <p>体験セッション 90分<span>当日入会で無料</span></p>
@@ -602,8 +684,6 @@ section { padding: 88px 0; }
   </div>
   <img src="/images/fv-sns-card.webp" alt="食事を我慢して運動すれば痩せるよね？というあの頃の会話" class="fv-sns-card" loading="eager">
   <div class="container">
-    <div class="hero-quote">「結局、食事を我慢して<br>運動すれば痩せるんでしょ?」</div>
-    <p class="hero-sub">あの頃の私に戻って、<br>本当に足りないものを教えてあげたい。</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=fv" onclick="gtag('event','cta_click',{section:'fv'})" class="btn-coral">体験予約はこちら →</a>
     <span class="btn-note">¥5,500 ／ 当日入会で無料になります</span>
   </div>
@@ -633,15 +713,19 @@ section { padding: 88px 0; }
     <h2 class="diff-headline">「動きを鍛えるために、<br>運動する。」</h2>
     <picture style="display:block;width:100%;aspect-ratio:16/9;margin:40px 0;border-radius:12px;overflow:hidden;"><source srcset="images/training-balance.webp" type="image/webp"><img src="images/training-balance.jpg" alt="5toolgym トレーニング指導" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
     <div class="diff-body">
-      痩せるために体を動かすのではなく、<br>
+      痩せるために<br>
+      体を動かすのではなく、<br>
       カラダを正しく動かすことで<br>
       結果としてカラダが締まって、<br>
-      姿勢が凛として、必要な筋肉も増え、<br>
-      軽くなって、疲れにくくなる。
+      姿勢が凛として、<br>
+      必要な筋肉も増え、<br>
+      軽くなって、<br>
+      疲れにくくなる。
     </div>
     <p class="diff-punch">
       そのことに気づいた時、<br>
-      ずっと抜けていたピースが、やっとわかった気がした。
+      ずっと抜けていたピースが、<br>
+      カチッとハマった気がした。
     </p>
   </div>
 </section>
@@ -652,8 +736,8 @@ section { padding: 88px 0; }
     <span class="eyebrow">HONESTY</span>
     <div class="honesty-inner">
       <p>正直に言うと、<br>5toolgymが向かない方もいます。</p>
-      <p>とにかく最短で、体重の数字だけを落としたい方。<br>追い込まれる激しいトレーニングを求める方。<br>この2つなら、短期減量に特化したジムのほうが合っています。</p>
-      <p>私たちがやるのは、体の使い方を変えて、<br>体型・姿勢・不調がまとめて整っていく道です。<br>時間は少しかかります。<br>その代わり、「やめたら戻る」を繰り返さない体になっていきます。</p>
+      <p>とにかく最短で、<br>体重の数字だけを落としたい方や<br>追い込まれる激しいトレーニングを求める方。<br>この2つなら、<br>短期減量に特化したダイエット専門の<br>パーソナルジムのほうが合っています。</p>
+      <p>私たちが提供するのは、体の使い方・動きを変えて、<br>体型・姿勢・不調がまとめて整っていく道です。<br>時間は少しかかります。<br>その代わり、「やめたら戻る」を繰り返さない体になっていきます。</p>
       <p>体験して合わなければ、入会しなくて大丈夫です。</p>
     </div>
   </div>
@@ -673,31 +757,42 @@ section { padding: 88px 0; }
     </ul>
     <p class="gym-close">
       どれか一つを頑張るのではなく、<br>
-      すべてが同時に、高水準に整っていく。<br><br>
-      それが、5toolgymのトレーニングです。
+      すべてが同時に、<br>
+      高水準に整っていき<br>
+      結果として<br>
+      毎日が楽しくて仕方がない、<br>
+      明日が楽しみになるカラダになる。<br><br>
+      それが、<br>
+      5toolgymのパーソナルトレーニングです。
     </p>
 
     <p class="story-bridge">
       私がここで変わり始めたのは、<br>
-      トレーニングの「目的」が変わってからだった。<br>
+      トレーニングの「目的」が<br>
+      変わってからだった。<br><br>
       最初の1ヶ月で、こんな変化があった。
     </p>
 
     <div class="after-scene">
       <p>
         人生で一度も腕立て伏せができなかった。<br>
-        それが、1回だけできるようになった。<br>
+        それが、<br>
+        1回だけできるようになった。<br>
         「先生、できました！」<br>
-        そう報告した日のことを、今も覚えている。
+        そう報告した日のことを、<br>
+        今も覚えている。
       </p>
       <p>
-        階段を上っても息が切れなくなって、<br>
-        子どもと公園を走り回れるようになっていた。
+        階段を上っても<br>
+        息が切れなくなって、<br>
+        子どもと公園を<br>
+        走り回れるようになっていた。
       </p>
       <p>
         「なんか最近、姿勢よくなった?」<br>
         職場でそう言われた日、<br>
-        久しぶりに自分のことが好きになった気がした。
+        久しぶりに<br>
+        自分のことが好きになった気がした。
       </p>
     </div>
   </div>
@@ -714,14 +809,17 @@ section { padding: 88px 0; }
         <p class="trust-label">最長継続年数<br>（店舗開業前から）</p>
       </div>
       <div class="trust-card">
-        <p class="trust-num">13<span class="trust-unit">名</span></p>
-        <p class="trust-label">3年以上継続中の<br>会員さん</p>
+        <p class="trust-num"><small style="font-size:0.5em;vertical-align:middle;">約</small>30<span class="trust-unit">%</span></p>
+        <p class="trust-label">会員が<br>3年以上継続中</p>
       </div>
     </div>
     <div class="trust-body">
-      続けようと頑張っているのではなく、<br>
-      もはや生活の中に、当たり前にある。<br>
-      そういう場所になっているから、続いているんです。
+      一生懸命、続けようと<br>
+      頑張っているのではなく、<br>
+      もはや生活の中に、<br>
+      当たり前にある。<br>
+      そういう場所になっているから、<br>
+      続いているんです。
     </div>
     <picture style="display:block;width:100%;aspect-ratio:4/3;margin:40px 0;border-radius:12px;overflow:hidden;"><source srcset="images/gym-interior-yakuin.webp" type="image/webp"><img src="images/gym-interior-yakuin.jpg" alt="5toolgym薬院店 店舗内装" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
     <p class="trust-evidence-b">派手なビフォーアフター写真は、ここには載せていません。<br>当ジムの新しいお客様の多くは、広告ではなく、<br>Googleマップの評価と、通っている方からの紹介で来られます。</p>
@@ -750,7 +848,7 @@ section { padding: 88px 0; }
     </div>
     <div class="g-metric">
       <span class="g-num">90<small>%</small></span>
-      <span class="g-label">体験→入会<br>転換率</span>
+      <span class="g-label">体験からご入会</span>
     </div>
   </div>
 </section>
@@ -761,12 +859,13 @@ section { padding: 88px 0; }
     <span class="eyebrow">MEMBER STORIES</span>
     <p class="episode-lead">
       ここに来る方の多くは、<br>
-      「もう無理かも」と思っていた人たちです。
+      「もう無理かも、自信がない」<br>
+      と思っていた人たちです。
     </p>
     <div class="episode-cards">
       <div class="episode-card">
         <p class="episode-voice">「お願いだから、痩せて」</p>
-        <p class="episode-story">息子にそう言われた日、初めて本気になれたというお母さん。カウンセリングで泣きながら話してくれました。今は一緒に走れるようになったと報告をくれました。</p>
+        <p class="episode-story">息子にそう言われた日、初めて本気になれたというお母さん。カウンセリングで悲しそうに話してくれました。今では息子さんからも褒められるほど見違えて引き締まり、カラダを動かすことが楽しいとおっしゃっています。</p>
         <span class="individual-note">※個人の感想です</span>
       </div>
       <div class="episode-card">
@@ -780,8 +879,8 @@ section { padding: 88px 0; }
         <span class="individual-note">※個人の感想です</span>
       </div>
       <div class="episode-highlight">
-        <p class="episode-voice">「あと5年、ゴルフを続けられるカラダにしてほしい」</p>
-        <p class="episode-story">80代の女性会員さんの言葉です。<br>その方は5年が経った今も、「またあと5年、ゴルフを続けられるように」とおっしゃっています。<br><br>年齢は関係ありません。動きを鍛えれば、カラダはいくつからでも変わっていきます。</p>
+        <p class="episode-voice">「あと5年、大好きなゴルフを続けられるカラダにしてほしい」</p>
+        <p class="episode-story">80代の女性会員さんの言葉です。<br>その方は5年が経った今も、「またあと5年、大好きなゴルフを続けられるように」とおっしゃっています。<br><br>年齢は関係ありません。動きを鍛えれば、カラダはいくつからでもガラッと変わっていきます。</p>
       </div>
     </div>
   </div>
@@ -790,29 +889,37 @@ section { padding: 88px 0; }
 <!-- 種明かし（はじめまして、5toolgymです） -->
 <section class="reveal-section">
   <div class="container">
-    <p class="reveal-bridge">
-      私がそのことに気づけたのは、<br>
-      あるジムに出会ったからでした。
-    </p>
     <p class="reveal-divider">はじめまして、5toolgymです</p>
     <p class="reveal-body">
-      今読んでいただいた言葉は、<br>
-      実際に通ってくださっている会員さんの声をもとに書きました。<br><br>
-      「続かない」「変わらない」「年だから仕方ない」<br>
-      そう思って諦めかけていた方が、今日も5toolgymに通い続けてくれています。
+      ここまで記載した内容は、<br>
+      実際に通ってくださっているお客様から<br>
+      伺った声をもとに書きました。<br><br>
+      「続かない」<br>
+      「運動の経験がない」<br>
+      「他のジムで失敗した」<br>
+      「肩こりや腰痛もあり不安」<br>
+      「年齢も年齢だから変わらない気がする」<br><br>
+      そう諦めていた方が<br>
+      5toolgymでのトレーニングで<br>
+      カラダの変化を手にして、<br>
+      また、毎日の生活を楽しむための<br>
+      ライフスタイルの一部として<br>
+      今も通い続けてくださっています。
     </p>
   </div>
 </section>
 
 <!-- ⑦ 体験の流れ -->
-<section class="flow-section">
+<section class="flow-section" id="experience">
   <div class="container">
     <span class="eyebrow">EXPERIENCE</span>
     <p class="flow-lead">体験セッション90分で<br>何をするのか、正直に話します。</p>
     <p class="flow-sub">
       ただ運動するだけではありません。<br>
-      あなたのカラダを丁寧に見て、<br>
-      何が足りなかったのかを一緒に確認する90分です。
+      あなたのカラダを<br>
+      丁寧にチェックさせていただき、<br>
+      今のあなたに何が足りないのかを<br>
+      一緒に確認する90分です。
     </p>
     <ul class="flow-steps">
       <li>
@@ -907,14 +1014,14 @@ section { padding: 88px 0; }
       </li>
       <li class="faq-item">
         <p class="faq-q">他のパーソナルジムと何が違うんですか?</p>
-        <p class="faq-a">多くのジムは「筋肉を鍛える」ことから始めます。私たちは「体の使い方」から始めます。順番が逆なだけですが、この順番で、続かなかった方が続くようになっています。</p>
+        <p class="faq-a">多くのジムは「筋肉を鍛える」ことから始めます。私たちは「体の使い方」から始めます。イメージ通りに体を動かすことができて、初めてトレーニングの効果が最大化されます。</p>
       </li>
     </ul>
   </div>
 </section>
 
 <!-- ⑨ 料金 -->
-<section class="price-section">
+<section class="price-section" id="price">
   <div class="container">
     <span class="eyebrow">PRICE</span>
     <h2>料金プラン</h2>
@@ -938,6 +1045,12 @@ section { padding: 88px 0; }
         <span class="price-row-amount">¥11,000</span>
       </div>
       <div class="price-section-label">パーソナルトレーニング（月額）</div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <span class="price-row-label">月2回</span>
+        </div>
+        <span class="price-row-amount">¥19,400</span>
+      </div>
       <div class="price-row featured">
         <div class="price-row-left">
           <span class="price-row-label">月4回 <span class="price-tag-popular">おすすめ</span></span>
@@ -984,7 +1097,7 @@ section { padding: 88px 0; }
 </div>
 
 <!-- ⑩ トレーナー -->
-<section class="trainer-section">
+<section class="trainer-section" id="trainers">
   <div class="container">
     <span class="eyebrow">TRAINERS</span>
     <h2>トレーナー紹介</h2>
@@ -999,27 +1112,53 @@ section { padding: 88px 0; }
         <span class="trainer-role">オーナー / チーフトレーナー</span>
         <span class="trainer-store">薬院店・赤坂店</span>
         <p class="trainer-desc">「痩せるためだけのジム」は作りたくなかった、というのが正直な気持ちです。多くの方を見てきて気づいたのは、「体型が変わらない人」の多くは、鍛え方が間違っているのではなく、身体の使い方に問題があるということ。姿勢が悪いまま運動すると、むしろ痛みが出る。動きのクセを直さないと、何年通っても変わらない。だから5toolgymは、まず「機能を整える」ことを先にやります。</p>
+        <div class="trainer-quals">
+          <ul>
+            <li>NCCA認定 フィジカルトレーニングコーチ ADVANCE</li>
+            <li>NCCA認定 メンタルコンディショニングコーチ BASIC</li>
+            <li>NCCA フィジカルトレーニングコーチ BASIC 養成講師</li>
+          </ul>
+        </div>
       </div>
       <div class="trainer-card">
         <div class="trainer-avatar"><img src="images/trainer-manami-plain.webp" alt="manami" loading="lazy"></div>
         <p class="trainer-name">manami</p>
         <span class="trainer-role">トレーナー</span>
         <span class="trainer-store">薬院店・赤坂店</span>
-        <p class="trainer-desc">女性の身体は、年齢・ホルモン・産後によってまったく変わります。「同じやり方が通用しない」という感覚、ありませんか？女性特有の悩みに特化した指導をしています。「言いにくいこと」も話してもらえる関係を作ることが、一番大事だと思っています。</p>
+        <p class="trainer-desc">トレーニングを通して心身共に健康でいられるようにサポートさせていただきます。</p>
+        <div class="trainer-quals">
+          <ul>
+            <li>NCCA認定 ボディメイクインストラクター</li>
+            <li>NCCA認定 ファンクショナルムーブメントトレーナー</li>
+            <li>全米スポーツ医学協会認定 NASM-CPT</li>
+          </ul>
+        </div>
       </div>
       <div class="trainer-card">
         <div class="trainer-avatar"><img src="images/trainer-irabe.webp" alt="伊良部" loading="lazy"></div>
         <p class="trainer-name">伊良部</p>
         <span class="trainer-role">トレーナー</span>
         <span class="trainer-store">薬院店・赤坂店</span>
-        <p class="trainer-desc">「正しく動けるようになると、トレーニングは楽しくなります。まず動きを見せてください。何が足りないか、一緒に確認しましょう。」</p>
+        <p class="trainer-desc">トレーニングは"継続できるかどうか"がすべてです。そのため、無理なメニューではなく、一人ひとりに合わせた現実的なプランを提供しています。</p>
+        <div class="trainer-quals">
+          <ul>
+            <li>トレーニング指導者（JATI-ATI）</li>
+            <li>SAQレベル1 インストラクター</li>
+          </ul>
+        </div>
       </div>
       <div class="trainer-card">
         <div class="trainer-avatar"><img src="images/trainer-takasu.webp" alt="髙須" loading="lazy"></div>
         <p class="trainer-name">髙須</p>
         <span class="trainer-role">トレーナー</span>
         <span class="trainer-store">薬院店</span>
-        <p class="trainer-desc">ピラティススタジオで、姿勢改善・不調ケアを数多く担当してきました。正しいトレーニングには、正しい身体の動きを学ぶことが鍵です。レッスンを通して、みなさまの毎日を少し楽にしたい。それが私のやりたいことです。</p>
+        <p class="trainer-desc">これまでピラティススタジオで数多くの方の姿勢改善や不調ケアを担当し、お客様の目標のサポートをしてきました。正しいトレーニングには正しい体の動きを学ぶことが鍵です。</p>
+        <div class="trainer-quals">
+          <ul>
+            <li>トレーニング指導者（JATI-ATI）</li>
+            <li>CLUBPILATES TEACHER TRAINING Mat, Reformer</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1051,7 +1190,7 @@ section { padding: 88px 0; }
 </section>
 
 <!-- ⑪ 地図 -->
-<section class="map-section">
+<section class="map-section" id="access">
   <div class="container">
     <span class="eyebrow">ACCESS</span>
     <h2>アクセス</h2>
@@ -1078,9 +1217,14 @@ section { padding: 88px 0; }
   <div class="container">
     <span class="eyebrow">GET STARTED</span>
     <p class="cta-body">
-      まず、一度だけ来てみてください。<br>
-      90分で、あなたのカラダに何が足りなかったのかがわかります。<br>
-      合わなければ、入会しなくて大丈夫です。
+      薬院エリアには数多くのパーソナルジムがありますが、<br>
+      カラダに対して本当に必要な要素を<br>
+      提供している自信があります。<br><br>
+      あなたの大切なお時間を、無駄にしません。<br>
+      まず、一度だけでも体験トレーニングにお越しください。<br><br>
+      90分で、あなたのカラダに何が足りなかったのかがわかります。<br><br>
+      合わなければ、ご入会いただかなくても問題ございません。<br>
+      無理な勧誘は、いたしません。
     </p>
     <div class="cta-card">
       <h3>体験セッション（90分）</h3>
@@ -1103,5 +1247,27 @@ section { padding: 88px 0; }
   </div>
 </footer>
 
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var nav = document.getElementById('drawerNav');
+    var overlay = document.getElementById('drawerOverlay');
+    function closeDrawer(){
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+      overlay.classList.remove('open');
+    }
+    window.closeDrawer = closeDrawer;
+    btn.addEventListener('click', function(){
+      var isOpen = nav.classList.contains('open');
+      if(isOpen){ closeDrawer(); } else {
+        btn.classList.add('open');
+        nav.classList.add('open');
+        overlay.classList.add('open');
+      }
+    });
+    overlay.addEventListener('click', closeDrawer);
+  })();
+</script>
 </body>
 </html>
