@@ -16,7 +16,7 @@ Cloudflare Workers (static assets) でホストされているランディング
 
 | ツール | 変数名 | 本番 ID |
 |--------|--------|---------|
-| GA4 | `GA_ID` | `G-8P5K4FSDEF` ※要確認（薬院は G-JB7FMH9VST の可能性あり） |
+| GA4 | `GA_ID` | `G-JB7FMH9VST` |
 | Meta Pixel | `PIXEL_ID` | `970383788661577` |
 | Clarity | `CLARITY_ID` | `vx3scpfrrn` |
 
