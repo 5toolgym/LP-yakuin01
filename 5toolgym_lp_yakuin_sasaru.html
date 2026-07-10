@@ -9,27 +9,49 @@
 <meta property="og:title" content="5toolgym 薬院店 | 動きを鍛える、パーソナルジム 福岡">
 <meta property="og:description" content="食事制限でも激しい運動でもない。体の使い方を変えることで、体型・姿勢・不調がまとめて整っていく。体験90分¥5,500。">
 <meta property="og:image" content="https://lp-yakuin01.5toolgym.workers.dev/images/og-sasaru.jpg">
-<meta property="og:url" content="https://lp-yakuin01.5toolgym.workers.dev/5toolgym_lp_yakuin_sasaru">
+<meta property="og:url" content="https://lp-yakuin01.5toolgym.workers.dev/5toolgym_lp_yakuin_sasaru"><!-- TODO: カスタムドメイン設定後に更新 -->
+<link rel="canonical" href="https://lp-yakuin01.5toolgym.workers.dev/5toolgym_lp_yakuin_sasaru"><!-- TODO: カスタムドメイン設定後に更新 -->
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
 <script>
+/* ── GA4 ── */
 var GA_ID = 'G-8P5K4FSDEF';
-var CLARITY_ID = 'vx3scpfrrn';
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
 gtag('config', GA_ID);
 window.addEventListener('load', function(){
-  if(GA_ID && GA_ID !== 'G-XXXXXXXXXX'){
+  if(GA_ID){
     var s = document.createElement('script');
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     s.async = true;
     document.head.appendChild(s);
   }
 });
+
+/* ── Meta Pixel ── */
+var PIXEL_ID = '970383788661577';
+if(PIXEL_ID){
+  /* fbq stubを即時定義：Lead等のイベントをスクリプト読込前からキュー */
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;
+    n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+  }(window,document,'script');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+  /* fbevents.jsはload後に遅延読み込み（レンダリングブロックしない） */
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(s);
+  });
+}
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=970383788661577&ev=PageView&noscript=1"></noscript>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","vx3scpfrrn");</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -735,13 +757,13 @@ section { padding: 88px 0; }
 
 <div class="sticky-bar">
   <p>体験セッション 90分<span>当日入会で無料</span></p>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="gtag('event','cta_click',{section:'stickybar'})" class="sticky-btn">今すぐ予約 ¥5,500</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'sticky'})" class="sticky-btn">今すぐ予約 ¥5,500</a>
 </div>
 
 <!-- スマホ用下部固定CTA（768px以下のみ表示） -->
 <div class="sticky-cta-mobile">
   <p>体験90分 ¥5,500<span>当日入会で無料になります</span></p>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="gtag('event','cta_click',{section:'stickybar_mobile'})" class="sticky-cta-mobile-btn">体験を予約する</a>
+  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=stickybar" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'sticky_mobile'})" class="sticky-cta-mobile-btn">体験を予約する</a>
 </div>
 
 <!-- ① HERO -->
@@ -754,7 +776,7 @@ section { padding: 88px 0; }
   </div>
   <img src="/images/fv-sasaru.gif" alt="食事を我慢して運動すれば痩せるよね？というあの頃の会話" class="fv-sns-card" width="1200" height="1600" loading="eager">
   <div class="container">
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=fv" onclick="gtag('event','cta_click',{section:'fv'})" class="btn-coral">空き状況を確認する →</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=fv" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'fv'})" class="btn-coral">空き状況を確認する →</a>
     <span class="btn-note">¥5,500 ／ 当日入会で無料になります</span>
     <p class="fv-micro">予約は30秒で完了 ／ 無理な勧誘はありません ／ 体験だけのご利用もOK</p>
   </div>
@@ -933,7 +955,7 @@ section { padding: 88px 0; }
   <div class="cta-mid-card">
     <h3>体験セッション（90分）</h3>
     <p>¥5,500 ／ 当日入会で無料になります</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=trust" onclick="gtag('event','cta_click',{section:'trust'})" class="btn-cta-mid">体験を予約する →</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=trust" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'trust'})" class="btn-cta-mid">体験を予約する →</a>
     <p class="cta-micro">予約は30秒で完了 ／ 無理な勧誘はありません ／ 体験だけのご利用もOK</p>
   </div>
 </div>
@@ -1149,7 +1171,7 @@ section { padding: 88px 0; }
   <div class="cta-mid-card">
     <h3>体験セッション（90分）</h3>
     <p>¥5,500 ／ 当日入会で無料になります</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=experience" onclick="gtag('event','cta_click',{section:'experience'})" class="btn-cta-mid">体験を予約する →</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=experience" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'experience'})" class="btn-cta-mid">体験を予約する →</a>
     <p class="cta-micro">予約は30秒で完了 ／ 無理な勧誘はありません ／ 体験だけのご利用もOK</p>
   </div>
 </div>
@@ -1228,7 +1250,7 @@ section { padding: 88px 0; }
   <div class="cta-mid-card">
     <h3>体験セッション（90分）</h3>
     <p>¥5,500 ／ 当日入会で無料になります</p>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=price" onclick="gtag('event','cta_click',{section:'price'})" class="btn-cta-mid">このプランで体験してみる</a>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=price" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'pricing'})" class="btn-cta-mid">このプランで体験してみる</a>
     <p class="cta-micro">予約は30秒で完了 ／ 無理な勧誘はありません ／ 体験だけのご利用もOK</p>
   </div>
 </div>
@@ -1359,7 +1381,7 @@ section { padding: 88px 0; }
       <h3>体験セッション（90分）</h3>
       <p class="cta-price"><span class="cta-price-yen">¥</span>5,500</p>
       <p class="cta-price-note">当日ご入会の場合、体験料は無料になります</p>
-      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=final" onclick="gtag('event','cta_click',{section:'final'})" class="btn-cta">今すぐ体験を予約する</a>
+      <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=final" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'final'})" class="btn-cta">今すぐ体験を予約する</a>
     </div>
   </div>
 </section>
