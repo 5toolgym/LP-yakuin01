@@ -475,6 +475,14 @@ section { padding: 88px 0; }
 }
 .g-num small { font-size: 0.5em; font-weight: 700; }
 .g-label { font-size: 13px; color: var(--text); line-height: 1.5; font-weight: 500; }
+.g-note { font-size: 10px; color: var(--teal); font-weight: 500; }
+.answer-preview { padding: 40px 0 4px; background: #fff; text-align: center; }
+.answer-preview-text {
+  font-family: var(--serif); font-size: clamp(18px, 4vw, 24px);
+  font-weight: 700; line-height: 1.9; color: var(--text); margin-bottom: 14px;
+}
+.answer-preview-text strong { color: var(--coral); font-weight: 900; }
+.answer-preview-note { font-size: 13px; color: var(--text); opacity: 0.65; }
 @media (max-width: 520px) {
   .google-metrics-inner { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 16px; }
   .g-num { font-size: 24px; }
@@ -782,6 +790,18 @@ section { padding: 88px 0; }
   </div>
 </section>
 
+<!-- ①-2 答え先出し -->
+<section class="answer-preview">
+  <div class="container">
+    <p class="answer-preview-text">
+      私に足りなかったのは、<br>
+      我慢でも、運動量でもなく——<br>
+      <strong>「動きを鍛える」</strong>ことでした。
+    </p>
+    <p class="answer-preview-note">（詳しくは、この下で話します）</p>
+  </div>
+</section>
+
 <div style="width:100%;max-width:480px;margin:0 auto;">
   <img src="/images/fv-below-campaign.webp" alt="体験トレーニングキャンペーン中 薬院大通駅から徒歩2分" width="1200" height="1600" loading="lazy" style="width:100%;height:auto;display:block;">
 </div>
@@ -972,8 +992,8 @@ section { padding: 88px 0; }
       <span class="g-label">平均継続期間</span>
     </div>
     <div class="g-metric">
-      <span class="g-num">90<small>%</small></span>
-      <span class="g-label">体験からご入会</span>
+      <span class="g-num">91<small>%</small></span>
+      <span class="g-label">体験からご入会<br><span class="g-note">（2024年12月〜2026年5月／36名中33名）</span></span>
     </div>
   </div>
 </section>
