@@ -27,17 +27,18 @@
 :root {
   --black: #ffffff;
   --white: #0a0a0a;
-  --accent: #1a7a3c;
-  --gray: #f5f5f3;
-  --gray2: #e0e0dc;
-  --muted: #666;
-  --text: #1a1a1a;
+  --accent: #D4537E;
+  --accent-dark: #993556;
+  --gray: #FCEFF4;
+  --gray2: #F0DCE4;
+  --muted: #6B6B6B;
+  --text: #2B2B2B;
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black); color: var(--text); line-height: 1.8; }
 .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
 .section-label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
-.section-title { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+.section-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
 .section-title em { color: var(--accent); font-style: normal; }
 .divider { width: 40px; height: 2px; background: var(--accent); margin: 24px 0; }
 .topbar { background: var(--accent); color: var(--black); text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 900; letter-spacing: 1px; position: sticky; top: 0; z-index: 100; }
@@ -45,16 +46,19 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .header { background: var(--black); border-bottom: 1px solid var(--gray2); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
 .logo { font-weight: 900; font-size: 14px; letter-spacing: 2px; color: var(--accent); text-transform: lowercase; }
 .header-cta { background: var(--accent); color: var(--black); font-weight: 900; font-size: 12px; padding: 10px 20px; border-radius: 100px; text-decoration: none; letter-spacing: 1px; white-space: nowrap; }
-.hero { padding: 64px 20px 80px; max-width: 680px; margin: 0 auto; }
-.hero-eyebrow { display: inline-block; font-size: 12px; color: var(--accent); background: rgba(200,240,69,0.1); border: 1px solid rgba(200,240,69,0.3); padding: 6px 16px; border-radius: 100px; letter-spacing: 2px; margin-bottom: 28px; }
-.hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(26px, 6vw, 42px); font-weight: 700; line-height: 1.4; margin-bottom: 24px; }
+.hero { padding: 0 0 80px; max-width: 680px; margin: 0 auto; }
+.hero-photo { width: 100%; line-height: 0; }
+.hero-photo img { width: 100%; height: auto; display: block; }
+.hero-body { padding: 32px 20px 0; }
+.hero-eyebrow { display: inline-block; font-size: 12px; color: var(--accent); background: rgba(212,83,126,0.08); border: 1px solid rgba(212,83,126,0.3); padding: 6px 16px; border-radius: 100px; letter-spacing: 2px; margin-bottom: 28px; }
+.hero h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: clamp(26px, 6vw, 42px); font-weight: 700; line-height: 1.4; margin-bottom: 24px; }
 .hero h1 em { color: var(--accent); font-style: normal; display: block; }
 .hero-sub { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 36px; }
 .hero-stats { display: flex; gap: 32px; margin-bottom: 40px; }
-.hero-stat-num { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 700; color: var(--accent); display: block; line-height: 1; }
+.hero-stat-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 32px; font-weight: 700; color: var(--accent); display: block; line-height: 1; }
 .hero-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; margin-top: 4px; }
-.btn-primary { display: inline-block; background: var(--accent); color: var(--black); font-weight: 900; font-size: 15px; padding: 18px 40px; border-radius: 100px; text-decoration: none; letter-spacing: 1px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 0 20px rgba(200,240,69,0.3); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,240,69,0.4); }
+.btn-primary { display: inline-block; background: var(--accent); color: var(--black); font-weight: 900; font-size: 15px; padding: 18px 40px; border-radius: 100px; text-decoration: none; letter-spacing: 1px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 0 20px rgba(212,83,126,0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(212,83,126,0.4); }
 .btn-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
 .scene { background: var(--gray); border-top: 1px solid var(--gray2); border-bottom: 1px solid var(--gray2); padding: 56px 20px; }
 .scene-inner { max-width: 680px; margin: 0 auto; }
@@ -63,23 +67,23 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .scene-check { list-style: none; margin: 32px 0; }
 .scene-check li { padding: 14px 0 14px 32px; border-bottom: 1px solid var(--gray2); font-size: 14px; color: #333; position: relative; line-height: 1.7; }
 .scene-check li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
-.scene-note { font-family: 'Noto Serif JP', serif; font-size: 18px; color: var(--text); font-weight: 700; margin-top: 32px; line-height: 1.7; }
+.scene-note { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; color: var(--text); font-weight: 700; margin-top: 32px; line-height: 1.7; }
 .scene-note em { color: var(--accent); font-style: normal; }
 .why { padding: 72px 20px; max-width: 680px; margin: 0 auto; }
 .reason-block { background: var(--gray); border: 1px solid var(--gray2); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
-.reason-block h3 { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; line-height: 1.6; }
+.reason-block h3 { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; line-height: 1.6; }
 .reason-block h3 em { color: var(--accent); font-style: normal; }
 .reason-block p { font-size: 14px; color: #444; line-height: 1.9; }
 .steps { background: var(--gray); padding: 72px 20px; }
 .steps-inner { max-width: 680px; margin: 0 auto; }
 .step { display: flex; gap: 24px; margin-bottom: 48px; align-items: flex-start; }
-.step-num { font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 700; color: var(--accent); opacity: 0.4; flex-shrink: 0; line-height: 1; width: 48px; }
+.step-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 40px; font-weight: 700; color: var(--accent); opacity: 0.4; flex-shrink: 0; line-height: 1; width: 48px; }
 .step-content h3 { font-size: 16px; font-weight: 900; margin-bottom: 10px; color: var(--accent); letter-spacing: 1px; }
 .step-content p { font-size: 14px; color: #444; line-height: 1.9; }
 .usp { padding: 72px 20px; max-width: 680px; margin: 0 auto; }
 .usp-grid { display: flex; flex-direction: column; gap: 16px; }
 .usp-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: var(--gray); border-radius: 14px; border: 1px solid var(--gray2); }
-.usp-num { font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; color: var(--accent); opacity: 0.5; flex-shrink: 0; line-height: 1; }
+.usp-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); opacity: 0.5; flex-shrink: 0; line-height: 1; }
 .usp-text h3 { font-size: 15px; font-weight: 900; margin-bottom: 8px; }
 .usp-text p { font-size: 13px; color: #444; line-height: 1.8; }
 .voice { background: var(--gray); padding: 72px 20px; }
@@ -94,27 +98,27 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .trainer-card:last-child { border-bottom: none; }
 .trainer-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--accent); }
 .trainer-role { font-size: 10px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
-.trainer-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.trainer-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
 .trainer-title { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
 .trainer-bio { font-size: 13px; color: #444; line-height: 1.9; }
 .plans { background: var(--gray); padding: 72px 20px; }
 .plans-inner { max-width: 680px; margin: 0 auto; }
 .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
 .plan-card { background: var(--black); border: 1px solid var(--gray2); border-radius: 14px; padding: 20px; text-align: center; }
-.plan-card.featured { border-color: var(--accent); background: rgba(200,240,69,0.05); }
+.plan-card.featured { border-color: var(--accent); background: rgba(212,83,126,0.05); }
 .plan-freq { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-.plan-price { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: var(--accent); }
+.plan-price { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 24px; font-weight: 700; color: var(--accent); }
 .plan-unit { font-size: 11px; color: var(--muted); }
 .plan-badge { display: inline-block; background: var(--accent); color: var(--black); font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 100px; margin-bottom: 8px; letter-spacing: 1px; }
 .offer { padding: 72px 20px; max-width: 680px; margin: 0 auto; }
 .offer-box { background: var(--gray); border: 1px solid var(--accent); border-radius: 20px; padding: 40px 32px; text-align: center; }
 .offer-price-old { font-size: 14px; color: var(--muted); text-decoration: line-through; margin-bottom: 8px; }
-.offer-price { font-family: 'Noto Serif JP', serif; font-size: 48px; font-weight: 700; color: var(--accent); line-height: 1; }
+.offer-price { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 48px; font-weight: 700; color: var(--accent); line-height: 1; }
 .offer-price-note { font-size: 12px; color: var(--muted); margin-top: 8px; margin-bottom: 32px; }
 .offer-includes { list-style: none; text-align: left; margin-bottom: 32px; }
 .offer-includes li { padding: 10px 0 10px 24px; border-bottom: 1px solid var(--gray2); font-size: 14px; color: #333; position: relative; }
 .offer-includes li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
-.offer-zero { background: rgba(200,240,69,0.1); border: 1px solid rgba(200,240,69,0.3); border-radius: 12px; padding: 16px; margin-bottom: 28px; font-size: 14px; color: var(--accent); font-weight: 700; }
+.offer-zero { background: rgba(212,83,126,0.08); border: 1px solid rgba(212,83,126,0.3); border-radius: 12px; padding: 16px; margin-bottom: 28px; font-size: 14px; color: var(--accent); font-weight: 700; }
 .flow { background: var(--gray); padding: 72px 20px; }
 .flow-inner { max-width: 680px; margin: 0 auto; }
 .flow-step { display: flex; gap: 20px; margin-bottom: 32px; align-items: flex-start; }
@@ -132,14 +136,14 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .access-info strong { color: var(--text); }
 .close-section { padding: 72px 20px; max-width: 680px; margin: 0 auto; text-align: center; }
 .close-section p { font-size: 14px; color: #444; line-height: 2; margin-bottom: 32px; }
-.close-section .signature { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--muted); margin-top: 24px; }
+.close-section .signature { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 14px; color: var(--muted); margin-top: 24px; }
 .footer { background: var(--black); border-top: 1px solid var(--gray2); padding: 32px 20px; text-align: center; }
 .footer p { font-size: 12px; color: var(--muted); line-height: 2; }
 .letter-sec { background: #fdfaf5; padding: 80px 20px; }
 .letter-inner { max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 4px; padding: 48px 40px; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
-.letter-text { font-family: 'Noto Serif JP', serif; font-size: 15px; line-height: 2.4; color: #3a3a3a; margin-bottom: 1.6em; }
+.letter-text { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; line-height: 2.4; color: #3a3a3a; margin-bottom: 1.6em; }
 .letter-text:last-of-type { margin-bottom: 0; }
-.letter-sig { font-family: 'Noto Serif JP', serif; font-size: 15px; line-height: 2.4; color: #3a3a3a; text-align: right; margin-top: 36px; }
+.letter-sig { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; line-height: 2.4; color: #3a3a3a; text-align: right; margin-top: 36px; }
 @media(max-width:640px) { .letter-inner { padding: 32px 20px; } .letter-text, .letter-sig { font-size: 14px; } }
 </style>
 </head>
@@ -156,24 +160,25 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">デスクワーカー・30〜40代の方へ</div>
-  <h1>
-    休んでも、寝ても、<br>疲れが取れない。
-    <em>それは、休み方の問題じゃない。</em>
-  </h1>
-  <p class="hero-sub">カラダが緊張したまま、呼吸が乱れたまま。<br>その状態では、何時間寝ても回復しません。<br>必要なのは「正しく休めるカラダ」をつくることです。</p>
-  <div class="hero-stats">
-    <div>
-      <span class="hero-stat-num">90%</span>
-      <div class="hero-stat-label">体験→入会率</div>
-    </div>
-    <div>
-      <span class="hero-stat-num">13.1ヶ月</span>
-      <div class="hero-stat-label">平均継続期間</div>
-    </div>
+  <div class="hero-photo">
+    <!-- 差し込み: fatigue-hero-yakuin.webp (1080x1350 / 4:5) -->
+    <picture><source srcset="images/fatigue-hero-yakuin.webp" type="image/webp"><img src="images/fatigue-hero-yakuin.jpg" fetchpriority="high" alt="5toolgym薬院店 24時間ジムつきパーソナルトレーニングジム 夕方まで、元気がもつ 通常13,200円が5,500円 薬院大通駅から徒歩2分"></picture>
   </div>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-primary">体験を予約する（当日入会で0円）</a>
-  <p class="btn-note">通常¥13,200 → 初回体験¥5,500 / 90分 / 無理な勧誘なし</p>
+  <div class="hero-body">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">休んでも、寝ても、疲れが取れない。それは、休み方の問題じゃない。カラダが緊張したまま、呼吸が乱れたまま。その状態では、何時間寝ても回復しません。</h1>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">91%</span>
+        <div class="hero-stat-label">体験→入会率</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">14ヶ月</span>
+        <div class="hero-stat-label">平均継続期間</div>
+      </div>
+    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-primary">体験を予約する（当日入会で0円）</a>
+    <p class="btn-note">通常¥13,200 → 初回体験¥5,500 / 90分 / 無理な勧誘なし</p>
+  </div>
 </section>
 
 <section class="scene">
@@ -326,6 +331,24 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
       <p class="trainer-bio">疲れやすさの原因は、ホルモンバランスや生活習慣によって人それぞれ違います。女性特有の疲れ方にも対応した指導をしています。</p>
     </div>
   </div>
+  <div class="trainer-card">
+    <img src="https://lp-yakuin01.5toolgym.workers.dev/images/img6.jpg" alt="髙須銀之丞" class="trainer-img">
+    <div>
+      <div class="trainer-role">Personal Trainer</div>
+      <div class="trainer-name">髙須 銀之丞</div>
+      <div class="trainer-title">姿勢改善・不調ケアが得意</div>
+      <p class="trainer-bio">正しいトレーニングには、正しい身体の動きを学ぶことが鍵です。緊張や呼吸の乱れからくる不調ケアを得意としています。</p>
+    </div>
+  </div>
+  <div class="trainer-card">
+    <img src="https://lp-yakuin01.5toolgym.workers.dev/images/trainer-irabe.webp" alt="伊良部" class="trainer-img">
+    <div>
+      <div class="trainer-role">Personal Trainer</div>
+      <div class="trainer-name">伊良部</div>
+      <div class="trainer-title">動作改善・体力向上が得意</div>
+      <p class="trainer-bio">「続けられるかどうか」を一番大切にしています。疲れているときでも無理なく取り組める現実的なプランを、一緒に組んでいきます。</p>
+    </div>
+  </div>
 </section>
 
 <section class="plans">
@@ -434,7 +457,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
     <p class="letter-text">新しいことを始めるとき、<br>楽しみと同じくらい、不安もありますよね。</p>
     <p class="letter-text">5toolgymってどんな場所なんだろう？<br>トレーナーはどんな人なんだろう？<br>自分の悩みを、<br>本当に解決してもらえるんだろうか？</p>
     <p class="letter-text">その気持ち、とてもよくわかります。<br>だからこそ、一つお伝えさせてください。</p>
-    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、9割以上がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は13ヶ月以上です。</p>
+    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
     <p class="letter-text">これは、<br>私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
     <p class="letter-text">5toolgymのトレーナー全員で、<br>あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、<br>心待ちにしています。</p>
     <p class="letter-sig">5toolgym代表　柴山 智幸</p>

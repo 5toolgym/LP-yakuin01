@@ -71,15 +71,16 @@ if(PIXEL_ID){
 
 
 :root {
-  --text: #1A1A1A;
-  --teal: #2A6B5E;
-  --teal-dark: #1D5047;
-  --mint: #E2F7F1;
-  --mint-mid: #B8EBD8;
-  --coral: #E8637A;
-  --coral-bg: #FEF0F2;
-  --coral-mid: #FACDD4;
-  --serif: 'Noto Serif JP', serif;
+  --text: #2B2B2B;
+  --text-sub: #6B6B6B;
+  --teal: #D4537E;
+  --teal-dark: #993556;
+  --mint: #FBEAF0;
+  --mint-mid: #F0DCE4;
+  --coral: #D4537E;
+  --coral-bg: #FCEFF4;
+  --coral-mid: #F0DCE4;
+  --serif: 'Noto Sans JP', sans-serif;
   --sans: 'Noto Sans JP', sans-serif;
 }
 
@@ -89,8 +90,9 @@ body {
   background: #fff;
   color: var(--text);
   font-family: var(--sans);
-  font-size: 21px;
+  font-size: 16px;
   line-height: 1.9;
+  letter-spacing: .02em;
   -webkit-font-smoothing: antialiased;
   padding-top: 56px;
 }
@@ -144,6 +146,30 @@ section { padding: 88px 0; }
   padding: 18px 44px; border-radius: 50px; text-decoration: none; letter-spacing: 0.04em;
 }
 .btn-note { display: block; font-size: 15px; color: var(--text); margin-top: 14px; }
+.hero-trust { display: flex; gap: 10px; margin: 0 0 24px; }
+.hero-trust-item { flex: 1; max-width: 200px; background: var(--mint); border: 1px solid var(--mint-mid); border-radius: 12px; padding: 14px 16px; text-align: center; }
+.hero-trust-item strong { font-family: 'Outfit', var(--sans); font-size: 26px; font-weight: 700; color: var(--teal-dark); display: block; line-height: 1.1; margin-bottom: 4px; }
+.hero-trust-item strong small { font-size: 13px; font-weight: 700; }
+.hero-trust-item span { font-size: 12px; color: var(--text-sub); letter-spacing: .02em; }
+
+/* 悩み共感チェックリスト */
+.empathy-section { background: #fff; }
+.empathy-lead { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.7; margin-bottom: 32px; }
+.empathy-list { list-style: none; }
+.empathy-list li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--hairline, var(--mint-mid)); font-size: 16px; line-height: 1.9; font-weight: 500; }
+.empathy-list li:last-child { border-bottom: none; }
+.empathy-list li::before { content: '✓'; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--mint); color: var(--teal-dark); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.empathy-close { margin-top: 32px; font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.9; }
+.empathy-close em { font-style: normal; color: var(--teal-dark); }
+
+/* 選ばれる理由 ×4 */
+.reasons-section { background: var(--mint); }
+.reasons-lead { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.7; margin-bottom: 32px; }
+.reasons-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.reasons-list li { background: #fff; border: 1px solid var(--mint-mid); border-radius: 16px; padding: 24px 24px 24px 64px; position: relative; }
+.reasons-num { position: absolute; left: 20px; top: 24px; font-family: 'Outfit', var(--sans); font-size: 20px; font-weight: 700; color: var(--teal-dark); }
+.reasons-list h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.reasons-list p { font-size: 15px; color: var(--text-sub); line-height: 1.85; font-weight: 500; }
 
 /* 深掘り */
 .dig-section { background: var(--mint); }
@@ -538,7 +564,6 @@ section { padding: 88px 0; }
 @media (max-width: 768px) {
   .sticky-cta-mobile { display: flex; }
   .sticky-bar { display: none; }
-  body { font-size: 19px; }
   .footer { padding-bottom: 80px; }
 }
 
@@ -785,15 +810,20 @@ section { padding: 88px 0; }
       <span class="fv-badge">女性トレーナー指名OK</span>
     </div>
   </div>
-  <img src="/images/fv-sasaru.gif" alt="食事を我慢して運動すれば痩せるよね？というあの頃の会話" class="fv-sns-card" width="1080" height="1350" loading="eager">
+  <!-- 差し込み: fv-sasaru.webp (1080x1350 / 4:5) -->
+  <img src="/images/fv-sasaru.gif" alt="5toolgym薬院店 パーソナルトレーニングジム 動きを鍛えると、体型・姿勢・不調がまとめて整っていく 通常13,200円が5,500円 薬院大通駅から徒歩2分" class="fv-sns-card" width="1080" height="1350" loading="eager">
   <div class="container">
+    <div class="hero-trust">
+      <div class="hero-trust-item"><strong>91<small>%</small></strong><span>体験→入会率</span></div>
+      <div class="hero-trust-item"><strong>14<small>ヶ月</small></strong><span>平均継続期間</span></div>
+    </div>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?utm_source=lp&utm_medium=cta&utm_campaign=yakuin_sasaru&utm_content=fv" onclick="if(window.fbq)fbq('track','Lead');gtag('event','cta_click',{link_position:'fv'})" class="btn-coral">空き状況を確認する →</a>
     <span class="btn-note">¥5,500 ／ 当日入会で無料になります</span>
     <p class="fv-micro">予約は30秒で完了 ／ 無理な勧誘はありません ／ 体験だけのご利用もOK</p>
   </div>
 </section>
 
-<!-- ①-2 答え先出し -->
+<!-- ①-2 30秒で読める結論 -->
 <section class="answer-preview">
   <div class="container">
     <p class="answer-preview-text">
@@ -805,7 +835,24 @@ section { padding: 88px 0; }
   </div>
 </section>
 
+<!-- ①-3 悩み共感 -->
+<section class="empathy-section">
+  <div class="container">
+    <span class="eyebrow">こんな経験、ありませんか</span>
+    <p class="empathy-lead">これまで、いろんな方法を試してきた方へ。</p>
+    <ul class="empathy-list">
+      <li>ジムに入会しても、いつのまにか幽霊会員になっていた</li>
+      <li>食事を我慢しても、思うように変わらなかった</li>
+      <li>肩こりや腰痛もあって、運動する自信が持てない</li>
+      <li>他のジムで頑張ったのに、続かなかった</li>
+      <li>年齢的にもう変わらない気がしている</li>
+    </ul>
+    <p class="empathy-close">そう感じているのは、<br><em>あなただけではありません。</em></p>
+  </div>
+</section>
+
 <div style="width:100%;max-width:480px;margin:0 auto;">
+  <!-- 差し込み: fv-below-campaign.webp (1200x1600) -->
   <img src="/images/fv-below-campaign.webp" alt="体験トレーニングキャンペーン中 薬院大通駅から徒歩2分" width="1200" height="1600" loading="lazy" style="width:100%;height:auto;display:block;">
 </div>
 
@@ -913,6 +960,37 @@ section { padding: 88px 0; }
 </section>
 
 
+<!-- 選ばれる理由 ×4 -->
+<section class="reasons-section">
+  <div class="container">
+    <span class="eyebrow">5toolgymが選ばれる理由</span>
+    <p class="reasons-lead">動きを鍛える場所だから、<br>ここが違います。</p>
+    <ul class="reasons-list">
+      <li>
+        <span class="reasons-num">01</span>
+        <h3>原因から直す</h3>
+        <p>その場しのぎのメニューではなく、姿勢や動き方の崩れの原因から一緒に整えていきます。</p>
+      </li>
+      <li>
+        <span class="reasons-num">02</span>
+        <h3>あなた専用のプログラム</h3>
+        <p>目標・体の状態・ライフスタイルに合わせて、担当トレーナーとプログラムを組み立てます。</p>
+      </li>
+      <li>
+        <span class="reasons-num">03</span>
+        <h3>24時間ジムが無料で使える</h3>
+        <p>パーソナルセッション以外の時間も、自主練習にご利用いただけます。</p>
+      </li>
+      <li>
+        <span class="reasons-num">04</span>
+        <h3>当日キャンセルOK・縛りなし</h3>
+        <p>体験して合わなければ、入会しなくて大丈夫です。無理な勧誘は一切ありません。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
 <!-- HONESTY -->
 <section class="honesty-section">
   <div class="container">
@@ -939,17 +1017,16 @@ section { padding: 88px 0; }
       <span>指導歴9年</span>
       <span>のべ1万セッション以上</span>
       <span>★4.9（Google 30件）</span>
-      <span>5年以上継続の会員多数</span>
     </div>
     <img src="/images/douse-tsudakanai.webp" alt="「どうせ私は続かない」そう思っていませんか?" width="1200" height="1600" loading="lazy" style="width:100%;height:auto;display:block;margin:24px 0;border-radius:12px;">
     <div class="trust-cards">
       <div class="trust-card">
-        <p class="trust-num">5<span class="trust-unit">年</span></p>
-        <p class="trust-label">最長継続年数<br>（店舗開業前から）</p>
+        <p class="trust-num">91<span class="trust-unit">%</span></p>
+        <p class="trust-label">体験→入会率<br>（2024年12月〜2026年5月／36名中33名）</p>
       </div>
       <div class="trust-card">
-        <p class="trust-num"><small style="font-size:0.5em;vertical-align:middle;">約</small>30<span class="trust-unit">%</span></p>
-        <p class="trust-label">会員が<br>3年以上継続中</p>
+        <p class="trust-num">14<span class="trust-unit">ヶ月</span></p>
+        <p class="trust-label">会員様の<br>平均継続期間</p>
       </div>
     </div>
     <div class="trust-body">
@@ -991,7 +1068,7 @@ section { padding: 88px 0; }
       <span class="g-label">Google評価<br>（30件）</span>
     </div>
     <div class="g-metric">
-      <span class="g-num">13.1<small>ヶ月</small></span>
+      <span class="g-num">14<small>ヶ月</small></span>
       <span class="g-label">平均継続期間</span>
     </div>
     <div class="g-metric">

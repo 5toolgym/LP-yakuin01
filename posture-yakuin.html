@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preload" as="image" href="images/conditioning-mob.webp" type="image/webp">
+<link rel="preload" as="image" href="images/posture-hero-yakuin.webp" type="image/webp">
 <title>5toolgym 薬院店 | 姿勢改善パーソナルトレーニング｜福岡・薬院</title>
 <meta name="description" content="マッサージでも、ストレッチでも変わらなかった。原因は筋力じゃなく、身体の使い方だったから。姿勢が崩れる本当の原因を直すパーソナルジム。薬院大通駅徒歩2分。">
 <meta property="og:type" content="website">
@@ -32,8 +32,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;background:#FFFFFF;color:#1A1A1A;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:80px}
 :root{
-  --green:#1D9E75;--dark:#1A1A1A;--mid:#555555;--light:#888888;
-  --bg:#FFFFFF;--bg2:#F7F7F5;--border:#E5E5E5;
+  --green:#D4537E;--dark:#2B2B2B;--mid:#5A5A5A;--light:#6B6B6B;
+  --bg:#FFFFFF;--bg2:#FCEFF4;--border:#F0DCE4;
   --sp:20px;--r:4px;--max:640px;
 }
 img{max-width:100%;height:auto;display:block}
@@ -92,26 +92,17 @@ body.menu-open{overflow:hidden}
 
 /* ── SCROLL ARROW ── */
 @keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-.scroll-arrow{display:block;text-align:center;font-size:20px;color:rgba(255,255,255,.6);animation:scrollBounce 1.5s ease-in-out infinite;margin-top:40px}
+.scroll-arrow{display:block;text-align:center;font-size:20px;color:var(--light);animation:scrollBounce 1.5s ease-in-out infinite;margin-top:24px}
 
 /* ── HERO ── */
-.hero{position:relative;overflow:hidden;padding:calc(36px + 52px + 32px) var(--sp) 60px;text-align:center;background:#1c221e}
-.hero-photo{position:absolute;inset:0;z-index:0}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(10,10,8,.45) 0%,rgba(10,10,8,.15) 60%,rgba(10,10,8,.05) 100%)}
-.hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto}
-.hero-eyebrow{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.08em;font-weight:500;margin-bottom:20px}
-.hero-h1{font-size:clamp(22px,5.5vw,34px);font-weight:600;line-height:1.55;color:#fff;margin-bottom:24px;letter-spacing:.02em}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:40px}
-.hero-badges{display:flex;gap:12px;justify-content:center;margin-bottom:32px}
-.hero-badge{border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:16px 24px;text-align:center;flex:1;max-width:180px;background:rgba(0,0,0,.55)}
-.hero-badge-num{font-family:'Outfit',sans-serif;font-size:2rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px}
-.hero-badge-unit{font-size:1rem;font-weight:400}
-.hero-badge-label{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.04em}
-.hero-price{display:flex;align-items:baseline;gap:8px;justify-content:center;margin-top:40px;margin-bottom:24px;flex-wrap:wrap}
-.hero-price-orig{font-size:14px;color:rgba(255,255,255,.4);text-decoration:line-through}
-.hero-price-main{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:#fff}
-.hero-price-note{font-size:12px;color:rgba(255,255,255,.5)}
+.hero{position:relative;overflow:hidden;padding:52px 0 60px;text-align:center;background:var(--bg)}
+.hero-photo{width:100%;line-height:0}
+.hero-photo img{width:100%;height:auto;display:block}
+.hero-inner{position:relative;max-width:var(--max);margin:0 auto;padding:24px var(--sp) 0}
+.hero-trust{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
+.hero-trust-item{flex:1;max-width:160px;background:var(--bg2);border:1px solid var(--border);padding:10px 16px;border-radius:8px;text-align:center}
+.hero-trust-item strong{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--green);display:block;line-height:1.1;margin-bottom:2px}
+.hero-trust-item span{font-size:11px;color:var(--light);letter-spacing:.04em}
 
 /* ── EMPATHY LIST ── */
 .elist-item{font-size:16px;line-height:2.0;padding:18px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
@@ -330,28 +321,14 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="top">
-  <div class="hero-photo"><picture><source srcset="images/conditioning-mob.webp" type="image/webp"><img src="images/conditioning-mob.jpg" alt="" fetchpriority="high"></picture></div>
-  <div class="hero-shade"></div>
+  <div class="hero-photo"><picture><source srcset="images/posture-hero-yakuin.webp" type="image/webp"><img src="images/posture-hero-yakuin.jpg" alt="薬院24時間ジム付きパーソナルトレーニングジム 猫背・巻き肩・反り腰を動きを鍛えて改善" fetchpriority="high"></picture></div>
+  <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">猫背と言われ続けた。でも、何をしても変わらなかった。姿勢が崩れる本当の原因を直すから、変わり続ける。</h1>
   <div class="hero-inner">
-    <p class="hero-eyebrow">猫背・巻き肩コンプレックスから脱却したい方へ</p>
-    <h1 class="hero-h1">猫背と言われ続けた。<br>でも、何をしても<br>変わらなかった。</h1>
-    <p class="hero-sub">姿勢が崩れる本当の原因を直すから、<br>変わり続ける。</p>
-    <div class="hero-price">
-      <span class="hero-price-orig">通常 ¥13,200</span>
-      <span class="hero-price-main">¥5,500</span>
-      <span class="hero-price-note">（初回体験 / 90分 / 税込）</span>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><strong>91%</strong><span>体験→入会率</span></div>
+      <div class="hero-trust-item"><strong>14<span style="font-size:12px">ヶ月</span></strong><span>平均継続期間</span></div>
     </div>
-    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main" style="margin-top:32px;max-width:360px" id="heroCta">体験を予約する（当日入会で0円）</a>
-    <div class="hero-badges" style="margin-top:20px;margin-bottom:12px">
-      <div class="hero-badge">
-        <div class="hero-badge-num">90<span class="hero-badge-unit">%</span></div>
-        <div class="hero-badge-label">体験→入会率</div>
-      </div>
-      <div class="hero-badge">
-        <div class="hero-badge-num">13.1<span class="hero-badge-unit" style="font-size:.9rem">ヶ月</span></div>
-        <div class="hero-badge-label">平均継続期間</div>
-      </div>
-    </div>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main" style="max-width:360px" id="heroCta">体験を予約する（当日入会で0円）</a>
     <p class="btn-sub">無理な勧誘なし　／　当日キャンセルOK　／　相談だけでもOK</p>
     <span class="scroll-arrow" aria-hidden="true">&#8595;</span>
   </div>
@@ -584,7 +561,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
         <div class="stat-label">体験→入会率</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">13.1<span class="stat-unit" style="font-size:1.2rem">ヶ月</span></div>
+        <div class="stat-num">14<span class="stat-unit" style="font-size:1.2rem">ヶ月</span></div>
         <div class="stat-label">平均継続期間</div>
       </div>
     </div>
@@ -681,6 +658,17 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
           </div>
         </div>
         <p class="tc-story">女性の身体は、年齢・ホルモン・産後によってまったく変わります。「同じやり方が通用しない」という感覚、ありませんか？<br><br>女性特有の悩みに特化した指導をしています。「言いにくいこと」も話してもらえる関係を作ることが、一番大事だと思っています。</p>
+      </div>
+      <div class="tc">
+        <div class="tc-head">
+          <div class="tc-photo"><picture><source srcset="images/trainer-irabe.webp" type="image/webp"><img loading="lazy" src="images/trainer-irabe.webp" alt="伊良部"></picture></div>
+          <div>
+            <p class="tc-role">PERSONAL TRAINER</p>
+            <p class="tc-name">伊良部</p>
+            <p class="tc-tag">動作改善・体力向上が得意</p>
+          </div>
+        </div>
+        <p class="tc-story">「続けられるかどうか」を、一番大切にしています。<br><br>動作改善と体力向上を得意分野に、一人ひとりのペースに合わせた現実的なプランを一緒に組んでいきます。無理な負荷をかけず、でも確実に。それが結局、一番の近道だと思っています。</p>
       </div>
     </div>
   </div>
@@ -845,7 +833,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
       <p class="letter-text">新しいことを始めるとき、<br>楽しみと同じくらい、不安もありますよね。</p>
       <p class="letter-text">5toolgymってどんな場所なんだろう？<br>トレーナーはどんな人なんだろう？<br>自分の悩みを、<br>本当に解決してもらえるんだろうか？</p>
       <p class="letter-text">その気持ち、とてもよくわかります。<br>だからこそ、一つお伝えさせてください。</p>
-      <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、9割以上がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は13ヶ月以上です。</p>
+      <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
       <p class="letter-text">これは、<br>私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
       <p class="letter-text">5toolgymのトレーナー全員で、<br>あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、<br>心待ちにしています。</p>
       <p class="letter-sig">5toolgym代表　柴山 智幸</p>
@@ -861,7 +849,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
       <div style="font-size:11px;color:var(--mid);letter-spacing:.04em">体験→入会率</div>
     </div>
     <div style="text-align:center;flex:1;min-width:120px;max-width:160px">
-      <div style="font-family:'Outfit',sans-serif;font-size:1.68rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px">13.1<span style="font-size:.84rem;font-weight:400">ヶ月</span></div>
+      <div style="font-family:'Outfit',sans-serif;font-size:1.68rem;color:var(--green);font-weight:700;line-height:1.1;margin-bottom:4px">14<span style="font-size:.84rem;font-weight:400">ヶ月</span></div>
       <div style="font-size:11px;color:var(--mid);letter-spacing:.04em">平均継続期間</div>
     </div>
   </div>
