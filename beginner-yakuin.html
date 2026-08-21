@@ -41,11 +41,26 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .section-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
 .section-title em { color: var(--accent); font-style: normal; }
 .divider { width: 40px; height: 2px; background: var(--accent); margin: 24px 0; }
-.topbar { background: var(--accent); color: var(--black); text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 900; letter-spacing: 1px; position: sticky; top: 0; z-index: 100; }
+.topbar { background: var(--accent); color: var(--black); text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 900; letter-spacing: 1px; position: sticky; top: 0; z-index: 301; }
 .topbar a { color: var(--black); text-decoration: none; font-weight: 900; }
-.header { background: var(--black); border-bottom: 1px solid var(--gray2); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+.header { background: var(--black); border-bottom: 1px solid var(--gray2); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: var(--topbar-h, 40px); z-index: 300; }
 .logo { font-weight: 900; font-size: 14px; letter-spacing: 2px; color: var(--accent); text-transform: lowercase; }
-.header-cta { background: var(--accent); color: var(--black); font-weight: 900; font-size: 12px; padding: 10px 20px; border-radius: 100px; text-decoration: none; letter-spacing: 1px; white-space: nowrap; }
+.hmb { width: 40px; height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; flex-shrink: 0; }
+.hmb span { display: block; width: 22px; height: 1.5px; background: var(--text); border-radius: 2px; transition: transform .3s, opacity .3s, width .3s; transform-origin: center; }
+.hmb.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hmb.open span:nth-child(2) { opacity: 0; width: 0; }
+.hmb.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.drawer { position: fixed; top: calc(53px + var(--topbar-h, 40px)); left: 0; right: 0; bottom: 0; z-index: 9999; background: var(--black); overflow-y: auto; transform: translateX(100%); transition: transform .35s cubic-bezier(.16,1,.3,1); }
+.drawer.open { transform: translateX(0); }
+.drawer-inner { padding: 32px 20px 80px; }
+.drawer-nav { display: flex; flex-direction: column; margin-bottom: 32px; }
+.drawer-nav a { display: flex; align-items: center; justify-content: space-between; padding: 16px 4px; font-size: 15px; color: var(--text); border-bottom: 1px solid var(--gray2); letter-spacing: .04em; text-decoration: none; }
+.drawer-cta { display: flex; align-items: center; justify-content: center; background: var(--accent); color: #fff; padding: 16px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-bottom: 12px; letter-spacing: .06em; text-decoration: none; }
+.drawer-info { font-size: 11px; color: var(--muted); line-height: 1.9; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--gray2); }
+.drawer-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9998; background: rgba(0,0,0,.3); opacity: 0; pointer-events: none; transition: opacity .3s; }
+.drawer-overlay.show { opacity: 1; pointer-events: auto; }
+body.menu-open { overflow: hidden; }
+@media(min-width:768px) { .hmb, .drawer, .drawer-overlay { display: none; } }
 .hero { padding: 0 0 80px; max-width: 680px; margin: 0 auto; }
 .hero-photo { width: 100%; line-height: 0; }
 .hero-photo img { width: 100%; height: auto; display: block; }
@@ -77,13 +92,17 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 .steps { background: var(--gray); padding: 72px 20px; }
 .steps-inner { max-width: 680px; margin: 0 auto; }
 .step { display: flex; gap: 24px; margin-bottom: 48px; align-items: flex-start; }
-.step-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 40px; font-weight: 700; color: var(--accent); opacity: 0.4; flex-shrink: 0; line-height: 1; width: 48px; }
+.step-num { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; width: 48px; }
+.step-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--gray); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-num-txt { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); opacity: 0.6; line-height: 1; }
 .step-content h3 { font-size: 16px; font-weight: 900; margin-bottom: 10px; color: var(--accent); letter-spacing: 1px; }
 .step-content p { font-size: 14px; color: #444; line-height: 1.9; }
 .usp { padding: 72px 20px; max-width: 680px; margin: 0 auto; }
 .usp-grid { display: flex; flex-direction: column; gap: 16px; }
 .usp-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: var(--gray); border-radius: 14px; border: 1px solid var(--gray2); }
-.usp-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); opacity: 0.5; flex-shrink: 0; line-height: 1; }
+.usp-num { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; width: 40px; }
+.usp-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--gray); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.usp-num-txt { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent); opacity: 0.6; line-height: 1; }
 .usp-text h3 { font-size: 15px; font-weight: 900; margin-bottom: 8px; }
 .usp-text p { font-size: 13px; color: #444; line-height: 1.8; }
 .voice { background: var(--gray); padding: 72px 20px; }
@@ -155,21 +174,39 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 </div>
 
 <header class="header">
-  <div class="logo">5toolgym</div>
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="header-cta">体験を予約する</a>
+  <a href="#top" class="logo" style="text-decoration:none">5toolgym</a>
+  <button class="hmb" id="hmbBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
 </header>
 
-<section class="hero">
-  <div class="hero-photo">
-    <!-- 差し込み: beginner-hero-yakuin.webp (1080x1350 / 4:5) -->
-    <picture><source srcset="images/beginner-hero-yakuin.webp" type="image/webp"><img src="images/beginner-hero-yakuin.jpg" fetchpriority="high" alt="5toolgym薬院店 24時間ジムつきパーソナルトレーニングジム 運動が苦手でも、大丈夫。 通常13,200円が5,500円 薬院大通駅から徒歩2分"></picture>
+<div class="drawer" id="drawer">
+  <div class="drawer-inner">
+    <nav class="drawer-nav">
+      <a href="#scene">お悩みについて<span>→</span></a>
+      <a href="#usp">選ばれる理由<span>→</span></a>
+      <a href="#voice">お客様の声<span>→</span></a>
+      <a href="#trainers">トレーナー紹介<span>→</span></a>
+      <a href="#offer">体験について<span>→</span></a>
+      <a href="#access">アクセス<span>→</span></a>
+    </nav>
+    <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="drawer-cta">体験トレーニングを予約する</a>
+    <div class="drawer-info">〒810-0022 福岡市中央区薬院3丁目13-22 新宝ビル3F<br>薬院大通駅 徒歩2分 ／ 薬院駅 徒歩6分<br>TEL: 092-600-0296</div>
   </div>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<section class="hero" id="top">
   <div class="hero-body">
-    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">続かなかったのは、あなたのせいじゃない。仕組みが、間違っていただけです。自分のさじ加減で決まる運動は、続きません。</h1>
+    <div class="hero-eyebrow">運動が続かなかった方・初めての方へ</div>
+    <h1>
+      続かなかったのは、<br>あなたのせいじゃない。
+      <em>仕組みが、間違っていただけです。</em>
+    </h1>
+    <p class="hero-sub">自分のさじ加減で決まる運動は、続きません。<br>パーソナルトレーニングは「続けられる仕組み」そのものです。</p>
     <div class="hero-stats">
       <div>
         <span class="hero-stat-num">91%</span>
         <div class="hero-stat-label">体験→入会率</div>
+        <div style="font-size:8px;color:var(--muted);letter-spacing:0;margin-top:2px;line-height:1.4">2024年12月〜2026年5月／36名中33名</div>
       </div>
       <div>
         <span class="hero-stat-num">14ヶ月</span>
@@ -181,7 +218,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   </div>
 </section>
 
-<section class="scene">
+<section class="scene" id="scene">
   <div class="scene-inner">
     <p>ジムに入会した。<br>最初の1〜2週間は通えた。<br>でも<strong>気づいたら行かなくなっていた。</strong></p>
     <p>「また続かなかった」という罪悪感だけが残る。<br>運動しなきゃとは思っている。<br><strong>でも何から始めればいいかわからないし、キツいのは嫌だ。</strong></p>
@@ -200,7 +237,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 
 <section class="why">
   <div class="container">
-    <div class="section-label">WHY YOU CAN'T CONTINUE</div>
+    <div class="section-label">続かない理由</div>
     <h2 class="section-title">「続かない」本当の理由は、<em>自分のさじ加減で決まるから</em>です。</h2>
     <div class="divider"></div>
     <div class="reason-block">
@@ -220,25 +257,25 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 
 <section class="steps">
   <div class="steps-inner">
-    <div class="section-label">WHAT WE DO</div>
+    <div class="section-label">取り組み内容</div>
     <h2 class="section-title">5toolgymで<em>実際にやること</em></h2>
     <div class="divider"></div>
     <div class="step">
-      <div class="step-num">01</div>
+      <div class="step-num"><span class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2" stroke="#D4537E" stroke-width="1.6"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="#D4537E" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#D4537E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="step-num-txt">01</span></div>
       <div class="step-content">
         <h3>今のカラダの状態を正確に把握する</h3>
         <p>まずどこから始めるべきかを、プロの目で確認します。「自分には何が必要か」がわかるだけで、迷いがなくなります。</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-num">02</div>
+      <div class="step-num"><span class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.8-7.5-10.2C4.5 6.6 6.6 4.5 9.3 4.5c1.4 0 2.6.7 3.4 1.8.8-1.1 2-1.8 3.4-1.8 2.7 0 4.8 2.1 4.8 5.3C19.5 15.2 12 20 12 20z" stroke="#D4537E" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="step-num-txt">02</span></div>
       <div class="step-content">
         <h3>「運動が楽しい」という感覚を育てる</h3>
         <p>無理のない強度から始めます。「なんか体が変わってきた」「動くのが楽になった」という感覚が、運動を続ける一番の動機になります。</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-num">03</div>
+      <div class="step-num"><span class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="#D4537E" stroke-width="1.6" stroke-linecap="round"/><path d="M17.6 3.5v3.3h-3.3M6.4 20.5v-3.3h3.3" stroke="#D4537E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="step-num-txt">03</span></div>
       <div class="step-content">
         <h3>習慣になるまでサポートする</h3>
         <p>週1回の予約を続けていくうちに、「運動する日がある生活」が普通になります。習慣になれば、もうやめたいとは思わなくなります。</p>
@@ -247,35 +284,35 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   </div>
 </section>
 
-<section class="usp">
+<section class="usp" id="usp">
   <div class="container">
-    <div class="section-label">WHY 5TOOLGYM</div>
+    <div class="section-label">選ばれる理由</div>
     <h2 class="section-title">他のジムと、<em>何が違うのか。</em></h2>
     <div class="divider"></div>
     <div class="usp-grid">
       <div class="usp-item">
-        <div class="usp-num">01</div>
+        <div class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#D4537E" stroke-width="1.6"/><path d="M4.5 20c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5" stroke="#D4537E" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="usp-num-txt">01</span></div>
         <div class="usp-text">
           <h3>完全マンツーマンだから怖くない</h3>
           <p>他の会員の目が一切ありません。「こんなこともできないの？」と思われる心配がゼロです。初めてでも、久しぶりでも、安心して来られます。</p>
         </div>
       </div>
       <div class="usp-item">
-        <div class="usp-num">02</div>
+        <div class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h9M4 12h6M4 17h11" stroke="#D4537E" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2" stroke="#D4537E" stroke-width="1.6"/><circle cx="12" cy="17" r="2" stroke="#D4537E" stroke-width="1.6"/></svg></span><span class="usp-num-txt">02</span></div>
         <div class="usp-text">
           <h3>強度はトレーナーが決める</h3>
           <p>キツすぎず、楽すぎず。「ちょうどいい」を毎回プロが調整します。自分では加減できなくても、トレーナーがいればその心配がありません。</p>
         </div>
       </div>
       <div class="usp-item">
-        <div class="usp-num">03</div>
+        <div class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#D4537E" stroke-width="1.6"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16l2 2 4-4" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="usp-num-txt">03</span></div>
         <div class="usp-text">
           <h3>当日キャンセルOK・縛りなし</h3>
           <p>急な予定変更にも対応。「行けなかったら無駄になる」という心理的プレッシャーがないから、気軽に始められます。</p>
         </div>
       </div>
       <div class="usp-item">
-        <div class="usp-num">04</div>
+        <div class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="11" height="18" rx="1.5" stroke="#D4537E" stroke-width="1.6"/><circle cx="14" cy="12" r="1.2" fill="#D4537E"/></svg></span><span class="usp-num-txt">04</span></div>
         <div class="usp-text">
           <h3>24時間ジム無料利用</h3>
           <p>週1のパーソナルに慣れてきたら、自分のペースで24時間ジムも使えます。習慣が定着してきたときに、さらに伸ばせる環境があります。</p>
@@ -285,9 +322,9 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   </div>
 </section>
 
-<section class="voice">
+<section class="voice" id="voice">
   <div class="voice-inner">
-    <div class="section-label">MEMBER VOICE</div>
+    <div class="section-label">お客様の声</div>
     <h2 class="section-title">実際に通っている方の声</h2>
     <div class="divider"></div>
     <div class="voice-card">
@@ -309,8 +346,8 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   </div>
 </section>
 
-<section class="trainers container">
-  <div class="section-label">TRAINERS</div>
+<section class="trainers container" id="trainers">
+  <div class="section-label">トレーナー紹介</div>
   <h2 class="section-title">トレーナー紹介</h2>
   <div class="divider"></div>
   <div class="trainer-card">
@@ -340,20 +377,11 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
       <p class="trainer-bio">正しいトレーニングには、正しい身体の動きを学ぶことが鍵です。初めての方にも分かりやすく、丁寧な指導を心がけています。</p>
     </div>
   </div>
-  <div class="trainer-card">
-    <img src="https://lp-yakuin01.5toolgym.workers.dev/images/trainer-irabe.webp" alt="伊良部" class="trainer-img">
-    <div>
-      <div class="trainer-role">Personal Trainer</div>
-      <div class="trainer-name">伊良部</div>
-      <div class="trainer-title">動作改善・体力向上が得意</div>
-      <p class="trainer-bio">「続けられるかどうか」を一番大切にしています。一人ひとりのペースに合わせた現実的なプランを、一緒に組んでいきます。</p>
-    </div>
-  </div>
 </section>
 
 <section class="plans">
   <div class="plans-inner">
-    <div class="section-label">PRICING</div>
+    <div class="section-label">料金プラン</div>
     <h2 class="section-title">料金プラン</h2>
     <div class="divider"></div>
     <div class="plans-grid">
@@ -382,8 +410,8 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   </div>
 </section>
 
-<section class="offer container">
-  <div class="section-label">EXPERIENCE</div>
+<section class="offer container" id="offer">
+  <div class="section-label">体験について</div>
   <h2 class="section-title">まず、体験してみてください。</h2>
   <div class="divider"></div>
   <div class="offer-box">
@@ -406,7 +434,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 
 <section class="flow">
   <div class="flow-inner">
-    <div class="section-label">FLOW</div>
+    <div class="section-label">体験の流れ</div>
     <h2 class="section-title">体験トレーニングの流れ</h2>
     <div class="divider"></div>
     <div class="flow-step">
@@ -429,7 +457,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 </section>
 
 <section class="faq container">
-  <div class="section-label">FAQ</div>
+  <div class="section-label">よくある質問</div>
   <h2 class="section-title">よくある質問</h2>
   <div class="divider"></div>
   <div class="faq-item">
@@ -457,7 +485,7 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
     <p class="letter-text">新しいことを始めるとき、<br>楽しみと同じくらい、不安もありますよね。</p>
     <p class="letter-text">5toolgymってどんな場所なんだろう？<br>トレーナーはどんな人なんだろう？<br>自分の悩みを、<br>本当に解決してもらえるんだろうか？</p>
     <p class="letter-text">その気持ち、とてもよくわかります。<br>だからこそ、一つお伝えさせてください。</p>
-    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
+    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%（2024年12月〜2026年5月／36名中33名）がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
     <p class="letter-text">これは、<br>私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
     <p class="letter-text">5toolgymのトレーナー全員で、<br>あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、<br>心待ちにしています。</p>
     <p class="letter-sig">5toolgym代表　柴山 智幸</p>
@@ -471,9 +499,9 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
   <p class="signature">5toolgym代表 柴山 智幸</p>
 </section>
 
-<section class="access">
+<section class="access" id="access">
   <div class="access-inner">
-    <div class="section-label">ACCESS</div>
+    <div class="section-label">アクセス</div>
     <h2 class="section-title">アクセス</h2>
     <div class="divider"></div>
     <div class="access-info">
@@ -490,6 +518,21 @@ body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--black);
 <footer class="footer">
   <p>© 5toolgym 薬院店｜福岡市中央区薬院3丁目13-22 新宝ビル3F</p>
 </footer>
+
+<script>
+function syncTopbarH(){const tb=document.querySelector('.topbar');if(tb)document.documentElement.style.setProperty('--topbar-h',tb.offsetHeight+'px');}
+syncTopbarH();
+window.addEventListener('resize',syncTopbarH);
+
+const hmbBtn=document.getElementById('hmbBtn');
+const drawer=document.getElementById('drawer');
+const overlay=document.getElementById('drawerOverlay');
+function openDrawer(){hmbBtn.classList.add('open');drawer.classList.add('open');overlay.classList.add('show');document.body.classList.add('menu-open');}
+function closeDrawer(){hmbBtn.classList.remove('open');drawer.classList.remove('open');overlay.classList.remove('show');document.body.classList.remove('menu-open');}
+hmbBtn.addEventListener('click',()=>{drawer.classList.contains('open')?closeDrawer():openDrawer()});
+overlay.addEventListener('click',closeDrawer);
+document.querySelectorAll('.drawer-nav a').forEach(a=>a.addEventListener('click',closeDrawer));
+</script>
 
 </body>
 </html>

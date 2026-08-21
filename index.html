@@ -52,8 +52,12 @@ a{color:inherit;text-decoration:none}
 .sbar-btn{width:100%;max-width:480px;display:flex;align-items:center;justify-content:center;background:var(--green);color:#fff;padding:14px 20px;border-radius:var(--r);font-size:14px;font-weight:700;letter-spacing:.06em}
 .sbar-sub{font-size:10px;color:var(--light);margin-top:5px;letter-spacing:.04em}
 
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:301;background:var(--gold);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:900;letter-spacing:1px}
+.topbar a{color:#fff;text-decoration:none;font-weight:900}
+
 /* ── NAV ── */
-nav:not(.drawer-nav){position:fixed;top:0;left:0;right:0;z-index:300;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav:not(.drawer-nav){position:sticky;top:var(--topbar-h,40px);left:0;right:0;z-index:300;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:8px;font-family:'Noto Sans JP',sans-serif;font-size:13px;letter-spacing:.08em;color:var(--text);line-height:1.2}
 .nav-logo-img{height:24px;width:auto;flex-shrink:0}
 .nav-logo-sub{display:block;font-size:8px;letter-spacing:.2em;color:var(--green);margin-bottom:1px;font-weight:500}
@@ -66,7 +70,7 @@ nav:not(.drawer-nav){position:fixed;top:0;left:0;right:0;z-index:300;height:52px
 @media(min-width:768px){.hmb{display:none}}
 
 /* ── DRAWER ── */
-.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:9999;background:#fff;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.drawer{position:fixed;top:calc(52px + var(--topbar-h,40px));left:0;right:0;bottom:0;z-index:9999;background:#fff;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .drawer.open{transform:translateX(0)}
 .drawer-inner{padding:32px var(--sp) 80px}
 .drawer-nav{display:flex;flex-direction:column;margin-bottom:32px}
@@ -102,7 +106,7 @@ body.menu-open .btn-main{animation:none;transform:none}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ── HERO ── */
-.hero{position:relative;padding:52px 0 calc(env(safe-area-inset-bottom, 0px) + 24px);overflow:hidden;background:var(--bg)}
+.hero{position:relative;padding:0 0 calc(env(safe-area-inset-bottom, 0px) + 24px);overflow:hidden;background:var(--bg)}
 .hero-photo{width:100%;line-height:0}
 .hero-photo img{width:100%;height:auto;display:block}
 .hero-trust{display:flex;gap:10px;justify-content:center;padding:20px var(--sp) 0}
@@ -149,7 +153,9 @@ body.menu-open .btn-main{animation:none;transform:none}
 .usp-inner{max-width:var(--max);margin:0 auto}
 .usp-grid{display:flex;flex-direction:column;gap:2px;background:var(--border);margin-top:4px}
 .usp-item{background:var(--white);padding:22px 20px;display:flex;gap:14px}
-.usp-num{font-family:'Outfit',sans-serif;font-size:24px;font-weight:300;color:var(--gold-light);opacity:.5;flex-shrink:0;line-height:1;width:28px;padding-top:2px}
+.usp-num{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;width:40px}
+.usp-icon{width:36px;height:36px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.usp-num-txt{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--gold-light);opacity:.7;line-height:1;letter-spacing:.05em}
 .usp-ttl{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:5px}
 .usp-desc{font-size:15px;color:var(--light);line-height:1.8}
 
@@ -294,6 +300,11 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
   <p class="sbar-sub">当日入会で0円 / 相談だけでもOK</p>
 </div>
 
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  今月の体験枠 残り3名｜<a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei">体験を予約する（当日入会で0円）</a>
+</div>
+
 <!-- ══ NAV ══ -->
 <nav>
   <a href="#top" class="nav-logo">
@@ -330,11 +341,11 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ HERO ══ -->
 <section class="hero" id="top">
   <div class="hero-photo">
-    <picture><source srcset="images/diet-hero-yakuin.webp" type="image/webp"><img src="images/diet-hero-yakuin.jpg" fetchpriority="high" alt="5toolgym 薬院店 24時間ジムつきパーソナルトレーニングジム 限定5名 通常13,200円が5,500円"></picture>
+    <picture><source srcset="images/diet-hero-yakuin.webp" type="image/webp"><img src="images/diet-hero-yakuin.jpg" fetchpriority="high" alt="5toolgym 薬院店 24時間ジムつきパーソナルトレーニングジム 残り3名 通常13,200円が5,500円"></picture>
   </div>
   <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">何をやっても変わらなかった身体が、変わり始める。痩せない理由は、運動量じゃない。身体の使い方です。</h1>
   <div class="hero-trust">
-    <div class="hero-trust-item"><strong>91%</strong><span>体験→入会率</span></div>
+    <div class="hero-trust-item"><strong>91%</strong><span>体験→入会率</span><span style="display:block;font-size:8px;color:var(--light);letter-spacing:0;margin-top:2px;line-height:1.4">2024年12月〜2026年5月／36名中33名</span></div>
     <div class="hero-trust-item"><strong>14<span style="font-size:12px">ヶ月</span></strong><span>平均継続期間</span></div>
   </div>
   <div id="heroCta">
@@ -372,7 +383,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ SOLUTION ══ -->
 <section class="solution" id="solution">
   <div class="solution-inner">
-    <p class="sec-eyebrow">WHY YOU DON'T CHANGE</p>
+    <p class="sec-eyebrow">変わらない理由</p>
     <h2 class="sec-ttl">「やっても変わらない」<br>本当の理由は、<br><em>順番が違うから</em>です。</h2>
     <div class="sec-bar"></div>
     <p class="solution-intro">多くのダイエットは「食事を減らす」「運動を増やす」から始めます。でも身体の使い方が崩れたまま運動しても、代謝は上がりません。正しい順番はこうです。</p>
@@ -436,33 +447,33 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ USP ══ -->
 <section class="usp" id="usp">
   <div class="usp-inner">
-    <p class="sec-eyebrow">WHY 5TOOLGYM</p>
+    <p class="sec-eyebrow">選ばれる理由</p>
     <h2 class="sec-ttl">他のジムと、<em>何が違うのか。</em></h2>
     <div class="sec-bar"></div>
     <div class="usp-grid">
       <div class="usp-item">
-        <span class="usp-num">01</span>
+        <span class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#D4537E" stroke-width="1.6"/><path d="M12 8v4l3 3" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="usp-num-txt">01</span></span>
         <div>
           <p class="usp-ttl">「痩せない原因」から先に直す</p>
           <p class="usp-desc">姿勢が崩れていると、使うべき筋肉が使えていません。使えない筋肉は代謝に貢献しない。だから運動しても食事を減らしても変わらない。まず姿勢・骨格を整えることで、身体が本来の力を発揮できるようになります。</p>
         </div>
       </div>
       <div class="usp-item">
-        <span class="usp-num">02</span>
+        <span class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#D4537E" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="usp-num-txt">02</span></span>
         <div>
           <p class="usp-ttl">あなただけのプログラム</p>
           <p class="usp-desc">体型・生活習慣をヒアリングして設計。食事は「制限」ではなく「提案」。無理なく続けられる方法を一緒に考えます。</p>
         </div>
       </div>
       <div class="usp-item">
-        <span class="usp-num">03</span>
+        <span class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#D4537E" stroke-width="1.6"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16l2 2 4-4" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="usp-num-txt">03</span></span>
         <div>
           <p class="usp-ttl">当日キャンセルOK</p>
           <p class="usp-desc">子育て・仕事・急な予定変更にも対応。続けられない理由をひとつずつ潰します。</p>
         </div>
       </div>
       <div class="usp-item">
-        <span class="usp-num">04</span>
+        <span class="usp-num"><span class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="11" height="18" rx="1.5" stroke="#D4537E" stroke-width="1.6"/><circle cx="14" cy="12" r="1.2" fill="#D4537E"/></svg></span><span class="usp-num-txt">04</span></span>
         <div>
           <p class="usp-ttl">24時間ジム無料利用</p>
           <p class="usp-desc">週1のパーソナル以外も使えるから、習慣になる。習慣になるから、変わり続ける。</p>
@@ -484,7 +495,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ RESULTS ══ -->
 <section class="results" id="results">
   <div class="results-inner">
-    <p class="sec-eyebrow">RESULTS</p>
+    <p class="sec-eyebrow">実績</p>
     <h2 class="sec-ttl">通ってくださった方の<em>変化</em></h2>
     <div class="sec-bar"></div>
     <div class="results-grid">
@@ -561,7 +572,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ VOICE ══ -->
 <section class="voice" id="voice">
   <div class="voice-inner">
-    <p class="sec-eyebrow">MEMBER VOICE</p>
+    <p class="sec-eyebrow">お客様の声</p>
     <h2 class="sec-ttl">実際に通っている方の声</h2>
     <div class="sec-bar"></div>
     <div class="voice-cards">
@@ -620,7 +631,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ TRAINERS ══ -->
 <section class="trainers" id="trainers">
   <div class="trainers-inner">
-    <p class="sec-eyebrow">TRAINER</p>
+    <p class="sec-eyebrow">トレーナー紹介</p>
     <h2 class="sec-ttl">なぜこのジムを<em>やっているのか</em></h2>
     <div class="sec-bar"></div>
     <div class="tc-cards">
@@ -657,17 +668,6 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
         </div>
         <p class="tc-story">女性の身体は、年齢・ホルモン・産後によってまったく変わります。「同じやり方が通用しない」という感覚、ありませんか？<br><br>女性特有の悩みに特化した指導をしています。「言いにくいこと」も話してもらえる関係を作ることが、一番大事だと思っています。</p>
       </div>
-      <div class="tc">
-        <div class="tc-head">
-          <div class="tc-photo"><picture><source srcset="images/trainer-irabe.webp" type="image/webp"><img loading="lazy" src="images/trainer-irabe.webp" alt="伊良部"></picture></div>
-          <div>
-            <p class="tc-role">PERSONAL TRAINER</p>
-            <p class="tc-name">伊良部</p>
-            <p class="tc-tag">動作改善・体力向上が得意</p>
-          </div>
-        </div>
-        <p class="tc-story">「続けられるかどうか」を、一番大切にしています。<br><br>動作改善と体力向上を得意分野に、一人ひとりのペースに合わせた現実的なプランを一緒に組んでいきます。無理な負荷をかけず、でも確実に。それが結局、一番の近道だと思っています。</p>
-      </div>
     </div>
   </div>
 </section>
@@ -684,7 +684,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ PLANS ══ -->
 <section class="plans" id="plans">
   <div class="plans-inner">
-    <p class="sec-eyebrow">MONTHLY PLAN</p>
+    <p class="sec-eyebrow">料金プラン</p>
     <h2 class="sec-ttl">料金プラン</h2>
     <div class="sec-bar"></div>
     <div class="plans-grid">
@@ -743,7 +743,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ FLOW ══ -->
 <section class="flow" id="flow">
   <div class="flow-inner">
-    <p class="sec-eyebrow">TRIAL FLOW</p>
+    <p class="sec-eyebrow">体験の流れ</p>
     <h2 class="sec-ttl">体験トレーニングの<em>流れ</em></h2>
     <div class="sec-bar"></div>
     <div class="flow-list">
@@ -794,7 +794,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ ANXIETY ══ -->
 <section class="anxiety" id="anxiety">
   <div class="anxiety-inner">
-    <p class="sec-eyebrow">BEFORE YOU VISIT</p>
+    <p class="sec-eyebrow">ご来店前に</p>
     <h2 class="sec-ttl">体験前に<em>気になること</em></h2>
     <div class="sec-bar"></div>
     <div class="anxiety-list">
@@ -841,7 +841,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
     <p class="letter-text">新しいことを始めるとき、<br>楽しみと同じくらい、不安もありますよね。</p>
     <p class="letter-text">5toolgymってどんな場所なんだろう？<br>トレーナーはどんな人なんだろう？<br>自分の悩みを、<br>本当に解決してもらえるんだろうか？</p>
     <p class="letter-text">その気持ち、とてもよくわかります。<br>だからこそ、一つお伝えさせてください。</p>
-    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
+    <p class="letter-text">体験トレーニングにお越しいただいたお客様のうち、91%（2024年12月〜2026年5月／36名中33名）がそのままご入会されています。また、入会後も長く通い続けてくださる方が多く、平均継続期間は14ヶ月です。</p>
     <p class="letter-text">これは、<br>私たちが数字を誇りたいのではなく、<br>「来てみれば、きっとわかる」<br>という自信の表れです。</p>
     <p class="letter-text">5toolgymのトレーナー全員で、<br>あなたのお悩みに向き合います。<br>ぜひ、私たちを頼ってください。<br>無理な勧誘は一切ありませんので、<br>どうか安心してご予約・ご来店ください。<br>あなたとお会いできるのを、<br>心待ちにしています。</p>
     <p class="letter-sig">5toolgym代表　柴山 智幸</p>
@@ -861,7 +861,7 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 <!-- ══ ACCESS ══ -->
 <section class="access" id="access">
   <div class="access-inner">
-    <p class="sec-eyebrow">ACCESS</p>
+    <p class="sec-eyebrow">アクセス</p>
     <h2 class="sec-ttl">店舗情報</h2>
     <div class="sec-bar"></div>
     <div class="access-map" id="mapWrap" onclick="loadMap()">
@@ -897,6 +897,10 @@ footer{background:var(--dark);padding:32px var(--sp) 20px;text-align:center}
 function loadMap(){
   document.getElementById('mapWrap').innerHTML='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.9692556452756!2d130.3981048!3d33.580147499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191af66bd5a39%3A0x515abdb6a060e19e!2zNXRvb2xneW3olqzpmaLlupc!5e0!3m2!1sja!2sjp!4v1773634372121!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" style="width:100%;height:100%;border:0;display:block"></iframe>';
 }
+
+function syncTopbarH(){const tb=document.querySelector('.topbar');if(tb)document.documentElement.style.setProperty('--topbar-h',tb.offsetHeight+'px');}
+syncTopbarH();
+window.addEventListener('resize',syncTopbarH);
 
 const hmbBtn=document.getElementById('hmbBtn');
 const drawer=document.getElementById('drawer');
