@@ -119,12 +119,13 @@ body.menu-open .btn-main{animation:none;transform:none}
 .target-item::before{content:'✓';color:var(--main);font-weight:700;flex-shrink:0;font-size:14px}
 
 /* ── EMPATHY ── */
-.empathy{background:var(--accent-dark);padding:80px var(--sp)}
+.empathy{background:var(--bg);padding:80px var(--sp)}
 .empathy-inner{max-width:var(--max);margin:0 auto}
 .empathy-body{display:flex;flex-direction:column;gap:36px}
-.empathy-p{font-family:'Noto Sans JP',sans-serif;font-size:clamp(16px,4.2vw,20px);font-weight:300;color:rgba(255,255,255,.75);line-height:2.15;letter-spacing:.04em}
-.empathy-close{font-family:'Noto Sans JP',sans-serif;font-size:clamp(16px,4.2vw,20px);font-weight:400;color:#fff;line-height:2.1;letter-spacing:.04em;border-top:1px solid rgba(123,158,135,.25);padding-top:36px;margin-top:-4px}
-.empathy-close em{font-style:normal;color:#9ABFA8}
+.empathy-p{font-family:'Noto Sans JP',sans-serif;font-size:clamp(16px,4.2vw,20px);font-weight:300;color:var(--mid);line-height:2.15;letter-spacing:.04em}
+.empathy-close{font-family:'Noto Sans JP',sans-serif;font-size:clamp(16px,4.2vw,20px);font-weight:400;color:var(--dark);line-height:2.1;letter-spacing:.04em;border-top:1px solid var(--border);padding-top:36px;margin-top:-4px}
+.empathy-close em{font-style:normal;color:var(--accent)}
+.empathy-hook{font-family:'Noto Sans JP',sans-serif;font-size:clamp(24px,6.5vw,36px);font-weight:700;color:var(--accent);text-align:center;line-height:1.6;letter-spacing:.03em;margin-top:44px}
 
 /* ── PAIN POINTS ── */
 .pain{background:var(--bg);padding:0 var(--sp) 80px;margin-top:-14px}
@@ -438,6 +439,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <p class="empathy-p">SNSで見かける綺麗な女性はみんなピラティスに通っている。<br>私もそうなれるはず、と思っていた。<br>でも現実は甘くなかった。</p>
       <p class="empathy-p">スッキリするし、背筋が伸びる感じはある。<br>でも正直、ピラティスに通う自分を信じ続けていただけで、<br>体重は変わらなかった。</p>
       <p class="empathy-close">ピラティスは痩せるための運動ではない。<br>通ってから、気づいた。<br><em>そう感じているのは、<br>あなただけじゃありません。</em></p>
+      <p class="empathy-hook">ピラティスだけでは<br>変わらない理由があります</p>
     </div>
   </div>
 </section>
