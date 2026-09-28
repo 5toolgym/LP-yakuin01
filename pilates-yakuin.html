@@ -92,6 +92,8 @@ body.menu-open .btn-main{animation:none;transform:none}
 .btn-main{animation:pulse 2.5s ease-in-out infinite}
 .btn-main:active{animation:none;transform:translateY(1px)}
 .btn-note{font-size:11px;color:var(--light);text-align:center;margin-top:8px;letter-spacing:.06em}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:#06C755;border:1.5px solid #06C755;padding:13px 24px;border-radius:var(--r);font-size:13px;font-weight:700;letter-spacing:.04em;width:100%;max-width:480px;margin:10px auto 0;text-align:center;transition:opacity .2s}
+.btn-line:active{opacity:.7}
 
 /* ── CTA BLOCK ── */
 .cta-block{padding:60px var(--sp);text-align:center;background:var(--bg2)}
@@ -409,6 +411,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div id="heroCta">
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
     <p class="btn-note">90分体験 5,500円（税込）／相談だけでもOK</p>
+    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="hero">LINEで質問する</a>
   </div>
   <div style="text-align: center; padding: 12px 0 0;">
     <i class="scroll-arrow" aria-hidden="true">&#8595;</i>
@@ -563,6 +566,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
     <p class="btn-note" style="margin-top:10px">90分体験 5,500円（税込）／相談だけでもOK</p>
+    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="cta1">LINEで質問する</a>
   </div>
 </div>
 
@@ -754,6 +758,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
     <p class="btn-note" style="margin-top:10px">90分体験 5,500円（税込）／相談だけでもOK</p>
+    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="cta2">LINEで質問する</a>
   </div>
 </div>
 
@@ -979,6 +984,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
     <p class="final-cta-sub">変わりたいと思ったその日が、始め時です。<br>まず90分、体験してみてください。</p>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ予約する →</a>
     <p class="btn-note" style="margin-top:10px">体験は1日あたり数枠のみのご案内です（予約状況はフォームでご確認いただけます）</p>
+    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="final">LINEで質問する</a>
   </div>
 </section>
 
@@ -1003,6 +1009,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <dd class="access-dd"><a href="tel:0926000296">092-600-0296</a></dd>
     </dl>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する</a>
+    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="access">LINEで質問する</a>
   </div>
 </section>
 
@@ -1047,6 +1054,12 @@ document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{
   a.addEventListener('click',function(){
     if(typeof fbq==='function')fbq('track','Lead');
     if(typeof gtag==='function')gtag('event','cta_click',{event_category:'booking',store:'薬院',page:'pilates'});
+  });
+});
+
+document.querySelectorAll('a[href*="lin.ee"]').forEach(a=>{
+  a.addEventListener('click',function(){
+    if(typeof gtag==='function')gtag('event','line_click',{event_category:'booking',store:'薬院',page:'pilates',position:a.dataset.linePos||''});
   });
 });
 </script>
