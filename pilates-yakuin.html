@@ -1090,13 +1090,14 @@ document.querySelectorAll('.anxiety-q').forEach(btn=>{
 
 document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{
   a.addEventListener('click',function(){
-    if(typeof fbq==='function')fbq('track','Lead');
+    if(typeof fbq==='function')fbq('track','Lead',{content_name:'booking'});
     if(typeof gtag==='function')gtag('event','cta_click',{event_category:'booking',store:'薬院',page:'pilates'});
   });
 });
 
 document.querySelectorAll('a[href*="lin.ee"]').forEach(a=>{
   a.addEventListener('click',function(){
+    if(typeof fbq==='function')fbq('track','Lead',{content_name:'line'});
     if(typeof gtag==='function')gtag('event','line_click',{event_category:'booking',store:'薬院',page:'pilates',position:a.dataset.linePos||''});
   });
 });
