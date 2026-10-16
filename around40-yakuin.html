@@ -129,6 +129,52 @@ td:last-child{text-align:right;font-weight:700}
 .final .lead{margin-bottom:28px;color:var(--mid)}
 .access{font-size:14px;color:var(--mid);line-height:1.9;border-top:1px solid var(--line);margin-top:48px;padding-top:28px;text-align:left}
 
+/* QUOTE BAND */
+.qband{background:var(--dark2);color:#EDEDEA;padding:28px 0}
+.qband p{font-size:17px;font-weight:700;line-height:1.8;color:#fff}
+.qband p::before{content:"“";color:var(--accent);font-size:28px;line-height:0;margin-right:4px;vertical-align:-8px}
+.qband span{display:block;font-size:12px;opacity:.7;margin-top:8px}
+
+/* DIFF */
+.diff{margin-top:36px;border-top:1px solid #33393C;padding-top:28px}
+.diff h3{font-size:19px;color:#fff;margin-bottom:16px;line-height:1.5}
+.diff-row{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #2C3134}
+.diff-row i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#0B1F07;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.diff-row b{display:block;color:#fff;font-size:16px;margin-bottom:4px}
+.diff-row p{font-size:14px;line-height:1.8}
+
+/* PRICE extras */
+.per{display:block;font-size:12px;font-weight:500;color:var(--light)}
+.incl{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.incl span{font-size:12px;font-weight:700;border:1px solid var(--accent-ink);color:var(--accent-ink);border-radius:999px;padding:4px 12px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 32px 18px 0;font-weight:700;line-height:1.6;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent-ink);font-weight:800;margin-right:10px}
+.faq summary::after{content:"+";position:absolute;right:4px;top:15px;font-size:22px;font-weight:400;color:var(--light)}
+.faq details[open] summary::after{content:"−"}
+.faq .a{padding:0 0 20px 22px;font-size:15px;color:var(--mid);line-height:1.9}
+.faq-group{font-size:13px;font-weight:800;color:var(--light);letter-spacing:.08em;margin:32px 0 8px}
+
+/* MESSAGE */
+.msg{background:#fff;border-radius:var(--r);padding:28px 22px;margin-bottom:40px;text-align:left}
+.msg h3{font-size:19px;line-height:1.6;margin-bottom:16px}
+.msg p{font-size:15px;line-height:2}
+.msg .sign{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:13px;color:var(--mid)}
+.msg .sign img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.msg .sign b{display:block;font-size:15px;color:var(--ink)}
+
+/* ACCESS */
+.access-sec{background:#fff;padding:56px 0 64px}
+.access-photo{border-radius:var(--r);aspect-ratio:16/10;object-fit:cover;margin-bottom:20px}
+.access-dl{display:grid;grid-template-columns:84px 1fr;font-size:15px;line-height:1.8}
+.access-dl dt,.access-dl dd{padding:12px 0;border-bottom:1px solid var(--line)}
+.access-dl dt{font-weight:700;color:var(--mid);font-size:13px}
+.btn-map{margin-top:20px;border:1.5px solid var(--ink);color:var(--ink);font-size:14px;padding:12px}
+
 /* sticky bar */
 #sbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(22,25,27,.96);padding:10px var(--sp) calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .35s ease}
 #sbar.show{transform:none}
@@ -153,6 +199,13 @@ td:last-child{text-align:right;font-weight:700}
     <a class="btn btn-line" href="https://lin.ee/Y1P0dZl" data-line-pos="hero">まずLINEで質問する</a>
   </div>
 </section>
+
+<div class="qband">
+  <div class="wrap">
+    <p>不思議と、トレーニングしていたほうが疲れないし、頭が冴える。</p>
+    <span>40代男性・通い始めて5年</span>
+  </div>
+</div>
 
 <section id="who">
   <div class="wrap">
@@ -192,7 +245,7 @@ td:last-child{text-align:right;font-weight:700}
         <div class="strength-body">
           <p class="strength-num">01</p>
           <p class="strength-ttl">ケガしにくいカラダに整える</p>
-          <p>肉離れ・腰痛・膝の痛みが出る動きのクセを見つけて、関節が正しく動く状態に戻します。</p>
+          <p>立ち方、歩き方、物を持ち上げるときの姿勢を見て、肉離れ・腰痛・膝の痛みにつながるクセを探します。固まった関節を動く状態に戻してから、トレーニングに入ります。</p>
         </div>
       </div>
       <div class="strength-item">
@@ -200,7 +253,7 @@ td:last-child{text-align:right;font-weight:700}
         <div class="strength-body">
           <p class="strength-num">02</p>
           <p class="strength-ttl">負荷をかけて、体型を戻す</p>
-          <p>整えたうえで、筋肉を増やすための重さを段階的にかけます。下っ腹が落ちていくのは、ここからです。</p>
+          <p>整えたうえで、筋肉を増やすための重さを少しずつ上げていきます。いきなり追い込むことはしません。動きが崩れない重さを見極めるから、ケガをせずに続けられます。</p>
         </div>
       </div>
       <div class="strength-item">
@@ -208,13 +261,20 @@ td:last-child{text-align:right;font-weight:700}
         <div class="strength-body">
           <p class="strength-num">03</p>
           <p class="strength-ttl">やりたい動きにつなげる</p>
-          <p>ゴルフ、バスケ、ランニングなど、あなたが続けたいことに合わせて組み立てます。</p>
+          <p>ゴルフのスイング、バスケの接触やジャンプ、ランニング。あなたが続けたいことを聞いたうえで、その動きに必要な要素からメニューを組み立てます。</p>
         </div>
       </div>
     </div>
     <div class="gym24">
       <picture><source srcset="/images/amenity-24h-gym.webp" type="image/webp"><img src="/images/amenity-24h-gym.webp" width="600" height="600" loading="lazy" alt="24時間ジム"></picture>
       <p>薬院店は24時間ジム付き。セッションのない日も、仕事帰りや早朝に自分のペースで続けられます。</p>
+    </div>
+    <div class="diff">
+      <h3>5toolgymが、ほかのパーソナルジムと違うところ</h3>
+      <div class="diff-row"><i>1</i><div><b>メニューより先に、カラダを評価する</b><p>初回は姿勢・関節の動き・筋肉のバランスを確認し、写真で記録します。決まったメニューを当てはめるのではなく、あなたのカラダに合わせて組み立てます。</p></div></div>
+      <div class="diff-row"><i>2</i><div><b>痛みを押して、追い込まない</b><p>「整える → 鍛える」の順番を守ります。強度は「楽すぎず、キツすぎず」。アラフォーからは、ケガで止まらないことが一番の近道です。</p></div></div>
+      <div class="diff-row"><i>3</i><div><b>月会費に24時間ジムが含まれる</b><p>パーソナルの会員は、追加料金なしで24時間ジムを使えます。セッションの日だけで終わらず、習慣にできる環境があります。</p></div></div>
+      <div class="diff-row"><i>4</i><div><b>トレーナーを教える側の資格</b><p>オーナーはNCCA（全日本コンディショニングコーチ協会）の講師資格を持ち、トレーナーの育成にも関わっています。</p></div></div>
     </div>
   </div>
 </section>
@@ -250,10 +310,10 @@ td:last-child{text-align:right;font-weight:700}
       <div class="price-trial"><small>体験（90分）</small><b>5,500<small>円（税込）</small></b></div>
       <p class="price-h">パーソナルトレーニング（月額）</p>
       <table>
-        <tr><td>月2回</td><td>19,400円</td></tr>
-        <tr><td>月4回</td><td>38,000円</td></tr>
-        <tr><td>月6回</td><td>55,800円</td></tr>
-        <tr><td>月8回</td><td>72,800円</td></tr>
+        <tr><td>月2回</td><td>19,400円<span class="per">1回あたり 約9,700円</span></td></tr>
+        <tr><td>月4回（週1回）</td><td>38,000円<span class="per">1回あたり 約9,500円</span></td></tr>
+        <tr><td>月6回</td><td>55,800円<span class="per">1回あたり 約9,300円</span></td></tr>
+        <tr><td>月8回（週2回）</td><td>72,800円<span class="per">1回あたり 約9,100円</span></td></tr>
         <tr><td>都度払い</td><td>11,000円／回</td></tr>
         <tr><td>入会金</td><td>11,000円</td></tr>
       </table>
@@ -262,9 +322,11 @@ td:last-child{text-align:right;font-weight:700}
         <tr><td>月額</td><td>8,800円</td></tr>
         <tr><td>入会金</td><td>8,800円</td></tr>
       </table>
-      <p class="small" style="margin-top:10px">※表示価格はすべて税込です。</p>
+      <div class="incl"><span>24時間ジム利用料込み</span><span>契約期間の縛りなし</span><span>当日キャンセルOK</span></div>
+      <p class="small" style="margin-top:14px">※表示価格はすべて税込です。月額プランには24時間ジムの利用料が含まれます。</p>
     </div>
-    <p class="honest">合わなければ、入会しなくて大丈夫です。</p>
+    <p class="honest">月4回なら、週1回のパーソナルに加えて、ほかの日は24時間ジムで自主トレ。<br>まずは週1回から始める方がほとんどです。</p>
+    <p style="margin-top:12px">合わなければ、入会しなくて大丈夫です。</p>
   </div>
 </section>
 
@@ -298,21 +360,72 @@ td:last-child{text-align:right;font-weight:700}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <p class="label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="faq-group">体験について</p>
+    <details><summary>入会を勧誘されませんか？</summary><p class="a">されません。体験のあとに、今のカラダの状態とこれからのプランをお伝えしますが、入会するかどうかはその場で決めなくて大丈夫です。合わなければ、そのままお帰りください。</p></details>
+    <details><summary>体験の時間はどれくらいですか？</summary><p class="a">体験は90分です。カウンセリング、カラダの評価、体験トレーニング、これからのプランのご説明まで行います。予約画面では準備時間を含めて約2時間の枠で表示されますが、実際の体験は90分です。</p></details>
+    <details><summary>持ち物と服装を教えてください。</summary><p class="a">動きやすい服装と、室内用の運動シューズをご用意ください。タオルと飲み物もあると快適です。ウェア・シューズのレンタルはありません。</p></details>
+    <details><summary>更衣室やシャワーはありますか？</summary><p class="a">更衣室とロッカーはご用意しています。シャワーはありませんので、汗を拭くものをお持ちいただくと安心です。</p></details>
+    <details><summary>トレーナーは指名できますか？</summary><p class="a">ご予約時に指名できます。迷ったら「指名なし」で大丈夫です。入会後の担当変更もご相談いただけます。</p></details>
+    <p class="faq-group">カラダのこと</p>
+    <details><summary>運動はかなり久しぶりですが、大丈夫ですか？</summary><p class="a">大丈夫です。むしろ久しぶりの方ほど、最初にカラダの評価をしてから始める意味があります。今の体力や関節の状態に合わせて、強度を決めていきます。</p></details>
+    <details><summary>キツいトレーニングばかりではありませんか？</summary><p class="a">強度は「楽すぎず、キツすぎず」に調整します。痛みを押して追い込むことはしません。もっと追い込みたい方には、それに合わせたメニューも組めます。</p></details>
+    <details><summary>腰や膝に痛みがあっても受けられますか？</summary><p class="a">痛みが出る動きのクセを見つけて整えるのは、5toolgymが得意とするところです。ただし、医療機関で治療中の場合や強い痛みがある場合は、主治医にご相談のうえでお越しください。</p></details>
+    <details><summary>ゴルフや球技など、スポーツに合わせたトレーニングはできますか？</summary><p class="a">できます。続けたい競技や、困っている動き（スイング、ジャンプ、切り返しなど）をカウンセリングで伺い、それに必要な要素からメニューを組み立てます。</p></details>
+    <details><summary>どれくらいで変化を感じられますか？</summary><p class="a">個人差はありますが、まず3ヶ月ほどで痛みやケガの不安が減り、動きの軽さを感じる方が多いです。体重や体脂肪は3〜6ヶ月で動き始めるのが目安です。</p></details>
+    <details><summary>翌日の筋肉痛で仕事に響きませんか？</summary><p class="a">筋肉痛が残ることはありますが、仕事に支障が出るほど追い込むことはしません。強度は様子を見ながら上げていきます。</p></details>
+    <p class="faq-group">通い方・料金</p>
+    <details><summary>週に何回通えばいいですか？</summary><p class="a">週1回（月4回）から始める方がほとんどです。パーソナルのない日は、24時間ジムで軽めの自主トレをしていただくと変化が早まります。</p></details>
+    <details><summary>仕事帰りでも通えますか？</summary><p class="a">パーソナルトレーニングは毎日9:30〜22:30で受けられます。24時間ジムは時間を問わず使えます。</p></details>
+    <details><summary>急な仕事で予約を変更・キャンセルしたいときは？</summary><p class="a">当日キャンセルもできます。LINEでご連絡ください。トレーニングの開始時間を過ぎてからのキャンセルは、1回分の消化となります。</p></details>
+    <details><summary>24時間ジムは追加料金がかかりますか？</summary><p class="a">かかりません。パーソナルの月額プランに利用料が含まれています。24時間ジムだけのご利用は、月額8,800円（入会金8,800円）です。</p></details>
+    <details><summary>24時間ジムはどんな雰囲気ですか？</summary><p class="a">基本は無人で、混み合うことは少ないです。使っている方のほとんどはパーソナルの会員さんで、男女比はおよそ男性4：女性6です。間仕切りのない一つのフロアです。</p></details>
+    <details><summary>契約期間の縛りはありますか？</summary><p class="a">縛りはありません。</p></details>
+    <details><summary>食事の指導もしてもらえますか？</summary><p class="a">セッションの中で、普段の食事についてもご相談いただけます。極端な食事制限はおすすめしていません。</p></details>
+    <p class="faq-group">アクセス</p>
+    <details><summary>駐車場はありますか？</summary><p class="a">店舗専用の駐車場はありません。周辺にコインパーキングが複数あります。薬院大通駅から徒歩2分なので、地下鉄が便利です。</p></details>
+  </div>
+</section>
+
 <!-- ⑥ 予約 -->
 <section class="final" id="reserve">
   <div class="wrap">
+    <div class="msg">
+      <h3>「昔はさ」ではなく、<br>「今がいちばん動ける」と言える40代へ。</h3>
+      <p>アラフォーになると、カラダの不調を「もう年だから」で片付けてしまいがちです。</p>
+      <p>でも、9年間トレーナーとしてたくさんのカラダを見てきて思うのは、動けなくなる理由は、年齢よりも動かない時間の長さだということです。</p>
+      <p>整えて、少しずつ負荷をかけて、回復できるカラダをつくる。それができれば、40代からでもカラダは応えてくれます。</p>
+      <p>まずは90分、あなたのカラダを見せてください。</p>
+      <div class="sign"><img src="/images/trainer-shibayama-plain.webp" width="104" height="104" alt="柴山"><div><b>柴山</b>5toolgym オーナートレーナー</div></div>
+    </div>
     <h2>まず、カラダで<br>確かめてください。</h2>
     <p class="lead">90分で、何が足りなかったのかがわかります。</p>
     <a class="btn btn-main" href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei">体験を予約する（90分 5,500円）</a>
     <a class="btn btn-line" href="https://lin.ee/Y1P0dZl" data-line-pos="final">まずLINEで質問する</a>
+    <p class="btn-note">無理な勧誘なし ／ 当日キャンセルOK ／ 相談だけでもOK</p>
     <p class="btn-note">予約画面ではトレーナーは「指名なし」で大丈夫です。準備時間を含めて約2時間の枠で表示されますが、体験は90分です。</p>
-    <div class="access">
-      <b>5toolgym 薬院店</b><br>
-      〒810-0022 福岡市中央区薬院3丁目13-22 新宝ビル3F<br>
-      薬院大通駅 徒歩2分／薬院駅 徒歩6分<br>
-      営業時間 9:30〜22:30（24時間ジム併設）<br>
-      電話 <a href="tel:0926000296">092-600-0296</a>
-    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access-sec" id="access">
+  <div class="wrap">
+    <p class="label">ACCESS</p>
+    <h2>アクセス</h2>
+    <picture><source srcset="/images/exterior-close.webp" type="image/webp"><img class="access-photo" src="/images/exterior-close.jpg" width="1200" height="900" loading="lazy" alt="5toolgym薬院店の外観"></picture>
+    <dl class="access-dl">
+      <dt>店舗</dt><dd>5toolgym 薬院店<br>新宝ビル 3F</dd>
+      <dt>住所</dt><dd>〒810-0022<br>福岡市中央区薬院3丁目13-22</dd>
+      <dt>最寄駅</dt><dd>薬院大通駅 徒歩2分<br>薬院駅 徒歩6分</dd>
+      <dt>営業時間</dt><dd>パーソナル 9:30〜22:30（毎日・要予約）<br>24時間ジム 24時間利用可</dd>
+      <dt>駐車場</dt><dd>なし（周辺にコインパーキングあり）</dd>
+      <dt>電話</dt><dd><a href="tel:0926000296">092-600-0296</a></dd>
+    </dl>
+    <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=5toolgym%E8%96%AC%E9%99%A2%E5%BA%97" target="_blank" rel="noopener">Googleマップで開く</a>
   </div>
 </section>
 
