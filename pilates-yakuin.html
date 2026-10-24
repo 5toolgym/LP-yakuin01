@@ -375,6 +375,12 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 .quick-voice figcaption{font-size:11px;color:var(--light);margin-top:8px}
 .quick-note{font-size:10px;color:var(--light);margin:6px 0 0}
 .quick-more{display:block;text-align:center;font-size:13px;color:var(--accent);text-decoration:underline;margin:16px 0 24px}
+
+/* ── LINE primary CTA ── */
+.line-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:#06C755!important;color:#fff!important;padding:17px 20px;border-radius:8px;font-size:15px;font-weight:700;letter-spacing:.05em;text-decoration:none;width:100%;max-width:480px;margin:0 auto 10px;box-shadow:0 4px 16px rgba(6,199,85,.25);border:none;box-sizing:border-box}
+.line-cta:active{transform:translateY(1px)}
+.line-cta + a[href*="kanzashi"]{background:transparent!important;color:#D4537E!important;border:1.5px solid #D4537E!important;box-shadow:none!important;animation:none!important;font-size:13px!important;padding:12px 16px!important;max-width:480px;margin-left:auto;margin-right:auto}
+.line-cta + a.btn-white,.line-cta + a.fcta-btn{color:#fff!important;border-color:rgba(255,255,255,.8)!important}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&text=15glmoty%E3%80%80%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%91%E3%81%92%E3%81%93%E3%81%94%E3%81%95%E3%81%96%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B2%E3%81%B6%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%81%E3%82%82%E3%82%83%E3%82%84%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8F%E3%82%92%E3%82%93%E3%82%A3%E3%82%B5%E3%82%B9%E3%82%BC%E3%83%80%E3%83%86%E3%83%88%E3%83%8A%E3%83%94%E3%83%9D%E3%83%A0%E3%83%A9%E3%83%AC%E3%83%AD%E3%83%BC%E4%B8%80%E4%B8%8A%E4%B8%8D%E4%BA%8B%E4%BB%A3%E4%BB%A5%E4%BC%9A%E4%BD%93%E4%BD%BF%E5%85%A5%E5%85%A8%E5%87%BA%E5%88%87%E5%8B%95%E5%8B%A2%E5%8D%8A%E5%90%8C%E5%90%B8%E5%91%BC%E5%93%A1%E5%A0%B4%E5%A4%89%E5%A4%A7%E5%A7%8B%E5%A7%BF%E5%AB%8C%E5%AE%89%E5%AE%9F%E5%B1%B1%E5%B8%8C%E5%B9%B4%E5%B9%B8%E5%BA%A6%E5%BD%93%E5%BF%85%E6%80%9D%E6%84%9F%E6%85%8E%E6%96%B9%E6%98%8E%E6%99%82%E6%99%BA%E6%9C%9B%E6%9D%A5%E6%9F%B4%E6%A5%BD%E6%AC%A1%E6%AD%A2%E6%AD%A9%E6%B1%BA%E6%B7%B7%E7%84%B6%E7%95%AA%E7%9B%B4%E7%A2%BA%E7%A7%81%E7%A9%8D%E7%AB%8B%E7%B6%9A%E8%80%83%E8%8D%B7%E8%91%89%E8%A1%A8%E8%A6%81%E8%A6%9A%E8%A8%80%E8%A8%BC%E8%AA%98%E8%AA%AD%E8%B2%A0%E8%B6%B3%E8%B8%8F%E9%80%9A%E9%81%A9%E9%81%B8%E9%87%8D%E9%96%93%E9%A0%86%E9%A8%93&display=swap" media="print" onload="this.media='all'">
 </head>
@@ -382,7 +388,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 
 <!-- ══ STICKY BAR ══ -->
 <div id="sbar">
-  <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="sbar-btn">体験を予約する（90分 5,500円）</a>
+  <a href="https://lin.ee/72fYhhM" class="sbar-btn" data-line-pos="sticky" target="_blank" rel="noopener" style="background:#06C755">LINEで質問だけする</a>
   <p class="sbar-sub">相談だけでもOK／その場で決めなくて大丈夫です</p>
 </div>
 
@@ -425,9 +431,9 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   </div>
   <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">ピラティスで姿勢は変わった。でも体型は変わらなかった。ピラティスの次に必要な運動が、ここにあります。</h1>
   <div id="heroCta">
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta1" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
     <p class="btn-note">初回90分 5,500円（税込）</p>
-    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="hero">まずLINEで質問する</a>
   </div>
   <div style="text-align: center; padding: 12px 0 0;">
     <i class="scroll-arrow" aria-hidden="true">&#8595;</i>
@@ -487,8 +493,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
           <li><span>安心</span>無理な勧誘なし・当日キャンセルOK・相談だけでもOK</li>
           <li><span>環境</span>女性トレーナー対応可能・24時間ジム付き</li>
         </ul>
+        <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta2" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
         <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
-        <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="quick">まずLINEで質問する</a>
       <p class="btn-note" style="line-height:1.8;margin-top:12px">予約画面では、トレーナーは「指名なし」で大丈夫です。<br>準備時間を含めて約2時間の枠で表示されますが、体験は90分です。</p>
       </div>
     </div>
@@ -623,8 +629,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="cta-block">
   <div class="cta-block-inner">
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta3" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
-    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="cta1">まずLINEで質問する</a>
   </div>
 </div>
 
@@ -736,8 +742,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
 <div class="cta-block">
   <div class="cta-block-inner">
     <p style="font-size:11px;color:#999;text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta4" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
-    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="cta2">まずLINEで質問する</a>
   </div>
 </div>
 
@@ -802,6 +808,7 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <div class="offer-check">相談だけでもOK</div>
     </div>
     <p style="font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin:0 auto 16px;letter-spacing:0.02em;">無理な勧誘なし &nbsp;／&nbsp; 当日キャンセルOK &nbsp;／&nbsp; 相談だけでもOK</p>
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta5" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
   </div>
 </section>
@@ -966,9 +973,9 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
   <div class="final-cta-inner">
     <h2 class="final-cta-ttl">ピラティスは正解でした。<br><em>ただ、次が必要だっただけです。</em></h2>
     <p class="final-cta-sub">急がなくて大丈夫です。<br>まず90分、体験してみてください。</p>
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta6" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">今すぐ予約する →</a>
     <p class="btn-note" style="margin-top:10px">体験は各店 毎月5名限定です（予約状況はフォームでご確認いただけます）</p>
-    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="final">まずLINEで質問する</a>
   </div>
 </section>
 
@@ -992,8 +999,8 @@ footer{background:#2D2D2D;padding:36px var(--sp) 20px;text-align:center}
       <dt class="access-dt">電話</dt>
       <dd class="access-dd"><a href="tel:0926000296">092-600-0296</a></dd>
     </dl>
+    <a href="https://lin.ee/72fYhhM" class="line-cta" data-line-pos="cta7" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei" class="btn-main">体験を予約する（90分 5,500円）</a>
-    <a href="https://lin.ee/Y1P0dZl" class="btn-line" data-line-pos="access">まずLINEで質問する</a>
   </div>
 </section>
 
