@@ -338,7 +338,7 @@ footer{background:#1A1A1A;padding:36px var(--sp) 20px;text-align:center}
     <h1 class="fv-catch">その脚のライン、<br><span>生まれつき</span>だと<br>思っていませんか？</h1>
     <p class="fv-sub">原因は、姿勢かもしれません。</p>
   </div>
-  <div class="hero-photo"><picture><source srcset="images/posture-fv-yakuin.webp" type="image/webp"><img width="1200" height="800" src="images/posture-fv-yakuin.jpg" alt="トレーナーが見守る中、棒を背中に沿わせて姿勢を確認するお客様" fetchpriority="high"></picture></div>
+  <div class="hero-photo"><picture><source srcset="images/posture-fv-yakuin.webp" type="image/webp"><img width="1200" height="800" src="images/posture-fv-yakuin.jpg" alt="代表トレーナーがお客様の背中の動きを確認している様子" fetchpriority="high"></picture></div>
   <div class="hero-inner">
     <div class="hero-trust">
       <div class="hero-trust-item"><strong>14<span style="font-size:12px">ヶ月</span></strong><span>平均継続期間</span></div>
@@ -954,6 +954,19 @@ document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{
     if(typeof gtag==='function')gtag('event','cta_click',{event_category:'booking',store:'薬院',page:'posture'});
   });
 });
+</script>
+<script>
+/* チラシQR（utm_source=flyer）から来た人にだけ、チラシの無料特典を表示 */
+(function(){
+  if(new URLSearchParams(location.search).get('utm_source')!=='flyer')return;
+  var bar=document.getElementById('abar');if(bar)bar.textContent='チラシ持参で体験無料（12/31まで）';
+  document.querySelectorAll('.btn-main,.sbar-btn').forEach(function(a){a.textContent='チラシ持参で無料の体験を予約'});
+  document.querySelectorAll('.sbar-sub,.closing-note').forEach(function(p){p.textContent='チラシ持参で体験無料（12/31まで）'});
+  var cta=document.getElementById('heroCta');
+  if(cta){var n=document.createElement('p');n.className='btn-sub';n.style.fontWeight='700';n.textContent='予約フォームには通常料金が表示されますが、当日チラシをお持ちいただければ無料です。';cta.after(n)}
+  var offer=document.getElementById('offer');
+  if(offer){var t=offer.querySelector('.sec-ttl');if(t){var o=document.createElement('p');o.style.cssText='text-align:center;font-weight:700;color:#C93E6E;margin:0 0 16px';o.textContent='チラシをお持ちの方は、12/31まで体験無料です。';t.after(o)}}
+})();
 </script>
 </body>
 </html>
