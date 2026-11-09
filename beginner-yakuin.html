@@ -536,5 +536,27 @@ overlay.addEventListener('click',closeDrawer);
 document.querySelectorAll('.drawer-nav a').forEach(a=>a.addEventListener('click',closeDrawer));
 </script>
 
+<script>
+/* GA4: 滞在・スクロール到達（アプリ内ブラウザを閉じてもエンゲージメント時間が残るように） */
+(function(){
+  if(typeof window.gtag!=='function')return;
+  var P={store:'薬院',page:'beginner-yakuin'};
+  function ev(n,x){var o={};for(var k in P)o[k]=P[k];for(var k2 in x||{})o[k2]=x[k2];window.gtag('event',n,o);}
+  document.querySelectorAll('a[href*="lin.ee"],a[href*="line.me"]').forEach(function(a,i){a.addEventListener('click',function(){ev('line_click',{position:a.dataset.linePos||('line'+(i+1))});});});
+  document.querySelectorAll('a[href*="kanzashi"]').forEach(function(a,i){a.addEventListener('click',function(){ev('cta_click',{position:'booking'+(i+1)});});});
+  var visibleMs=0,last=document.visibilityState==='visible'?Date.now():0,sent={};
+  function tick(){
+    if(document.visibilityState==='visible'){var n=Date.now();if(last)visibleMs+=n-last;last=n;}else{last=0;}
+    [10,30,60].forEach(function(t){if(!sent['t'+t]&&visibleMs>=t*1000){sent['t'+t]=1;ev('engaged_'+t+'s');}});
+  }
+  setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){tick();last=document.visibilityState==='visible'?Date.now():0;});
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;if(h<=0)return;
+    var pct=window.scrollY/h*100;
+    [25,50,75].forEach(function(d){if(!sent['s'+d]&&pct>=d){sent['s'+d]=1;ev('scroll_depth',{percent:d});}});
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
