@@ -22,14 +22,14 @@ function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
 gtag('config', GA_ID);
-window.addEventListener('load', function(){
+(function(){
   if(GA_ID){
     var s = document.createElement('script');
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     s.async = true;
     document.head.appendChild(s);
   }
-});
+})();
 
 /* ── Meta Pixel ── */
 var PIXEL_ID = '970383788661577';
@@ -42,13 +42,13 @@ if(PIXEL_ID){
   }(window,document,'script');
   fbq('init', PIXEL_ID);
   fbq('track', 'PageView');
-  /* fbevents.jsはload後に遅延読み込み（レンダリングブロックしない） */
-  window.addEventListener('load', function(){
+  /* fbevents.jsは即時に非同期読み込み（レンダリングはブロックしない） */
+  (function(){
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://connect.facebook.net/en_US/fbevents.js';
     document.head.appendChild(s);
-  });
+  })();
 }
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=970383788661577&ev=PageView&noscript=1"></noscript>
@@ -1531,6 +1531,26 @@ section { padding: 88px 0; }
     });
     overlay.addEventListener('click', closeDrawer);
   })();
+</script>
+<script>
+/* GA4: 滞在・スクロール到達（アプリ内ブラウザを閉じてもエンゲージメント時間が残るように） */
+(function(){
+  if(typeof window.gtag!=='function')return;
+  var P={store:'薬院',page:'5toolgym_lp_yakuin_sasaru'};
+  function ev(n,x){var o={};for(var k in P)o[k]=P[k];for(var k2 in x||{})o[k2]=x[k2];window.gtag('event',n,o);}
+  var visibleMs=0,last=document.visibilityState==='visible'?Date.now():0,sent={};
+  function tick(){
+    if(document.visibilityState==='visible'){var n=Date.now();if(last)visibleMs+=n-last;last=n;}else{last=0;}
+    [10,30,60].forEach(function(t){if(!sent['t'+t]&&visibleMs>=t*1000){sent['t'+t]=1;ev('engaged_'+t+'s');}});
+  }
+  setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){tick();last=document.visibilityState==='visible'?Date.now():0;});
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;if(h<=0)return;
+    var pct=window.scrollY/h*100;
+    [25,50,75].forEach(function(d){if(!sent['s'+d]&&pct>=d){sent['s'+d]=1;ev('scroll_depth',{percent:d});}});
+  },{passive:true});
+})();
 </script>
 </body>
 </html>

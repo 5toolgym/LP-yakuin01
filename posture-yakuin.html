@@ -25,7 +25,7 @@
 <!-- Clarity -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vx3scpfrrn");</script>
 <!-- GA4 -->
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JB7FMH9VST');window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-JB7FMH9VST';s.async=true;document.head.appendChild(s);});</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JB7FMH9VST');(function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-JB7FMH9VST';s.async=true;document.head.appendChild(s);})();</script>
 
 <style>
 img{height:auto}
@@ -966,6 +966,26 @@ document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{
   if(cta){var n=document.createElement('p');n.className='btn-sub';n.style.fontWeight='700';n.textContent='予約フォームには通常料金が表示されますが、当日チラシをお持ちいただければ無料です。';cta.after(n)}
   var offer=document.getElementById('offer');
   if(offer){var t=offer.querySelector('.sec-ttl');if(t){var o=document.createElement('p');o.style.cssText='text-align:center;font-weight:700;color:#C93E6E;margin:0 0 16px';o.textContent='チラシをお持ちの方は、12/31まで体験無料です。';t.after(o)}}
+})();
+</script>
+<script>
+/* GA4: 滞在・スクロール到達（アプリ内ブラウザを閉じてもエンゲージメント時間が残るように） */
+(function(){
+  if(typeof window.gtag!=='function')return;
+  var P={store:'薬院',page:'posture-yakuin'};
+  function ev(n,x){var o={};for(var k in P)o[k]=P[k];for(var k2 in x||{})o[k2]=x[k2];window.gtag('event',n,o);}
+  var visibleMs=0,last=document.visibilityState==='visible'?Date.now():0,sent={};
+  function tick(){
+    if(document.visibilityState==='visible'){var n=Date.now();if(last)visibleMs+=n-last;last=n;}else{last=0;}
+    [10,30,60].forEach(function(t){if(!sent['t'+t]&&visibleMs>=t*1000){sent['t'+t]=1;ev('engaged_'+t+'s');}});
+  }
+  setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){tick();last=document.visibilityState==='visible'?Date.now():0;});
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;if(h<=0)return;
+    var pct=window.scrollY/h*100;
+    [25,50,75].forEach(function(d){if(!sent['s'+d]&&pct>=d){sent['s'+d]=1;ev('scroll_depth',{percent:d});}});
+  },{passive:true});
 })();
 </script>
 </body>
