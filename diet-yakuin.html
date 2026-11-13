@@ -809,6 +809,19 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 .grev-who{font-size:11px;color:var(--light);margin:6px 0 0!important}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&text=%2501234569glmoty%E3%80%80%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%96%E3%81%97%E3%81%98%E3%81%99%E3%81%9B%E3%81%9C%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B2%E3%81%BE%E3%81%BF%E3%82%81%E3%82%82%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%B0%E3%83%88%E3%83%8A%E3%83%8B%E3%83%AC%E3%83%B3%E3%83%B6%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8D%E4%B8%AD%E4%BA%88%E4%BA%BA%E4%BB%A3%E4%BC%9A%E4%BC%9D%E4%BD%93%E4%BF%A1%E5%85%A5%E5%85%A8%E5%88%86%E5%88%87%E5%8B%A7%E5%90%88%E5%90%8C%E5%90%8D%E5%90%91%E5%91%B3%E5%93%A1%E5%9D%87%E5%A0%B4%E5%A4%9A%E5%A7%8B%E5%AD%97%E5%AE%89%E5%AE%A2%E5%B0%91%E5%B1%B1%E5%B9%B3%E5%B9%B4%E5%B9%B8%E5%BA%97%E5%BA%A6%E5%BD%93%E5%BE%85%E5%BE%8C%E5%BF%83%E6%80%9D%E6%82%A9%E6%89%80%E6%8C%81%E6%95%B0%E6%96%B0%E6%96%B9%E6%99%BA%E6%9C%80%E6%9C%88%E6%9C%9F%E6%9C%AC%E6%9D%A5%E6%9F%B4%E6%A5%BD%E6%A7%98%E6%B0%97%E6%B1%BA%E7%84%A1%E7%90%86%E7%A7%81%E7%B4%84%E7%B6%99%E7%B6%9A%E8%87%AA%E8%88%88%E8%A1%A8%E8%A7%A3%E8%AA%87%E8%AA%98%E8%AA%AD%E8%B6%8A%E9%80%9A%E9%95%B7%E9%96%93%E9%A0%BC%E9%A8%93%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9F&display=swap" media="print" onload="this.media='all'">
+<style>/* 2026-11-13 予約ボタンを主導線に */
+.rsv-split-ttl{font-size:14px!important;margin:0 0 8px!important}
+.rsv-btn{background:var(--gold-d)!important;color:#fff!important;border:none!important;padding:17px 6px!important;font-size:15px!important;font-weight:700!important;box-shadow:0 4px 14px rgba(0,0,0,.12)!important}
+.line-cta{background:#fff!important;color:#06C755!important;border:1.5px solid #06C755!important;font-size:13px!important;padding:12px 16px!important;margin:12px auto 0!important;box-shadow:none!important;animation:none!important}
+.line-cta svg path{fill:#06C755!important}
+.owner-note{display:flex;gap:14px;align-items:center;max-width:520px;margin:0 auto;padding:22px 20px;background:#fff}
+.owner-note img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:center 20%;flex:none}
+.owner-note p{font-size:13px;line-height:1.8;margin:0;color:#3E3A36;text-align:left}
+.owner-note b{display:block;font-size:11px;letter-spacing:.06em;color:#8A827A;font-weight:700;margin-bottom:2px}
+.flow-video{display:block;width:100%;height:auto;aspect-ratio:9/16;max-width:300px;margin:14px auto 0;border-radius:10px;background:#000}
+.stick-line{background:#fff!important;color:#06C755!important;border:1.5px solid #06C755!important}.stick-line svg path{fill:#06C755!important}
+.flow-video-cap{font-size:11px;color:#8A827A;text-align:center;margin:6px 0 0;line-height:1.6}
+</style>
 </head>
 <body>
 
@@ -819,11 +832,8 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 </div>
 <div id="sbar">
   <p class="sbar-sub">体験は各店 毎月5名限定</p>
-  <a href="https://lin.ee/SSVMY67" class="sbar-cta" data-line-pos="sticky" target="_blank" rel="noopener" style="background:#06C755">
-    <svg width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>
-    LINEで質問だけする
-  </a>
-  <p class="sbar-note">初回90分 5,500円 / 相談だけでもOK</p>
+  <a href="#trial" class="sbar-cta" style="background:#8F7E62">体験を予約する（90分 5,500円）</a>
+  <p class="sbar-note">その場で決めなくて大丈夫です</p>
 </div>
 
 <!-- TOPBAR -->
@@ -864,16 +874,18 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 <!-- ══════════ HERO ══════════ -->
 <section class="hero" id="top">
   <div class="hero-visual hero-ai"><picture><source srcset="images/diet/lp1-fv-v4-yakuin.webp" type="image/webp"><img width="1080" height="1350" src="images/diet/lp1-fv-v4-yakuin.jpg" fetchpriority="high" alt="好きな服を、毎日、着ませんか？ 年齢とともに変わる体型を、服で隠してきたあなたへ。24時間ジム付きパーソナルジム、薬院大通駅から徒歩2分、5toolgym薬院店"></picture></div>
-  <div class="hero-ai-meta"><h1 class="hero-h1 sr-only">好きな服を、毎日、着ませんか？年齢とともに変わる体型を、服で隠してきたあなたへ。</h1><p class="hero-lead">何をやっても変わらなかった方へ。</p><p class="hero-sub">姿勢と動きを整えて、引き締まった若々しい体を目指す。<br>薬院大通駅から徒歩2分。仕事と子育ての合間に通えます。</p></div>
+  <div class="hero-ai-meta"><h1 class="hero-h1 sr-only">好きな服を、毎日、着ませんか？年齢とともに変わる体型を、服で隠してきたあなたへ。</h1><p class="hero-lead">食べる量は変わっていないのに、<br>お腹まわりだけ落ちない方へ。</p><p class="hero-sub">姿勢と動きを整えて、引き締まった若々しい体を目指す。<br>薬院大通駅から徒歩2分。仕事と子育ての合間に通えます。</p></div>
   <div class="hero-bottom" style="padding-top:20px">
-    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta1" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta1" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <p class="hero-price">初回体験 90分 <strong>5,500円</strong><small>（税込）</small><br><small>※2026年11月のキャンペーン価格（通常13,200円）</small></p>
   </div>
   <div style="text-align: center; padding: 12px 0 0;">
     <i class="scroll-arrow" aria-hidden="true">&#8595;</i>
   </div>
 </section>
+<div class="owner-note"><img src="images/img3.jpg" alt="5toolgym代表 柴山智幸" width="76" height="76"><p><b>5toolgym代表・トレーナー 柴山智幸</b>動画でお話ししていた柴山です。まずは90分の体験で、今の体の状態を一緒に確認させてください。その場で決めなくて大丈夫です。</p></div>
+
 
 
 <!-- ══════════ TRUST BAR ══════════ -->
@@ -1010,8 +1022,8 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
     <div class="why-card why-card-goal"><picture><source srcset="images/diet/lp1-why-meal.webp" type="image/webp"><img loading="lazy" width="1200" height="896" src="images/diet/lp1-why-meal.jpg" alt="バランスのよい食事をとる女性（イメージ）"></picture><p class="why-card-n">STEP 3</p><p class="why-card-t">太りにくい体を目指す</p><p class="why-card-d">食事は減らしすぎず、ちゃんと食べて動く。その積み重ねで、体型を整えていきます。</p></div>
   </div>
   <p class="why-note fi d2">我慢して食べなかった人ほど、<br>ちゃんと食べることが大事になります。</p>
-  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta2" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
   <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta2" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
 </section>
 
 
@@ -1117,8 +1129,8 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 <!-- ══ PRICE CTA ══ -->
 <div style="background:var(--bg2);padding:32px var(--sp);text-align:center;border-top:1px solid var(--border)">
   <p style="font-size:12px;color:var(--light);margin-bottom:16px;letter-spacing:.06em">まずは体験してから、コースを決めていただけます</p>
-  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta3" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
   <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta3" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
 </div>
 
 <!-- ══════════ TRAINERS ══════════ -->
@@ -1195,6 +1207,7 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
         <span class="flow-time">60分</span>
         <p class="flow-ttl">骨格チェック・トレーニング・コンディショニング</p>
         <p class="flow-desc">骨格・姿勢・動きのクセを分析し、あなたに合ったトレーニングを実施。ストレッチ・歪み改善まで含みます。</p>
+        <video class="flow-video" autoplay muted loop playsinline preload="metadata" poster="images/session-flow-poster.jpg" width="540" height="960"><source src="images/session-flow.mp4" type="video/mp4"></video><p class="flow-video-cap">モニターの方にご協力いただいた、実際の指導の様子です（撮影：福岡赤坂・大濠公園店）</p>
       </div>
     </div>
     <div class="flow-item">
@@ -1237,8 +1250,8 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
       <div class="trial-row"><div class="ck"></div>今後のご提案（5分）</div>
       <div class="trial-row"><div class="ck"></div>マンツーマン指導</div>
     </div>
-    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta6" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta6" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
     <p class="trial-note" style="margin-top:8px">お支払方法：現金・クレジットカード・各種キャッシュレス決済</p>
   </div>
 </section>
@@ -1333,8 +1346,8 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
     変わらなかった理由を、まず一緒に確かめるところから。<br>
     <strong>身体の使い方の違いを、90分で確かめてみてください。</strong>
   </p>
-  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta8" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
   <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+  <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta8" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
   <p class="fcta-note fi d3">体験は各店 毎月5名限定 ／ 相談だけでもOK</p>
 </section>
 
