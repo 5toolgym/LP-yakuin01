@@ -1380,7 +1380,11 @@ hmbBtn.addEventListener('click',()=>{drawer.classList.contains('open')?closeDraw
 overlay.addEventListener('click',closeDrawer);
 document.querySelectorAll('.drawer-close-link').forEach(a=>{a.addEventListener('click',closeDrawer)});
 document.querySelectorAll('a[href*="kanzashi"]').forEach(a=>{a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Lead',{content_name:'booking'});if(typeof gtag==='function')gtag('event','cta_click',{event_category:'booking',store:'薬院',page:'diet',gender:a.dataset.gender||''});});});
-document.querySelectorAll('a[href*="lin.ee"],a[href*="line.me"]').forEach(a=>{a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Lead',{content_name:'line'});if(typeof gtag==='function')gtag('event','line_click',{event_category:'line',store:'薬院',page:'diet',lp:'diet',position:a.dataset.linePos||''});});});
+/* LINEクリック計測（赤坂LPと同一ロジック） */
+(function(){var last=0;document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="lin.ee"],a[href*="line.me"]');if(!a)return;var n=Date.now();if(n-last<800)return;last=n;
+  try{if(typeof fbq==='function')fbq('track','Lead',{content_name:'line'});}catch(_){}
+  try{if(typeof gtag==='function')gtag('event','line_click',{event_category:'line',store:'薬院',page:'diet',lp:'diet',position:a.dataset.linePos||'other'});}catch(_){}
+},true);})();
 </script>
 <script>
 (function(){
