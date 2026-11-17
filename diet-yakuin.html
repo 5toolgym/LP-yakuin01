@@ -821,6 +821,22 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 .flow-video{display:block;width:100%;height:auto;aspect-ratio:9/16;max-width:300px;margin:14px auto 0;border-radius:10px;background:#000}
 .stick-line{background:#fff!important;color:#06C755!important;border:1.5px solid #06C755!important}.stick-line svg path{fill:#06C755!important}
 .flow-video-cap{font-size:11px;color:#8A827A;text-align:center;margin:6px 0 0;line-height:1.6}
+
+/* ===== FV v5（2026-11：画像タップ→予約ボタン、FVで「誰向け・何の店・体験価格・次の行動」） ===== */
+.fv-photo{display:block;position:relative;max-width:480px;margin:0 auto;line-height:0;overflow:hidden;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.fv-photo img{display:block;width:100%;height:auto;aspect-ratio:1195/896;max-height:38vh;object-fit:cover;object-position:60% 35%}
+.fv-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.9);color:#3E3A36;font-size:11px;font-weight:700;line-height:1.5;padding:6px 10px;border-radius:6px;text-align:right;letter-spacing:.02em}
+.fv-chip{position:absolute;left:10px;bottom:10px;background:#3E3A36;color:#fff;font-size:12px;line-height:1.4;padding:7px 12px;border-radius:999px;letter-spacing:.02em}
+.fv-chip b{font-size:15px;margin:0 1px}
+.hero#top{padding-top:0!important}
+.fv-copy{max-width:480px;margin:0 auto;padding:12px var(--sp) 0;text-align:left}
+.fv-for{font-size:12px;color:#8F7E62;font-weight:700;margin:0 0 4px;letter-spacing:.02em;line-height:1.6}
+.fv-h1{font-family:'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;font-size:clamp(21px,5.8vw,26px);font-weight:600;color:#3E3A36;line-height:1.45;margin:0 0 6px;letter-spacing:.02em}
+.fv-lead{font-size:13px;color:#4A443E;line-height:1.75;margin:0}
+.hero .hero-bottom{padding-top:14px!important;padding-bottom:18px!important}
+.fv-note{font-size:12px;color:#8A827A;text-align:center;margin:8px 0 0}
+.fv-flash .rsv-btn{animation:fvflash 1.2s ease-out 1}
+@keyframes fvflash{0%{transform:scale(1)}25%{transform:scale(1.05);box-shadow:0 0 0 6px rgba(143,126,98,.3)}100%{transform:scale(1)}}
 </style>
 </head>
 <body>
@@ -873,15 +889,16 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero" id="top">
-  <div class="hero-visual hero-ai"><picture><source srcset="images/diet/lp1-fv-v4-yakuin.webp" type="image/webp"><img width="1080" height="1350" src="images/diet/lp1-fv-v4-yakuin.jpg" fetchpriority="high" alt="好きな服を、毎日、着ませんか？ 年齢とともに変わる体型を、服で隠してきたあなたへ。24時間ジム付きパーソナルジム、薬院大通駅から徒歩2分、5toolgym薬院店"></picture></div>
-  <div class="hero-ai-meta"><h1 class="hero-h1 sr-only">好きな服を、毎日、着ませんか？年齢とともに変わる体型を、服で隠してきたあなたへ。</h1><p class="hero-lead">食べる量は変わっていないのに、<br>お腹まわりだけ落ちない方へ。</p><p class="hero-sub">姿勢と動きを整えて、引き締まった若々しい体を目指す。<br>薬院大通駅から徒歩2分。仕事と子育ての合間に通えます。</p></div>
-  <div class="hero-bottom" style="padding-top:20px">
-    <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
-    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta1" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
-    <p class="hero-price">初回体験 90分 <strong>5,500円</strong><small>（税込）</small><br><small>※2026年11月のキャンペーン価格（通常13,200円）</small></p>
+  <a href="#heroRsv" class="hero-visual fv-photo" id="heroTap" aria-label="体験予約ボタンへ移動"><picture><source srcset="images/diet/fv-photo-yakuin.webp" type="image/webp"><img width="1195" height="896" src="images/diet/fv-photo-yakuin.jpg" fetchpriority="high" alt="トレーナーと一緒にケトルベルでトレーニングする女性（5toolgym薬院店）"></picture><span class="fv-tag">24時間ジム付きパーソナルジム<br>薬院大通駅 徒歩2分</span><span class="fv-chip">初回体験 90分 <b>5,500円</b>（税込）</span></a>
+  <div class="fv-copy">
+    <p class="fv-for">年齢とともに変わる体型を、服で隠してきたあなたへ</p>
+    <h1 class="fv-h1">好きな服を、<br>毎日、着ませんか？</h1>
+    <p class="fv-lead">食べる量は同じなのに、お腹まわりだけ落ちない方へ。<br>私たちは、姿勢と動きを整えて引き締めます。</p>
   </div>
-  <div style="text-align: center; padding: 12px 0 0;">
-    <i class="scroll-arrow" aria-hidden="true">&#8595;</i>
+  <div class="hero-bottom" id="heroRsv">
+    <div class="rsv-split"><p class="rsv-split-ttl">体験を予約する（90分 5,500円）</p><div class="rsv-split-btns"><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=199915" class="rsv-btn" data-gender="female" target="_blank">女性の方はこちら</a><a href="https://instagram.kanzashi.com/l/1uyf95d0BYo/kirei?staffId=0&amp;couponId=418712" class="rsv-btn" data-gender="male" target="_blank">男性の方はこちら</a></div><p class="rsv-note">体験は90分です。</p></div>
+    <p class="fv-note">その場で決めなくて大丈夫です</p>
+    <a href="https://lin.ee/SSVMY67" class="line-cta" data-line-pos="cta1" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6 2 2 5.5 2 9.8c0 2.6 1.5 4.9 3.8 6.3l-.7 2.9 3.2-1.7c.8.2 1.8.3 2.7.3 5 0 9-3.5 9-7.8S16 2 11 2z" fill="white"/></svg>LINEで質問だけする</a>
   </div>
 </section>
 <div class="owner-note"><img src="images/img3.jpg" alt="5toolgym代表 柴山智幸" width="76" height="76"><p><b>5toolgym代表・トレーナー 柴山智幸</b>動画でお話ししていた柴山です。まずは90分の体験で、今の体の状態を一緒に確認させてください。その場で決めなくて大丈夫です。</p></div>
@@ -893,7 +910,6 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
   <div class="trust-items">
     <div class="trust-item"><span class="trust-v">13.1<small>ヶ月</small></span><span class="trust-k">平均継続期間</span></div>
     <div class="trust-item"><span class="trust-v">5<small>年以上</small></span><span class="trust-k">通い続けている<br>会員がいます</span></div>
-    <div class="trust-item"><span class="trust-v">24<small>時間</small></span><span class="trust-k">ジム利用料<br>コース料金込み</span></div>
   </div>
   <p class="trust-note">平均継続期間：2022年10月〜2026年4月／薬院店・赤坂店合算</p>
 </div>
@@ -1045,7 +1061,7 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
 <section class="psum" id="psum">
   <p class="psum-ttl">料金の目安</p>
   <div class="psum-rows">
-    <div class="psum-row"><span class="psum-k">体験セッション（90分）</span><span class="psum-v">5,500円<small>（税込）</small><br><small>※2026年11月のキャンペーン価格（通常13,200円）</small></span></div>
+    <div class="psum-row"><span class="psum-k">体験セッション（90分）</span><span class="psum-v">5,500円<small>（税込）</small></span></div>
     <div class="psum-row"><span class="psum-k">入会後</span><span class="psum-v">1回あたり 9,100円〜<small>（税込）</small></span></div>
   </div>
   <p class="psum-note">月2回〜8回のコースから選べます（別途、入会金11,000円・税込）。体験のあと、その場で決める必要はありません。</p>
@@ -1105,7 +1121,7 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
       <tr><td>月2回<small>ENTRY</small></td><td>19,400円</td><td>9,700円</td></tr>
     </tbody>
   </table>
-  <p class="pr-fee">入会金 11,000円（税込）／ 体験セッション 90分 5,500円（税込・2026年11月のキャンペーン価格、通常13,200円）</p>
+  <p class="pr-fee">入会金 11,000円（税込）／ 体験セッション 90分 5,500円（税込）</p>
   <details class="pr-det">
     <summary>コースごとの内容を見る</summary>
     <ul>
@@ -1242,7 +1258,6 @@ footer{background:#F6EFE7!important;border-top:1px solid #EFE4D6!important}
       <span style="font-size:1.8rem;font-weight:bold;color:inherit;">¥5,500</span>
       <span style="font-size:0.85rem;color:#888;">（税込）</span>
     </div>
-    <p style="text-align:center;font-size:12px;color:#888;margin:-4px 0 10px">2026年11月のキャンペーン価格（通常13,200円）</p>
     <div class="trial-rows">
       <div class="trial-row"><div class="ck"></div>カウンセリング（15分）</div>
       <div class="trial-row"><div class="ck"></div>骨格チェック・歪み改善・トレーニング（60分）</div>
@@ -1439,6 +1454,13 @@ s.querySelector('.stick-rsv').addEventListener('click',function(){try{if(typeof 
     [25,50,75].forEach(function(d){if(!sent['s'+d]&&pct>=d){sent['s'+d]=1;ev('scroll_depth',{percent:d});}});
   },{passive:true});
 })();
+</script>
+<script>
+/* FV：ヒーロー画像タップ → 予約ボタンへ移動して強調（GA4: hero_tap） */
+(function(){var t=document.getElementById('heroTap'),r=document.getElementById('heroRsv');if(!t||!r)return;
+t.addEventListener('click',function(e){e.preventDefault();try{r.scrollIntoView({behavior:'smooth',block:'center'})}catch(_){r.scrollIntoView()}
+r.classList.remove('fv-flash');void r.offsetWidth;r.classList.add('fv-flash');
+try{if(typeof gtag==='function')gtag('event','hero_tap',{store:'薬院',page:'diet'})}catch(_){}});})();
 </script>
 </body>
 </html>
